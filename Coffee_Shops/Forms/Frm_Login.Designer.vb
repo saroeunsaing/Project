@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_Shop
+Partial Class Frm_Login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,15 +24,13 @@ Partial Class Frm_Shop
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'Frm_Shop
+        'Frm_Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(274, 174)
-        Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.Name = "Frm_Shop"
-        Me.Text = "Frm_Shop"
+        Me.ClientSize = New System.Drawing.Size(267, 183)
+        Me.Name = "Frm_Login"
+        Me.Text = "Frm_Login"
         Me.ResumeLayout(False)
 
     End Sub

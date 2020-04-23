@@ -80,7 +80,13 @@
   <ItemGroup>
     <Compile Include="Config.vb" />
     <Compile Include="ConnectionString.vb" />
-    <Compile Include="CR_Sales.vb">
+    <Compile Include="Forms\Frm_Login.Designer.vb">
+      <DependentUpon>Frm_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CR_Sales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CR_Sales.rpt</DependentUpon>
@@ -93,16 +99,22 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Shop.Designer.vb">
-      <DependentUpon>Frm_Shop.vb</DependentUpon>
+    <Compile Include="Forms\Frm_Products.Designer.vb">
+      <DependentUpon>Frm_Products.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Shop.vb">
+    <Compile Include="Forms\Frm_Products.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Users.Designer.vb">
+    <Compile Include="Forms\Frm_Shop.Designer.vb">
+      <DependentUpon>Frm_Shop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Shop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Users.Designer.vb">
       <DependentUpon>Frm_Users.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Users.vb">
+    <Compile Include="Forms\Frm_Users.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -122,17 +134,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CR_Sales.rpt">
+    <EmbeddedResource Include="Forms\Frm_Login.resx">
+      <DependentUpon>Frm_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Sales.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Shop.resx">
+    <EmbeddedResource Include="Forms\Frm_Products.resx">
+      <DependentUpon>Frm_Products.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Shop.resx">
       <DependentUpon>Frm_Shop.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Users.resx">
+    <EmbeddedResource Include="Forms\Frm_Users.resx">
       <DependentUpon>Frm_Users.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -157,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Supports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
