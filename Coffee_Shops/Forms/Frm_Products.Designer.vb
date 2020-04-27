@@ -48,6 +48,8 @@ Partial Class Frm_Products
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Cmb_Category = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.Img_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Contain.SuspendLayout()
@@ -135,7 +137,7 @@ Partial Class Frm_Products
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 280)
+        Me.Label4.Location = New System.Drawing.Point(8, 338)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 29)
         Me.Label4.TabIndex = 14
@@ -305,6 +307,8 @@ Partial Class Frm_Products
         'Panel_Contain
         '
         Me.Panel_Contain.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel_Contain.Controls.Add(Me.Label8)
+        Me.Panel_Contain.Controls.Add(Me.TextBox1)
         Me.Panel_Contain.Controls.Add(Me.DGV_Data)
         Me.Panel_Contain.Controls.Add(Me.ComboBox1)
         Me.Panel_Contain.Controls.Add(Me.Label7)
@@ -338,17 +342,17 @@ Partial Class Frm_Products
         Me.DGV_Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGV_Data.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Data.Location = New System.Drawing.Point(13, 378)
+        Me.DGV_Data.Location = New System.Drawing.Point(13, 439)
         Me.DGV_Data.Name = "DGV_Data"
         Me.DGV_Data.RowHeadersVisible = False
         Me.DGV_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_Data.Size = New System.Drawing.Size(723, 228)
+        Me.DGV_Data.Size = New System.Drawing.Size(723, 167)
         Me.DGV_Data.TabIndex = 24
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(158, 320)
+        Me.ComboBox1.Location = New System.Drawing.Point(158, 378)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(288, 37)
         Me.ComboBox1.TabIndex = 23
@@ -356,7 +360,7 @@ Partial Class Frm_Products
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(8, 320)
+        Me.Label7.Location = New System.Drawing.Point(8, 378)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(89, 29)
         Me.Label7.TabIndex = 22
@@ -365,7 +369,7 @@ Partial Class Frm_Products
         'Cmb_Category
         '
         Me.Cmb_Category.FormattingEnabled = True
-        Me.Cmb_Category.Location = New System.Drawing.Point(158, 277)
+        Me.Cmb_Category.Location = New System.Drawing.Point(158, 335)
         Me.Cmb_Category.Name = "Cmb_Category"
         Me.Cmb_Category.Size = New System.Drawing.Size(288, 37)
         Me.Cmb_Category.TabIndex = 21
@@ -378,6 +382,22 @@ Partial Class Frm_Products
         Me.Label6.Size = New System.Drawing.Size(67, 29)
         Me.Label6.TabIndex = 20
         Me.Label6.Text = "តម្លៃដើម"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(158, 280)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(288, 37)
+        Me.TextBox1.TabIndex = 25
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(8, 283)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(74, 29)
+        Me.Label8.TabIndex = 26
+        Me.Label8.Text = "បញ្ចុះតម្លៃ"
         '
         'Frm_Products
         '
@@ -427,4 +447,6 @@ Partial Class Frm_Products
     Friend WithEvents Cmb_Category As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents DGV_Data As DataGridView
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
