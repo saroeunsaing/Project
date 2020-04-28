@@ -98,6 +98,12 @@
     <Compile Include="Forms\Frm_Discount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Frm_Main.Designer.vb">
+      <DependentUpon>Frm_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Frm_PTCash.Designer.vb">
       <DependentUpon>Frm_PTCash.vb</DependentUpon>
     </Compile>
@@ -116,10 +122,10 @@
     <Compile Include="Forms\Frm_Stocks.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Payments.Designer.vb">
+    <Compile Include="Forms\Frm_Payments.Designer.vb">
       <DependentUpon>Frm_Payments.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Payments.vb">
+    <Compile Include="Forms\Frm_Payments.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\CR_Sales.vb">
@@ -128,10 +134,10 @@
       <DependentUpon>CR_Sales.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
+    <Compile Include="Forms\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="Forms\Frm_Discount.resx">
       <DependentUpon>Frm_Discount.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Main.resx">
+      <DependentUpon>Frm_Main.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_PTCash.resx">
       <DependentUpon>Frm_PTCash.vb</DependentUpon>
     </EmbeddedResource>
@@ -188,14 +197,14 @@
     <EmbeddedResource Include="Forms\Frm_Stocks.resx">
       <DependentUpon>Frm_Stocks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Payments.resx">
+    <EmbeddedResource Include="Forms\Frm_Payments.resx">
       <DependentUpon>Frm_Payments.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Sales.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Products.resx">
@@ -235,6 +244,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ស្លឹករឹត1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Project>{ccb174d3-cb4e-43c0-b733-63adadc358f2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.vbproj">
+      <Project>{e66fdb5d-d2f8-4995-ba9a-f41618129c88}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
