@@ -80,10 +80,46 @@
   <ItemGroup>
     <Compile Include="Config.vb" />
     <Compile Include="ConnectionString.vb" />
+    <Compile Include="Forms\Frm_Dashboard.Designer.vb">
+      <DependentUpon>Frm_Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Frm_Login.Designer.vb">
       <DependentUpon>Frm_Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Discount.Designer.vb">
+      <DependentUpon>Frm_Discount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Discount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_PTCash.Designer.vb">
+      <DependentUpon>Frm_PTCash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_PTCash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Sales.Designer.vb">
+      <DependentUpon>Frm_Sales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Sales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Stocks.Designer.vb">
+      <DependentUpon>Frm_Stocks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Stocks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Payments.Designer.vb">
+      <DependentUpon>Frm_Payments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Payments.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\CR_Sales.vb">
@@ -134,8 +170,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
+      <DependentUpon>Frm_Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Login.resx">
       <DependentUpon>Frm_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Discount.resx">
+      <DependentUpon>Frm_Discount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_PTCash.resx">
+      <DependentUpon>Frm_PTCash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Sales.resx">
+      <DependentUpon>Frm_Sales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Stocks.resx">
+      <DependentUpon>Frm_Stocks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Payments.resx">
+      <DependentUpon>Frm_Payments.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -178,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Supports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ស្លឹករឹត1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
