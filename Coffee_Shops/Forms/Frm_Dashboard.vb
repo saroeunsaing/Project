@@ -118,7 +118,6 @@ Public Class Frm_Dashboard
     'check security with existing login
     Private Sub security()
         Dim user As New UserModel()
-        '' 
         If ActiveUser.idUser = Nothing OrElse ActiveUser.idUser = 0 Then
             'codes
             MessageBox.Show("Error")
@@ -137,7 +136,6 @@ Public Class Frm_Dashboard
 
     End Sub
     Private Function MaqueeText(ByVal data As String)
-
         Dim s1 As String = data.Remove(0, 1)
         Dim s2 As String = data(0)
         Return s1 & s2
