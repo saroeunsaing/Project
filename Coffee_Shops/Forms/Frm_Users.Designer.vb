@@ -30,17 +30,19 @@ Partial Class Frm_Users
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Txt_Contact1 = New System.Windows.Forms.TextBox()
-        Me.Txt_NameEN = New System.Windows.Forms.TextBox()
-        Me.Txt_NameKH = New System.Windows.Forms.TextBox()
+        Me.Txt_Password = New System.Windows.Forms.TextBox()
+        Me.Txt_UserName = New System.Windows.Forms.TextBox()
+        Me.Txt_UserID = New System.Windows.Forms.TextBox()
         Me.Btn_Minimize = New FontAwesome.Sharp.IconButton()
         Me.Btn_Maximize = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.Btn_Exit = New FontAwesome.Sharp.IconButton()
         Me.Panel_Contain = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DGV_Data = New System.Windows.Forms.DataGridView()
+        Me.Cmb_Position = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Txt_Fullname = New System.Windows.Forms.TextBox()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Contain.SuspendLayout()
         CType(Me.DGV_Data, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,7 +129,7 @@ Partial Class Frm_Users
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 179)
+        Me.Label3.Location = New System.Drawing.Point(8, 226)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(88, 29)
         Me.Label3.TabIndex = 13
@@ -136,7 +138,7 @@ Partial Class Frm_Users
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 136)
+        Me.Label2.Location = New System.Drawing.Point(8, 183)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 29)
         Me.Label2.TabIndex = 12
@@ -151,26 +153,26 @@ Partial Class Frm_Users
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "លេខសម្គាល់"
         '
-        'Txt_Contact1
+        'Txt_Password
         '
-        Me.Txt_Contact1.Location = New System.Drawing.Point(158, 176)
-        Me.Txt_Contact1.Name = "Txt_Contact1"
-        Me.Txt_Contact1.Size = New System.Drawing.Size(288, 37)
-        Me.Txt_Contact1.TabIndex = 7
+        Me.Txt_Password.Location = New System.Drawing.Point(158, 223)
+        Me.Txt_Password.Name = "Txt_Password"
+        Me.Txt_Password.Size = New System.Drawing.Size(288, 37)
+        Me.Txt_Password.TabIndex = 7
         '
-        'Txt_NameEN
+        'Txt_UserName
         '
-        Me.Txt_NameEN.Location = New System.Drawing.Point(158, 133)
-        Me.Txt_NameEN.Name = "Txt_NameEN"
-        Me.Txt_NameEN.Size = New System.Drawing.Size(288, 37)
-        Me.Txt_NameEN.TabIndex = 6
+        Me.Txt_UserName.Location = New System.Drawing.Point(158, 180)
+        Me.Txt_UserName.Name = "Txt_UserName"
+        Me.Txt_UserName.Size = New System.Drawing.Size(288, 37)
+        Me.Txt_UserName.TabIndex = 6
         '
-        'Txt_NameKH
+        'Txt_UserID
         '
-        Me.Txt_NameKH.Location = New System.Drawing.Point(158, 90)
-        Me.Txt_NameKH.Name = "Txt_NameKH"
-        Me.Txt_NameKH.Size = New System.Drawing.Size(288, 37)
-        Me.Txt_NameKH.TabIndex = 5
+        Me.Txt_UserID.Location = New System.Drawing.Point(158, 90)
+        Me.Txt_UserID.Name = "Txt_UserID"
+        Me.Txt_UserID.Size = New System.Drawing.Size(288, 37)
+        Me.Txt_UserID.TabIndex = 5
         '
         'Btn_Minimize
         '
@@ -235,8 +237,10 @@ Partial Class Frm_Users
         'Panel_Contain
         '
         Me.Panel_Contain.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel_Contain.Controls.Add(Me.Label6)
+        Me.Panel_Contain.Controls.Add(Me.Txt_Fullname)
         Me.Panel_Contain.Controls.Add(Me.DGV_Data)
-        Me.Panel_Contain.Controls.Add(Me.ComboBox1)
+        Me.Panel_Contain.Controls.Add(Me.Cmb_Position)
         Me.Panel_Contain.Controls.Add(Me.Label4)
         Me.Panel_Contain.Controls.Add(Me.Label5)
         Me.Panel_Contain.Controls.Add(Me.Panel1)
@@ -246,31 +250,14 @@ Partial Class Frm_Users
         Me.Panel_Contain.Controls.Add(Me.Label3)
         Me.Panel_Contain.Controls.Add(Me.Label2)
         Me.Panel_Contain.Controls.Add(Me.Label1)
-        Me.Panel_Contain.Controls.Add(Me.Txt_Contact1)
-        Me.Panel_Contain.Controls.Add(Me.Txt_NameEN)
-        Me.Panel_Contain.Controls.Add(Me.Txt_NameKH)
+        Me.Panel_Contain.Controls.Add(Me.Txt_Password)
+        Me.Panel_Contain.Controls.Add(Me.Txt_UserName)
+        Me.Panel_Contain.Controls.Add(Me.Txt_UserID)
         Me.Panel_Contain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Contain.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Contain.Name = "Panel_Contain"
         Me.Panel_Contain.Size = New System.Drawing.Size(751, 536)
         Me.Panel_Contain.TabIndex = 3
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 221)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 29)
-        Me.Label4.TabIndex = 20
-        Me.Label4.Text = "តួនាទី"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(158, 221)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(288, 37)
-        Me.ComboBox1.TabIndex = 21
         '
         'DGV_Data
         '
@@ -280,6 +267,39 @@ Partial Class Frm_Users
         Me.DGV_Data.Name = "DGV_Data"
         Me.DGV_Data.Size = New System.Drawing.Size(745, 189)
         Me.DGV_Data.TabIndex = 22
+        '
+        'Cmb_Position
+        '
+        Me.Cmb_Position.FormattingEnabled = True
+        Me.Cmb_Position.Location = New System.Drawing.Point(158, 268)
+        Me.Cmb_Position.Name = "Cmb_Position"
+        Me.Cmb_Position.Size = New System.Drawing.Size(288, 37)
+        Me.Cmb_Position.TabIndex = 21
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(8, 268)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 29)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "តួនាទី"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(8, 145)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 29)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "លេខសម្គាល់"
+        '
+        'Txt_Fullname
+        '
+        Me.Txt_Fullname.Location = New System.Drawing.Point(158, 137)
+        Me.Txt_Fullname.Name = "Txt_Fullname"
+        Me.Txt_Fullname.Size = New System.Drawing.Size(288, 37)
+        Me.Txt_Fullname.TabIndex = 23
         '
         'Frm_Users
         '
@@ -310,15 +330,17 @@ Partial Class Frm_Users
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Txt_Contact1 As TextBox
-    Friend WithEvents Txt_NameEN As TextBox
-    Friend WithEvents Txt_NameKH As TextBox
+    Friend WithEvents Txt_Password As TextBox
+    Friend WithEvents Txt_UserName As TextBox
+    Friend WithEvents Txt_UserID As TextBox
     Friend WithEvents Btn_Minimize As FontAwesome.Sharp.IconButton
     Friend WithEvents Btn_Maximize As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
     Friend WithEvents Btn_Exit As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Contain As Panel
     Friend WithEvents DGV_Data As DataGridView
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Cmb_Position As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Txt_Fullname As TextBox
 End Class

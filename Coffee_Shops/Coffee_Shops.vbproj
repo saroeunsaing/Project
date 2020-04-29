@@ -250,6 +250,10 @@
       <Project>{ccb174d3-cb4e-43c0-b733-63adadc358f2}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.vbproj">
+      <Project>{E04CCA6A-FD53-4D86-8F96-1AFB2BDB1711}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.vbproj">
       <Project>{e66fdb5d-d2f8-4995-ba9a-f41618129c88}</Project>
       <Name>Domain</Name>

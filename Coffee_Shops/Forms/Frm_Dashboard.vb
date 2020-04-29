@@ -146,4 +146,8 @@ Public Class Frm_Dashboard
             Application.Exit()
         End If
     End Sub
+
+    Private Sub Panel_Title_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Title.Paint
+
+    End Sub
 End Class

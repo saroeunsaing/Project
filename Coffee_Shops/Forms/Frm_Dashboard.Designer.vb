@@ -33,6 +33,7 @@ Partial Class Frm_Dashboard
         Me.Tm_MenuHide = New System.Windows.Forms.Timer(Me.components)
         Me.Tm_MenuShow = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_Menu = New System.Windows.Forms.Panel()
+        Me.Label_Login = New System.Windows.Forms.Label()
         Me.Label_ShopName = New System.Windows.Forms.Label()
         Me.Img_Logo = New FontAwesome.Sharp.IconPictureBox()
         Me.Txt_Login = New FontAwesome.Sharp.IconButton()
@@ -45,7 +46,6 @@ Partial Class Frm_Dashboard
         Me.Btn_Menu = New FontAwesome.Sharp.IconButton()
         Me.Panel_Content = New System.Windows.Forms.Panel()
         Me.Tm_Marquee = New System.Windows.Forms.Timer(Me.components)
-        Me.Label_Login = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Menu.SuspendLayout()
@@ -180,6 +180,15 @@ Partial Class Frm_Dashboard
         Me.Panel_Menu.Name = "Panel_Menu"
         Me.Panel_Menu.Size = New System.Drawing.Size(200, 635)
         Me.Panel_Menu.TabIndex = 25
+        '
+        'Label_Login
+        '
+        Me.Label_Login.Font = New System.Drawing.Font("Khmer OS Muol Light", 8.0!)
+        Me.Label_Login.ForeColor = System.Drawing.Color.White
+        Me.Label_Login.Location = New System.Drawing.Point(12, 515)
+        Me.Label_Login.Name = "Label_Login"
+        Me.Label_Login.Size = New System.Drawing.Size(147, 40)
+        Me.Label_Login.TabIndex = 38
         '
         'Label_ShopName
         '
@@ -400,15 +409,6 @@ Partial Class Frm_Dashboard
         '
         'Tm_Marquee
         '
-        '
-        'Label_Login
-        '
-        Me.Label_Login.Font = New System.Drawing.Font("Khmer OS Muol Light", 8.0!)
-        Me.Label_Login.ForeColor = System.Drawing.Color.White
-        Me.Label_Login.Location = New System.Drawing.Point(12, 515)
-        Me.Label_Login.Name = "Label_Login"
-        Me.Label_Login.Size = New System.Drawing.Size(147, 40)
-        Me.Label_Login.TabIndex = 38
         '
         'Frm_Dashboard
         '
