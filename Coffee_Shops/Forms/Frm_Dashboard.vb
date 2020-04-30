@@ -142,4 +142,7 @@ Public Class Frm_Dashboard
         End If
     End Sub
 
+    Private Sub Btn_Setting_Click(sender As Object, e As EventArgs) Handles Btn_Setting.Click
+        AbrirFormEnPanel(New Frm_Users)
+    End Sub
 End Class

@@ -6,6 +6,8 @@ Public Class Frm_Users
     Private Sub Frm_Users_Load(sender As Object, e As EventArgs) Handles Me.Load
         Placeholder()
         LoadGrid()
+        Dvg_Header
+
     End Sub
 #Region "Save data in form"
     Private Sub InsertUser()
@@ -63,28 +65,21 @@ Public Class Frm_Users
         End If
     End Sub
     'block button
-    Private Sub Btn_Maximize_Click(sender As Object, e As EventArgs) Handles Btn_Maximize.Click
-        Btn_Restore.Visible = True
-        Btn_Maximize.Visible = False
-        Me.WindowState = FormWindowState.Maximized
-    End Sub
-    Private Sub Btn_Minimize_Click(sender As Object, e As EventArgs) Handles Btn_Minimize.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-    Private Sub Btn_Restore_Click(sender As Object, e As EventArgs) Handles Btn_Restore.Click
-        Btn_Restore.Visible = False
-        Btn_Maximize.Visible = True
-
-        Me.WindowState = FormWindowState.Normal
-    End Sub
     Private Sub Btn_Exit_Click(sender As Object, e As EventArgs) Handles Btn_Exit.Click
         Me.Close()
     End Sub
 #End Region
 #Region "Retreive Data in Form"
+    Sub Dvg_Header()
+        DGV_Data.Columns(0).HeaderText = "លេខសម្គាល់"
+        DGV_Data.Columns(1).HeaderText = "គោត្តនាម​ នាម"
+        DGV_Data.Columns(2).HeaderText = "គណនីប្រើប្រាស់"
+        DGV_Data.Columns(3).HeaderText = "លេខសម្ងាត់"
+        DGV_Data.Columns(4).HeaderText = "តួនាទី"
+    End Sub
     Public Sub LoadGrid(Optional Query As String = "")
         If Query = "" Then
-            SQL.ExecQuery("SELECT * FROM tbl_User;")
+            SQL.ExecQuery("SELECT user_id,fullname,username,password,usertype FROM tbl_User;")
         Else
             SQL.ExecQuery(Query)
         End If
@@ -223,5 +218,9 @@ Public Class Frm_Users
     Private Sub Btn_Delete_Click(sender As Object, e As EventArgs) Handles Btn_Delete.Click
         DeleteUsers()
     End Sub
+
+
+
+
 #End Region
 End Class
