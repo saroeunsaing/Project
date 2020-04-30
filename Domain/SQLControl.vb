@@ -7,6 +7,7 @@ Imports System.Windows.Forms
 Public Class SQLControl
     Inherits ConnectToSQL
 
+
 #Region "Placehoder"
     <DllImport("user32.dll", CharSet:=CharSet.Auto)>
     Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As Integer, <MarshalAs(UnmanagedType.LPWStr)> ByVal lParam As String) As Int32

@@ -5,13 +5,8 @@ Imports Domain
 
 
 Public Class Frm_Dashboard
-    'make form header moving 
-    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
-    Private Shared Sub ReleaseCapture()
-    End Sub
-    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
-    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
-    End Sub
+    Dim FrmDesign As New FormsDesign()
+
 
     'close buttong on responsive form
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
@@ -27,7 +22,7 @@ Public Class Frm_Dashboard
     End Sub
     'minimize buttong on responsive form
     Private Sub Btn_Minimize_Click(sender As Object, e As EventArgs) Handles Btn_Minimize.Click
-        Me.WindowState = FormWindowState.Maximized
+        Me.WindowState = FormWindowState.Minimized
     End Sub
     'restore buttong on responsive form
     Private Sub Btn_Restore_Click(sender As Object, e As EventArgs) Handles Btn_Restore.Click
@@ -59,8 +54,8 @@ Public Class Frm_Dashboard
 
     Private Sub Panel_Title_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_Title.MouseMove
         'call header form moving
-        ReleaseCapture()
-        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+        FrmDesign.ReleaseCapture()
+        FrmDesign.SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
 
     'sub make new sub form on dashboard
@@ -147,7 +142,4 @@ Public Class Frm_Dashboard
         End If
     End Sub
 
-    Private Sub Panel_Title_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Title.Paint
-
-    End Sub
 End Class

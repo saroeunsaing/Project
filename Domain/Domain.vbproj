@@ -65,6 +65,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormsDesign.vb" />
     <Compile Include="SQLControl.vb" />
     <Compile Include="UserModel.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

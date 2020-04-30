@@ -36,13 +36,14 @@ Partial Class Frm_Users
         Me.Btn_Minimize = New FontAwesome.Sharp.IconButton()
         Me.Btn_Maximize = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.Btn_Restore = New FontAwesome.Sharp.IconButton()
         Me.Btn_Exit = New FontAwesome.Sharp.IconButton()
         Me.Panel_Contain = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Txt_Fullname = New System.Windows.Forms.TextBox()
         Me.DGV_Data = New System.Windows.Forms.DataGridView()
         Me.Cmb_Position = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Txt_Fullname = New System.Windows.Forms.TextBox()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Contain.SuspendLayout()
         CType(Me.DGV_Data, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,7 +184,7 @@ Partial Class Frm_Users
         Me.Btn_Minimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
         Me.Btn_Minimize.IconColor = System.Drawing.Color.White
         Me.Btn_Minimize.IconSize = 22
-        Me.Btn_Minimize.Location = New System.Drawing.Point(620, -3)
+        Me.Btn_Minimize.Location = New System.Drawing.Point(642, 0)
         Me.Btn_Minimize.Name = "Btn_Minimize"
         Me.Btn_Minimize.Rotation = 0R
         Me.Btn_Minimize.Size = New System.Drawing.Size(31, 28)
@@ -199,7 +200,7 @@ Partial Class Frm_Users
         Me.Btn_Maximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
         Me.Btn_Maximize.IconColor = System.Drawing.Color.White
         Me.Btn_Maximize.IconSize = 22
-        Me.Btn_Maximize.Location = New System.Drawing.Point(652, 3)
+        Me.Btn_Maximize.Location = New System.Drawing.Point(679, 3)
         Me.Btn_Maximize.Name = "Btn_Maximize"
         Me.Btn_Maximize.Rotation = 0R
         Me.Btn_Maximize.Size = New System.Drawing.Size(31, 28)
@@ -209,6 +210,7 @@ Partial Class Frm_Users
         'Panel_Title
         '
         Me.Panel_Title.BackColor = System.Drawing.Color.Gray
+        Me.Panel_Title.Controls.Add(Me.Btn_Restore)
         Me.Panel_Title.Controls.Add(Me.Btn_Minimize)
         Me.Panel_Title.Controls.Add(Me.Btn_Maximize)
         Me.Panel_Title.Controls.Add(Me.Btn_Exit)
@@ -217,6 +219,24 @@ Partial Class Frm_Users
         Me.Panel_Title.Name = "Panel_Title"
         Me.Panel_Title.Size = New System.Drawing.Size(751, 31)
         Me.Panel_Title.TabIndex = 2
+        '
+        'Btn_Restore
+        '
+        Me.Btn_Restore.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_Restore.FlatAppearance.BorderSize = 0
+        Me.Btn_Restore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Restore.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Restore.ForeColor = System.Drawing.Color.Transparent
+        Me.Btn_Restore.IconChar = FontAwesome.Sharp.IconChar.WindowRestore
+        Me.Btn_Restore.IconColor = System.Drawing.Color.White
+        Me.Btn_Restore.IconSize = 22
+        Me.Btn_Restore.Location = New System.Drawing.Point(679, 0)
+        Me.Btn_Restore.Name = "Btn_Restore"
+        Me.Btn_Restore.Rotation = 0R
+        Me.Btn_Restore.Size = New System.Drawing.Size(35, 35)
+        Me.Btn_Restore.TabIndex = 25
+        Me.Btn_Restore.UseVisualStyleBackColor = True
+        Me.Btn_Restore.Visible = False
         '
         'Btn_Exit
         '
@@ -227,7 +247,7 @@ Partial Class Frm_Users
         Me.Btn_Exit.IconChar = FontAwesome.Sharp.IconChar.WindowClose
         Me.Btn_Exit.IconColor = System.Drawing.Color.White
         Me.Btn_Exit.IconSize = 22
-        Me.Btn_Exit.Location = New System.Drawing.Point(679, 3)
+        Me.Btn_Exit.Location = New System.Drawing.Point(716, 3)
         Me.Btn_Exit.Name = "Btn_Exit"
         Me.Btn_Exit.Rotation = 0R
         Me.Btn_Exit.Size = New System.Drawing.Size(31, 28)
@@ -259,12 +279,33 @@ Partial Class Frm_Users
         Me.Panel_Contain.Size = New System.Drawing.Size(751, 536)
         Me.Panel_Contain.TabIndex = 3
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(8, 145)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 29)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "លេខសម្គាល់"
+        '
+        'Txt_Fullname
+        '
+        Me.Txt_Fullname.Location = New System.Drawing.Point(158, 137)
+        Me.Txt_Fullname.Name = "Txt_Fullname"
+        Me.Txt_Fullname.Size = New System.Drawing.Size(288, 37)
+        Me.Txt_Fullname.TabIndex = 23
+        '
         'DGV_Data
         '
+        Me.DGV_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGV_Data.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DGV_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Data.Location = New System.Drawing.Point(3, 313)
         Me.DGV_Data.Name = "DGV_Data"
+        Me.DGV_Data.RowHeadersVisible = False
+        Me.DGV_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_Data.Size = New System.Drawing.Size(745, 189)
         Me.DGV_Data.TabIndex = 22
         '
@@ -284,22 +325,6 @@ Partial Class Frm_Users
         Me.Label4.Size = New System.Drawing.Size(51, 29)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "តួនាទី"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 145)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 29)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "លេខសម្គាល់"
-        '
-        'Txt_Fullname
-        '
-        Me.Txt_Fullname.Location = New System.Drawing.Point(158, 137)
-        Me.Txt_Fullname.Name = "Txt_Fullname"
-        Me.Txt_Fullname.Size = New System.Drawing.Size(288, 37)
-        Me.Txt_Fullname.TabIndex = 23
         '
         'Frm_Users
         '
@@ -343,4 +368,5 @@ Partial Class Frm_Users
     Friend WithEvents Label4 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Txt_Fullname As TextBox
+    Friend WithEvents Btn_Restore As FontAwesome.Sharp.IconButton
 End Class
