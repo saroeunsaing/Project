@@ -22,7 +22,6 @@ Partial Class Frm_Shop
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn_Delete = New FontAwesome.Sharp.IconButton()
         Me.Btn_Edit = New FontAwesome.Sharp.IconButton()
         Me.Btn_Save = New FontAwesome.Sharp.IconButton()
@@ -39,24 +38,15 @@ Partial Class Frm_Shop
         Me.Btn_Remove = New FontAwesome.Sharp.IconButton()
         Me.Btn_Brows = New FontAwesome.Sharp.IconButton()
         Me.Img_Logo = New FontAwesome.Sharp.IconPictureBox()
-        Me.Btn_Minimize = New FontAwesome.Sharp.IconButton()
-        Me.Btn_Maximize = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.Btn_Exit = New FontAwesome.Sharp.IconButton()
         Me.Panel_Contain = New System.Windows.Forms.Panel()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         CType(Me.Img_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Contain.SuspendLayout()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 541)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(739, 26)
-        Me.Panel1.TabIndex = 19
         '
         'Btn_Delete
         '
@@ -118,14 +108,14 @@ Partial Class Frm_Shop
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Khmer OS Muol Light", 16.25!)
+        Me.Label5.Font = New System.Drawing.Font("NiDA Bayon", 14.25!)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(63, 54)
+        Me.Label5.Location = New System.Drawing.Point(44, 3)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(593, 50)
+        Me.Label5.Size = New System.Drawing.Size(246, 37)
         Me.Label5.TabIndex = 15
-        Me.Label5.Text = "សូមស្វាគមន៍មកកាន់ហាង"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label5.Text = "បង្កើតព័ត៌មានហាងថ្មី"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label4
         '
@@ -244,48 +234,17 @@ Partial Class Frm_Shop
         Me.Img_Logo.TabIndex = 0
         Me.Img_Logo.TabStop = False
         '
-        'Btn_Minimize
-        '
-        Me.Btn_Minimize.FlatAppearance.BorderSize = 0
-        Me.Btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Minimize.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Minimize.ForeColor = System.Drawing.Color.Transparent
-        Me.Btn_Minimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
-        Me.Btn_Minimize.IconColor = System.Drawing.Color.White
-        Me.Btn_Minimize.IconSize = 22
-        Me.Btn_Minimize.Location = New System.Drawing.Point(620, -3)
-        Me.Btn_Minimize.Name = "Btn_Minimize"
-        Me.Btn_Minimize.Rotation = 0R
-        Me.Btn_Minimize.Size = New System.Drawing.Size(31, 28)
-        Me.Btn_Minimize.TabIndex = 2
-        Me.Btn_Minimize.UseVisualStyleBackColor = True
-        '
-        'Btn_Maximize
-        '
-        Me.Btn_Maximize.FlatAppearance.BorderSize = 0
-        Me.Btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Maximize.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Maximize.ForeColor = System.Drawing.Color.Transparent
-        Me.Btn_Maximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
-        Me.Btn_Maximize.IconColor = System.Drawing.Color.White
-        Me.Btn_Maximize.IconSize = 22
-        Me.Btn_Maximize.Location = New System.Drawing.Point(652, 3)
-        Me.Btn_Maximize.Name = "Btn_Maximize"
-        Me.Btn_Maximize.Rotation = 0R
-        Me.Btn_Maximize.Size = New System.Drawing.Size(31, 28)
-        Me.Btn_Maximize.TabIndex = 1
-        Me.Btn_Maximize.UseVisualStyleBackColor = True
-        '
         'Panel_Title
         '
-        Me.Panel_Title.BackColor = System.Drawing.Color.Gray
-        Me.Panel_Title.Controls.Add(Me.Btn_Minimize)
-        Me.Panel_Title.Controls.Add(Me.Btn_Maximize)
+        Me.Panel_Title.BackColor = System.Drawing.Color.YellowGreen
+        Me.Panel_Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_Title.Controls.Add(Me.IconPictureBox1)
         Me.Panel_Title.Controls.Add(Me.Btn_Exit)
+        Me.Panel_Title.Controls.Add(Me.Label5)
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Title.Name = "Panel_Title"
-        Me.Panel_Title.Size = New System.Drawing.Size(739, 31)
+        Me.Panel_Title.Size = New System.Drawing.Size(900, 45)
         Me.Panel_Title.TabIndex = 2
         '
         'Btn_Exit
@@ -296,22 +255,20 @@ Partial Class Frm_Shop
         Me.Btn_Exit.ForeColor = System.Drawing.Color.Transparent
         Me.Btn_Exit.IconChar = FontAwesome.Sharp.IconChar.WindowClose
         Me.Btn_Exit.IconColor = System.Drawing.Color.White
-        Me.Btn_Exit.IconSize = 22
-        Me.Btn_Exit.Location = New System.Drawing.Point(679, 3)
+        Me.Btn_Exit.IconSize = 30
+        Me.Btn_Exit.Location = New System.Drawing.Point(844, 3)
         Me.Btn_Exit.Name = "Btn_Exit"
         Me.Btn_Exit.Rotation = 0R
-        Me.Btn_Exit.Size = New System.Drawing.Size(31, 28)
+        Me.Btn_Exit.Size = New System.Drawing.Size(53, 37)
         Me.Btn_Exit.TabIndex = 0
         Me.Btn_Exit.UseVisualStyleBackColor = True
         '
         'Panel_Contain
         '
-        Me.Panel_Contain.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel_Contain.Controls.Add(Me.Panel1)
+        Me.Panel_Contain.BackColor = System.Drawing.Color.YellowGreen
         Me.Panel_Contain.Controls.Add(Me.Btn_Delete)
         Me.Panel_Contain.Controls.Add(Me.Btn_Edit)
         Me.Panel_Contain.Controls.Add(Me.Btn_Save)
-        Me.Panel_Contain.Controls.Add(Me.Label5)
         Me.Panel_Contain.Controls.Add(Me.Label4)
         Me.Panel_Contain.Controls.Add(Me.Label3)
         Me.Panel_Contain.Controls.Add(Me.Label2)
@@ -327,15 +284,27 @@ Partial Class Frm_Shop
         Me.Panel_Contain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Contain.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Contain.Name = "Panel_Contain"
-        Me.Panel_Contain.Size = New System.Drawing.Size(739, 567)
+        Me.Panel_Contain.Size = New System.Drawing.Size(900, 635)
         Me.Panel_Contain.TabIndex = 3
+        '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.YellowGreen
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Building
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox1.IconSize = 40
+        Me.IconPictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(38, 37)
+        Me.IconPictureBox1.TabIndex = 20
+        Me.IconPictureBox1.TabStop = False
         '
         'Frm_Shop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(739, 567)
+        Me.ClientSize = New System.Drawing.Size(900, 635)
         Me.Controls.Add(Me.Panel_Title)
         Me.Controls.Add(Me.Panel_Contain)
         Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -347,11 +316,10 @@ Partial Class Frm_Shop
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Contain.ResumeLayout(False)
         Me.Panel_Contain.PerformLayout()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Btn_Delete As FontAwesome.Sharp.IconButton
     Friend WithEvents Btn_Edit As FontAwesome.Sharp.IconButton
     Friend WithEvents Btn_Save As FontAwesome.Sharp.IconButton
@@ -368,9 +336,8 @@ Partial Class Frm_Shop
     Friend WithEvents Btn_Remove As FontAwesome.Sharp.IconButton
     Friend WithEvents Btn_Brows As FontAwesome.Sharp.IconButton
     Friend WithEvents Img_Logo As FontAwesome.Sharp.IconPictureBox
-    Friend WithEvents Btn_Minimize As FontAwesome.Sharp.IconButton
-    Friend WithEvents Btn_Maximize As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
     Friend WithEvents Btn_Exit As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Contain As Panel
+    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
 End Class

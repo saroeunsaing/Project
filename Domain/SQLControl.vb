@@ -23,11 +23,13 @@ Public Class SQLControl
             End If
         ElseIf TypeOf control Is TextBox Then
             SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
+        ElseIf TypeOf control Is RichTextBox Then
+            SendMessage(control.Handle, EM_SETCUEBANNER, 0, text)
         End If
     End Sub
 #End Region
 
-#Region "Add Data Function"
+#Region "SQL Command Function"
     ' QUERY PARAMETERS
     Public Params As New List(Of SqlParameter)
     ' QUERY STATISTICS
@@ -49,16 +51,12 @@ Public Class SQLControl
 
         Try
             cn.Open()
-
             ' CREATE DB COMMAND
             cmd = New SqlCommand(Query, cn)
-
             ' LOAD PARAMS INTO DB COMMAND
             Params.ForEach(Sub(p) cmd.Parameters.Add(p))
-
             ' CLEAR PARAM LIST
             Params.Clear()
-
             ' EXECUTE COMMAND & FILL DATASET
             dt = New DataTable
             da = New SqlDataAdapter(cmd)
@@ -97,13 +95,46 @@ Public Class SQLControl
     End Function
 #End Region
 
-#Region "Update Function"
+#Region "Auto id with string"
+    Public Function getMaxID(ByVal tablename As String, ByVal fieldName As String, pre As String, numL As Integer, numR As Integer)
+        Dim id As String
+
+        Try
+            Using cn = GetConnection()
+
+
+                cn.Open()
+                Dim sql As String
+                sql = "SELECT top 1 " + fieldName + " FROM " + tablename + " order by " + fieldName + " desc"
+                cmd = New SqlCommand(sql, cn)
+                dr = cmd.ExecuteReader
+                'While reader.Read
+                '    'id = reader.Item(0) + 1
+                '    id = Format(Mid(dr(fieldName), 5, 7) + 1, "Cat-000000#")
+                'End While
+                If dr.HasRows = False Then
+                    dr.Close()
+                    id = pre + "1"
+
+                Else
+                    dr.Read()
+                    id = Format(Mid(dr(fieldName), numL, numR) + 1, pre + "#")
+                End If
+                dr.Close()
+                cn.Close()
+                Return id
+            End Using
+        Catch ex As Exception
+            'reader.Close()
+            cn.Close()
+            Return id
+        End Try
+        'reader.Close()
+        cn.Close()
+        Return 0
+    End Function
 
 #End Region
-#Region "Delete Function"
 
-#End Region
-#Region "Retrived Function"
 
-#End Region
 End Class

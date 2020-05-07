@@ -6,8 +6,12 @@ Public Class Frm_Users
     Private Sub Frm_Users_Load(sender As Object, e As EventArgs) Handles Me.Load
         Placeholder()
         LoadGrid()
-        Dvg_Header
-
+        Dvg_Header()
+        autoid()
+    End Sub
+    Sub autoid()
+        ''  Txt_ID.Text = SQL.getMaxID("tbl_product", "product_id", "Cat-0000001", 5, 7)
+        Txt_UserID.Text = SQL.getMaxID("tbl_product", "product_id", "U-000", 3, 4)
     End Sub
 #Region "Save data in form"
     Private Sub InsertUser()
@@ -40,6 +44,7 @@ Public Class Frm_Users
         Txt_Password.Clear()
         Placeholder()
         Btn_Save.Enabled = False
+        autoid()
     End Sub
 
 #End Region
@@ -115,6 +120,7 @@ Public Class Frm_Users
 #Region "update data in form "
     Private Sub Btn_Edit_Click(sender As Object, e As EventArgs) Handles Btn_Edit.Click
         UpdateUser()
+        autoid()
     End Sub
 
     'Private Sub FetchUsers()
@@ -217,10 +223,8 @@ Public Class Frm_Users
 
     Private Sub Btn_Delete_Click(sender As Object, e As EventArgs) Handles Btn_Delete.Click
         DeleteUsers()
+        autoid()
     End Sub
-
-
-
 
 #End Region
 End Class

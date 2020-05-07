@@ -25,9 +25,6 @@ Partial Class Frm_Users
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Btn_Delete = New FontAwesome.Sharp.IconButton()
-        Me.Btn_Edit = New FontAwesome.Sharp.IconButton()
-        Me.Btn_Save = New FontAwesome.Sharp.IconButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -37,83 +34,31 @@ Partial Class Frm_Users
         Me.Txt_UserID = New System.Windows.Forms.TextBox()
         Me.Panel_Contain = New System.Windows.Forms.Panel()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Btn_Exit = New FontAwesome.Sharp.IconButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Txt_Fullname = New System.Windows.Forms.TextBox()
         Me.DGV_Data = New System.Windows.Forms.DataGridView()
         Me.Cmb_Position = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Btn_Delete = New FontAwesome.Sharp.IconButton()
+        Me.Btn_Edit = New FontAwesome.Sharp.IconButton()
+        Me.Btn_Save = New FontAwesome.Sharp.IconButton()
         Me.Panel_Contain.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_Data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Btn_Delete
-        '
-        Me.Btn_Delete.FlatAppearance.BorderSize = 0
-        Me.Btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Delete.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Delete.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Delete.ForeColor = System.Drawing.Color.White
-        Me.Btn_Delete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt
-        Me.Btn_Delete.IconColor = System.Drawing.Color.Red
-        Me.Btn_Delete.IconSize = 20
-        Me.Btn_Delete.Location = New System.Drawing.Point(794, 299)
-        Me.Btn_Delete.Name = "Btn_Delete"
-        Me.Btn_Delete.Rotation = 0R
-        Me.Btn_Delete.Size = New System.Drawing.Size(75, 37)
-        Me.Btn_Delete.TabIndex = 18
-        Me.Btn_Delete.Text = "លុប"
-        Me.Btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Btn_Delete.UseVisualStyleBackColor = True
-        '
-        'Btn_Edit
-        '
-        Me.Btn_Edit.FlatAppearance.BorderSize = 0
-        Me.Btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Edit.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Edit.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Edit.ForeColor = System.Drawing.Color.White
-        Me.Btn_Edit.IconChar = FontAwesome.Sharp.IconChar.Edit
-        Me.Btn_Edit.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Edit.IconSize = 20
-        Me.Btn_Edit.Location = New System.Drawing.Point(714, 299)
-        Me.Btn_Edit.Name = "Btn_Edit"
-        Me.Btn_Edit.Rotation = 0R
-        Me.Btn_Edit.Size = New System.Drawing.Size(74, 37)
-        Me.Btn_Edit.TabIndex = 17
-        Me.Btn_Edit.Text = "កែប្រែ"
-        Me.Btn_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Btn_Edit.UseVisualStyleBackColor = True
-        '
-        'Btn_Save
-        '
-        Me.Btn_Save.FlatAppearance.BorderSize = 0
-        Me.Btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Save.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Save.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Save.ForeColor = System.Drawing.Color.White
-        Me.Btn_Save.IconChar = FontAwesome.Sharp.IconChar.Save
-        Me.Btn_Save.IconColor = System.Drawing.Color.Blue
-        Me.Btn_Save.IconSize = 20
-        Me.Btn_Save.Location = New System.Drawing.Point(638, 299)
-        Me.Btn_Save.Name = "Btn_Save"
-        Me.Btn_Save.Rotation = 0R
-        Me.Btn_Save.Size = New System.Drawing.Size(90, 37)
-        Me.Btn_Save.TabIndex = 16
-        Me.Btn_Save.Text = " រក្សាទុក"
-        Me.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Btn_Save.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.0!)
-        Me.Label5.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Label5.Font = New System.Drawing.Font("NiDA Bayon", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Red
         Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label5.Location = New System.Drawing.Point(3, 2)
+        Me.Label5.Location = New System.Drawing.Point(42, 2)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(342, 35)
+        Me.Label5.Size = New System.Drawing.Size(328, 33)
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "ទម្រង់បង្កើតតណនីសម្រាប់ប្រើប្រាស់"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -197,16 +142,32 @@ Partial Class Frm_Users
         'Panel_Title
         '
         Me.Panel_Title.BackColor = System.Drawing.Color.MediumTurquoise
+        Me.Panel_Title.Controls.Add(Me.IconPictureBox1)
         Me.Panel_Title.Controls.Add(Me.Label5)
         Me.Panel_Title.Controls.Add(Me.Btn_Exit)
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Title.Name = "Panel_Title"
-        Me.Panel_Title.Size = New System.Drawing.Size(900, 35)
+        Me.Panel_Title.Size = New System.Drawing.Size(900, 40)
         Me.Panel_Title.TabIndex = 26
+        '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.IconPictureBox1.ForeColor = System.Drawing.Color.Red
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Users
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.Red
+        Me.IconPictureBox1.IconSize = 36
+        Me.IconPictureBox1.Location = New System.Drawing.Point(2, 2)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(40, 36)
+        Me.IconPictureBox1.TabIndex = 27
+        Me.IconPictureBox1.TabStop = False
         '
         'Btn_Exit
         '
+        Me.Btn_Exit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_Exit.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Exit.FlatAppearance.BorderSize = 0
         Me.Btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Exit.Flip = FontAwesome.Sharp.FlipOrientation.Normal
@@ -214,12 +175,12 @@ Partial Class Frm_Users
         Me.Btn_Exit.IconChar = FontAwesome.Sharp.IconChar.WindowClose
         Me.Btn_Exit.IconColor = System.Drawing.Color.Red
         Me.Btn_Exit.IconSize = 30
-        Me.Btn_Exit.Location = New System.Drawing.Point(862, -1)
+        Me.Btn_Exit.Location = New System.Drawing.Point(863, 2)
         Me.Btn_Exit.Name = "Btn_Exit"
         Me.Btn_Exit.Rotation = 0R
         Me.Btn_Exit.Size = New System.Drawing.Size(35, 33)
         Me.Btn_Exit.TabIndex = 0
-        Me.Btn_Exit.UseVisualStyleBackColor = True
+        Me.Btn_Exit.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -289,6 +250,63 @@ Partial Class Frm_Users
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "តួនាទី"
         '
+        'Btn_Delete
+        '
+        Me.Btn_Delete.FlatAppearance.BorderSize = 0
+        Me.Btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Delete.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Delete.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Delete.ForeColor = System.Drawing.Color.White
+        Me.Btn_Delete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt
+        Me.Btn_Delete.IconColor = System.Drawing.Color.Red
+        Me.Btn_Delete.IconSize = 20
+        Me.Btn_Delete.Location = New System.Drawing.Point(794, 299)
+        Me.Btn_Delete.Name = "Btn_Delete"
+        Me.Btn_Delete.Rotation = 0R
+        Me.Btn_Delete.Size = New System.Drawing.Size(75, 37)
+        Me.Btn_Delete.TabIndex = 18
+        Me.Btn_Delete.Text = "លុប"
+        Me.Btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Delete.UseVisualStyleBackColor = True
+        '
+        'Btn_Edit
+        '
+        Me.Btn_Edit.FlatAppearance.BorderSize = 0
+        Me.Btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Edit.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Edit.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Edit.ForeColor = System.Drawing.Color.White
+        Me.Btn_Edit.IconChar = FontAwesome.Sharp.IconChar.Edit
+        Me.Btn_Edit.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_Edit.IconSize = 20
+        Me.Btn_Edit.Location = New System.Drawing.Point(714, 299)
+        Me.Btn_Edit.Name = "Btn_Edit"
+        Me.Btn_Edit.Rotation = 0R
+        Me.Btn_Edit.Size = New System.Drawing.Size(74, 37)
+        Me.Btn_Edit.TabIndex = 17
+        Me.Btn_Edit.Text = "កែប្រែ"
+        Me.Btn_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Edit.UseVisualStyleBackColor = True
+        '
+        'Btn_Save
+        '
+        Me.Btn_Save.FlatAppearance.BorderSize = 0
+        Me.Btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Save.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Save.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Save.ForeColor = System.Drawing.Color.White
+        Me.Btn_Save.IconChar = FontAwesome.Sharp.IconChar.Save
+        Me.Btn_Save.IconColor = System.Drawing.Color.Blue
+        Me.Btn_Save.IconSize = 20
+        Me.Btn_Save.Location = New System.Drawing.Point(638, 299)
+        Me.Btn_Save.Name = "Btn_Save"
+        Me.Btn_Save.Rotation = 0R
+        Me.Btn_Save.Size = New System.Drawing.Size(90, 37)
+        Me.Btn_Save.TabIndex = 16
+        Me.Btn_Save.Text = " រក្សាទុក"
+        Me.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Save.UseVisualStyleBackColor = True
+        '
         'Frm_Users
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
@@ -304,6 +322,7 @@ Partial Class Frm_Users
         Me.Panel_Contain.ResumeLayout(False)
         Me.Panel_Contain.PerformLayout()
         Me.Panel_Title.ResumeLayout(False)
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV_Data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -326,4 +345,5 @@ Partial Class Frm_Users
     Friend WithEvents Txt_Fullname As TextBox
     Friend WithEvents Btn_Exit As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
+    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
 End Class

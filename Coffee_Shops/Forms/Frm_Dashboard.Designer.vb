@@ -35,6 +35,7 @@ Partial Class Frm_Dashboard
         Me.Tm_MenuShow = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_Menu = New System.Windows.Forms.Panel()
         Me.Btn_Setting = New FontAwesome.Sharp.IconButton()
+        Me.Label_Login = New System.Windows.Forms.Label()
         Me.Label_ShopName = New System.Windows.Forms.Label()
         Me.Img_Logo = New FontAwesome.Sharp.IconPictureBox()
         Me.Txt_Login = New FontAwesome.Sharp.IconButton()
@@ -47,7 +48,6 @@ Partial Class Frm_Dashboard
         Me.Btn_Menu = New FontAwesome.Sharp.IconButton()
         Me.Panel_Content = New System.Windows.Forms.Panel()
         Me.Tm_Marquee = New System.Windows.Forms.Timer(Me.components)
-        Me.Label_Login = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Menu.SuspendLayout()
@@ -208,6 +208,15 @@ Partial Class Frm_Dashboard
         Me.Btn_Setting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Btn_Setting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Btn_Setting.UseVisualStyleBackColor = True
+        '
+        'Label_Login
+        '
+        Me.Label_Login.Font = New System.Drawing.Font("Khmer OS Muol Light", 8.0!)
+        Me.Label_Login.ForeColor = System.Drawing.Color.White
+        Me.Label_Login.Location = New System.Drawing.Point(12, 515)
+        Me.Label_Login.Name = "Label_Login"
+        Me.Label_Login.Size = New System.Drawing.Size(147, 40)
+        Me.Label_Login.TabIndex = 38
         '
         'Label_ShopName
         '
@@ -429,15 +438,6 @@ Partial Class Frm_Dashboard
         'Tm_Marquee
         '
         '
-        'Label_Login
-        '
-        Me.Label_Login.Font = New System.Drawing.Font("Khmer OS Muol Light", 8.0!)
-        Me.Label_Login.ForeColor = System.Drawing.Color.White
-        Me.Label_Login.Location = New System.Drawing.Point(12, 515)
-        Me.Label_Login.Name = "Label_Login"
-        Me.Label_Login.Size = New System.Drawing.Size(147, 40)
-        Me.Label_Login.TabIndex = 38
-        '
         'Frm_Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -449,6 +449,7 @@ Partial Class Frm_Dashboard
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel_Title)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_Dashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

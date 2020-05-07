@@ -21,13 +21,13 @@ Public Class UserModel
         End If
     End Function
     'check user position with user type
-    Public Function anyMethod2() As Boolean
-        If ActiveUser.position = Positions.receptionist Then
-            'code
-        End If
-        If ActiveUser.position = Positions.accounting Then
-            'code
-        End If
+    'Public Function anyMethod2() As Boolean
+    '    If ActiveUser.position = Positions.receptionist Then
+    '        'code
+    '    End If
+    '    If ActiveUser.position = Positions.accounting Then
+    '        'code
+    '    End If
 
-    End Function
+    'End Function
 End Class
