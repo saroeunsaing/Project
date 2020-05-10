@@ -135,6 +135,35 @@ Public Class SQLControl
     End Function
 
 #End Region
+    Sub labelS(itm As Label, table As String)
+        Using cn = GetConnection()
 
+            cn.Open()
+            cmd = New SqlCommand(table, cn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                ' itm.Items.Add(dr(1))
+                itm.Text = dr(1)
+
+            End While
+        End Using
+    End Sub
+
+    Sub cmbox(itm As ComboBox, table As String, index As String, id As String)
+        Using cn = GetConnection()
+            cn.Open()
+
+            'Create Dat.a Adapter (Using the stored procedure Command created earlier)
+            ' Create a data table and Fill the Data adapter 
+            Dim da As New SqlDataAdapter(table, cn)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            'Your Combobox 
+            itm.DataSource = dt
+            itm.DisplayMember = index
+            itm.ValueMember = id
+            'User will see DisplayMember in the Combobox
+        End Using
+    End Sub
 
 End Class

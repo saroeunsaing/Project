@@ -1,12 +1,13 @@
 ﻿Imports System.Runtime.InteropServices
 Imports Common
 Imports Domain
+Imports System.Data.SqlClient
 
 
 
 Public Class Frm_Dashboard
     Dim FrmDesign As New FormsDesign()
-
+    Dim SQLControl As New SQLControl
 
     'close buttong on responsive form
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
@@ -104,6 +105,8 @@ Public Class Frm_Dashboard
         Tm_Marquee.Start()
         managePermissions()
         loadUser()
+
+        SQLControl.labelS(Label_ShopName, "select * from tbl_shop")
 
     End Sub
     'load user name put on label

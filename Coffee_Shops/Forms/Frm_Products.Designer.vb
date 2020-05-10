@@ -26,7 +26,6 @@ Partial Class Frm_Products
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Products))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -122,28 +121,28 @@ Partial Class Frm_Products
         Me.Txt_Price.Location = New System.Drawing.Point(147, 137)
         Me.Txt_Price.Name = "Txt_Price"
         Me.Txt_Price.Size = New System.Drawing.Size(202, 37)
-        Me.Txt_Price.TabIndex = 8
+        Me.Txt_Price.TabIndex = 3
         '
         'Txt_NameEN
         '
         Me.Txt_NameEN.Location = New System.Drawing.Point(434, 51)
         Me.Txt_NameEN.Name = "Txt_NameEN"
         Me.Txt_NameEN.Size = New System.Drawing.Size(261, 37)
-        Me.Txt_NameEN.TabIndex = 7
+        Me.Txt_NameEN.TabIndex = 2
         '
         'Txt_NameKH
         '
         Me.Txt_NameKH.Location = New System.Drawing.Point(147, 94)
         Me.Txt_NameKH.Name = "Txt_NameKH"
         Me.Txt_NameKH.Size = New System.Drawing.Size(549, 37)
-        Me.Txt_NameKH.TabIndex = 6
+        Me.Txt_NameKH.TabIndex = 1
         '
         'Txt_ID
         '
         Me.Txt_ID.Location = New System.Drawing.Point(147, 51)
         Me.Txt_ID.Name = "Txt_ID"
         Me.Txt_ID.Size = New System.Drawing.Size(202, 37)
-        Me.Txt_ID.TabIndex = 5
+        Me.Txt_ID.TabIndex = 0
         '
         'Panel_Title
         '
@@ -235,7 +234,7 @@ Partial Class Frm_Products
         Me.DGV_Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -243,30 +242,22 @@ Partial Class Frm_Products
         Me.DGV_Data.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Data.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 6.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV_Data.DefaultCellStyle = DataGridViewCellStyle3
         Me.DGV_Data.Location = New System.Drawing.Point(3, 376)
         Me.DGV_Data.Name = "DGV_Data"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_Data.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.RosyBrown
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV_Data.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV_Data.RowHeadersVisible = False
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        Me.DGV_Data.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.DGV_Data.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGV_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_Data.Size = New System.Drawing.Size(894, 132)
+        Me.DGV_Data.Size = New System.Drawing.Size(894, 256)
         Me.DGV_Data.TabIndex = 39
         '
         'Txt_total
@@ -282,14 +273,14 @@ Partial Class Frm_Products
         Me.Txt_Discount.Location = New System.Drawing.Point(147, 177)
         Me.Txt_Discount.Name = "Txt_Discount"
         Me.Txt_Discount.Size = New System.Drawing.Size(202, 37)
-        Me.Txt_Discount.TabIndex = 37
+        Me.Txt_Discount.TabIndex = 5
         '
         'Txt_priceSale
         '
         Me.Txt_priceSale.Location = New System.Drawing.Point(449, 137)
         Me.Txt_priceSale.Name = "Txt_priceSale"
         Me.Txt_priceSale.Size = New System.Drawing.Size(246, 37)
-        Me.Txt_priceSale.TabIndex = 36
+        Me.Txt_priceSale.TabIndex = 4
         '
         'Label11
         '
@@ -305,7 +296,7 @@ Partial Class Frm_Products
         Me.Txt_Description.Location = New System.Drawing.Point(147, 250)
         Me.Txt_Description.Name = "Txt_Description"
         Me.Txt_Description.Size = New System.Drawing.Size(549, 76)
-        Me.Txt_Description.TabIndex = 34
+        Me.Txt_Description.TabIndex = 6
         Me.Txt_Description.Text = ""
         '
         'Label10
@@ -336,7 +327,7 @@ Partial Class Frm_Products
         Me.Btn_AddMatrial.IconChar = FontAwesome.Sharp.IconChar.PlusCircle
         Me.Btn_AddMatrial.IconColor = System.Drawing.Color.Blue
         Me.Btn_AddMatrial.IconSize = 20
-        Me.Btn_AddMatrial.Location = New System.Drawing.Point(641, 330)
+        Me.Btn_AddMatrial.Location = New System.Drawing.Point(660, 329)
         Me.Btn_AddMatrial.Name = "Btn_AddMatrial"
         Me.Btn_AddMatrial.Rotation = 0R
         Me.Btn_AddMatrial.Size = New System.Drawing.Size(36, 37)
@@ -375,15 +366,15 @@ Partial Class Frm_Products
         '
         Me.Cmb_Material.FormattingEnabled = True
         Me.Cmb_Material.Items.AddRange(New Object() {"RM", "FG", "Other"})
-        Me.Cmb_Material.Location = New System.Drawing.Point(455, 330)
+        Me.Cmb_Material.Location = New System.Drawing.Point(474, 329)
         Me.Cmb_Material.Name = "Cmb_Material"
         Me.Cmb_Material.Size = New System.Drawing.Size(180, 37)
-        Me.Cmb_Material.TabIndex = 23
+        Me.Cmb_Material.TabIndex = 8
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(360, 337)
+        Me.Label7.Location = New System.Drawing.Point(378, 335)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(89, 29)
         Me.Label7.TabIndex = 22
@@ -392,10 +383,10 @@ Partial Class Frm_Products
         'Cmb_Category
         '
         Me.Cmb_Category.FormattingEnabled = True
-        Me.Cmb_Category.Location = New System.Drawing.Point(129, 332)
+        Me.Cmb_Category.Location = New System.Drawing.Point(147, 332)
         Me.Cmb_Category.Name = "Cmb_Category"
-        Me.Cmb_Category.Size = New System.Drawing.Size(202, 37)
-        Me.Cmb_Category.TabIndex = 21
+        Me.Cmb_Category.Size = New System.Drawing.Size(184, 37)
+        Me.Cmb_Category.TabIndex = 7
         '
         'Label6
         '
@@ -420,7 +411,7 @@ Partial Class Frm_Products
         Me.Btn_Delete.Name = "Btn_Delete"
         Me.Btn_Delete.Rotation = 0R
         Me.Btn_Delete.Size = New System.Drawing.Size(75, 37)
-        Me.Btn_Delete.TabIndex = 18
+        Me.Btn_Delete.TabIndex = 11
         Me.Btn_Delete.Text = "លុប"
         Me.Btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Btn_Delete.UseVisualStyleBackColor = True
@@ -439,7 +430,7 @@ Partial Class Frm_Products
         Me.Btn_Edit.Name = "Btn_Edit"
         Me.Btn_Edit.Rotation = 0R
         Me.Btn_Edit.Size = New System.Drawing.Size(86, 37)
-        Me.Btn_Edit.TabIndex = 17
+        Me.Btn_Edit.TabIndex = 10
         Me.Btn_Edit.Text = "កែប្រែ"
         Me.Btn_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Btn_Edit.UseVisualStyleBackColor = True
@@ -458,7 +449,7 @@ Partial Class Frm_Products
         Me.Btn_Save.Name = "Btn_Save"
         Me.Btn_Save.Rotation = 0R
         Me.Btn_Save.Size = New System.Drawing.Size(96, 37)
-        Me.Btn_Save.TabIndex = 16
+        Me.Btn_Save.TabIndex = 9
         Me.Btn_Save.Text = " រក្សាទុក"
         Me.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Btn_Save.UseVisualStyleBackColor = True

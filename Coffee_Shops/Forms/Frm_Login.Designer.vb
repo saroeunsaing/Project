@@ -24,12 +24,13 @@ Partial Class Frm_Login
     Private Sub InitializeComponent()
         Me.Panel_Header = New System.Windows.Forms.Panel()
         Me.Panel_Content = New System.Windows.Forms.Panel()
-        Me.Panel_Footer = New System.Windows.Forms.Panel()
-        Me.Btn_Login = New FontAwesome.Sharp.IconButton()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
-        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
-        Me.Txt_Username = New System.Windows.Forms.TextBox()
         Me.Txt_Password = New System.Windows.Forms.TextBox()
+        Me.Txt_Username = New System.Windows.Forms.TextBox()
+        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
+        Me.Btn_Login = New FontAwesome.Sharp.IconButton()
+        Me.Panel_Footer = New System.Windows.Forms.Panel()
+        Me.Label_ShopName = New System.Windows.Forms.Label()
         Me.Panel_Content.SuspendLayout()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,6 +46,7 @@ Partial Class Frm_Login
         '
         'Panel_Content
         '
+        Me.Panel_Content.Controls.Add(Me.Label_ShopName)
         Me.Panel_Content.Controls.Add(Me.Txt_Password)
         Me.Panel_Content.Controls.Add(Me.Txt_Username)
         Me.Panel_Content.Controls.Add(Me.IconButton2)
@@ -56,45 +58,20 @@ Partial Class Frm_Login
         Me.Panel_Content.Size = New System.Drawing.Size(400, 433)
         Me.Panel_Content.TabIndex = 1
         '
-        'Panel_Footer
+        'Txt_Password
         '
-        Me.Panel_Footer.BackColor = System.Drawing.Color.Navy
-        Me.Panel_Footer.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel_Footer.Location = New System.Drawing.Point(0, 439)
-        Me.Panel_Footer.Name = "Panel_Footer"
-        Me.Panel_Footer.Size = New System.Drawing.Size(400, 26)
-        Me.Panel_Footer.TabIndex = 2
+        Me.Txt_Password.Location = New System.Drawing.Point(83, 218)
+        Me.Txt_Password.Name = "Txt_Password"
+        Me.Txt_Password.Size = New System.Drawing.Size(222, 37)
+        Me.Txt_Password.TabIndex = 4
+        Me.Txt_Password.UseSystemPasswordChar = True
         '
-        'Btn_Login
+        'Txt_Username
         '
-        Me.Btn_Login.FlatAppearance.BorderSize = 0
-        Me.Btn_Login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip
-        Me.Btn_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite
-        Me.Btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Login.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Login.IconChar = FontAwesome.Sharp.IconChar.SignInAlt
-        Me.Btn_Login.IconColor = System.Drawing.Color.White
-        Me.Btn_Login.IconSize = 30
-        Me.Btn_Login.Location = New System.Drawing.Point(53, 308)
-        Me.Btn_Login.Name = "Btn_Login"
-        Me.Btn_Login.Rotation = 0R
-        Me.Btn_Login.Size = New System.Drawing.Size(116, 42)
-        Me.Btn_Login.TabIndex = 0
-        Me.Btn_Login.Text = "ចូលប្រើ"
-        Me.Btn_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Btn_Login.UseVisualStyleBackColor = True
-        '
-        'IconPictureBox1
-        '
-        Me.IconPictureBox1.BackColor = System.Drawing.Color.DarkViolet
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User
-        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
-        Me.IconPictureBox1.IconSize = 119
-        Me.IconPictureBox1.Location = New System.Drawing.Point(117, 27)
-        Me.IconPictureBox1.Name = "IconPictureBox1"
-        Me.IconPictureBox1.Size = New System.Drawing.Size(127, 119)
-        Me.IconPictureBox1.TabIndex = 1
-        Me.IconPictureBox1.TabStop = False
+        Me.Txt_Username.Location = New System.Drawing.Point(83, 175)
+        Me.Txt_Username.Name = "Txt_Username"
+        Me.Txt_Username.Size = New System.Drawing.Size(222, 37)
+        Me.Txt_Username.TabIndex = 3
         '
         'IconButton2
         '
@@ -115,20 +92,53 @@ Partial Class Frm_Login
         Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.IconButton2.UseVisualStyleBackColor = True
         '
-        'Txt_Username
+        'IconPictureBox1
         '
-        Me.Txt_Username.Location = New System.Drawing.Point(83, 175)
-        Me.Txt_Username.Name = "Txt_Username"
-        Me.Txt_Username.Size = New System.Drawing.Size(222, 37)
-        Me.Txt_Username.TabIndex = 3
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.DarkViolet
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox1.IconSize = 119
+        Me.IconPictureBox1.Location = New System.Drawing.Point(132, 6)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(127, 119)
+        Me.IconPictureBox1.TabIndex = 1
+        Me.IconPictureBox1.TabStop = False
         '
-        'Txt_Password
+        'Btn_Login
         '
-        Me.Txt_Password.Location = New System.Drawing.Point(83, 218)
-        Me.Txt_Password.Name = "Txt_Password"
-        Me.Txt_Password.Size = New System.Drawing.Size(222, 37)
-        Me.Txt_Password.TabIndex = 4
-        Me.Txt_Password.UseSystemPasswordChar = True
+        Me.Btn_Login.FlatAppearance.BorderSize = 0
+        Me.Btn_Login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip
+        Me.Btn_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite
+        Me.Btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Login.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Login.IconChar = FontAwesome.Sharp.IconChar.SignInAlt
+        Me.Btn_Login.IconColor = System.Drawing.Color.White
+        Me.Btn_Login.IconSize = 30
+        Me.Btn_Login.Location = New System.Drawing.Point(53, 308)
+        Me.Btn_Login.Name = "Btn_Login"
+        Me.Btn_Login.Rotation = 0R
+        Me.Btn_Login.Size = New System.Drawing.Size(116, 42)
+        Me.Btn_Login.TabIndex = 0
+        Me.Btn_Login.Text = "ចូលប្រើ"
+        Me.Btn_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Login.UseVisualStyleBackColor = True
+        '
+        'Panel_Footer
+        '
+        Me.Panel_Footer.BackColor = System.Drawing.Color.Navy
+        Me.Panel_Footer.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel_Footer.Location = New System.Drawing.Point(0, 439)
+        Me.Panel_Footer.Name = "Panel_Footer"
+        Me.Panel_Footer.Size = New System.Drawing.Size(400, 26)
+        Me.Panel_Footer.TabIndex = 2
+        '
+        'Label_ShopName
+        '
+        Me.Label_ShopName.AutoSize = True
+        Me.Label_ShopName.Location = New System.Drawing.Point(132, 132)
+        Me.Label_ShopName.Name = "Label_ShopName"
+        Me.Label_ShopName.Size = New System.Drawing.Size(0, 29)
+        Me.Label_ShopName.TabIndex = 5
         '
         'Frm_Login
         '
@@ -161,4 +171,5 @@ Partial Class Frm_Login
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Btn_Login As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Footer As Panel
+    Friend WithEvents Label_ShopName As Label
 End Class
