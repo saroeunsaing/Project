@@ -3,6 +3,7 @@ Imports Common
 Imports System.Data.SqlClient
 Imports System.Runtime.InteropServices
 Imports System.Windows.Forms
+Imports System.Collections
 
 Public Class SQLControl
     Inherits ConnectToSQL
@@ -73,11 +74,11 @@ Public Class SQLControl
                 RecordCount = da.Fill(dt)
             End If
         Catch ex As Exception
-            ' CAPTURE ERROR
-            Exception = "ExecQuery Error: " & vbNewLine & ex.Message
+        ' CAPTURE ERROR
+        Exception = "ExecQuery Error: " & vbNewLine & ex.Message
         Finally
-            ' CLOSE CONNECTION
-            If cn.State = ConnectionState.Open Then cn.Close()
+        ' CLOSE CONNECTION
+        If cn.State = ConnectionState.Open Then cn.Close()
         End Try
     End Sub
 
@@ -135,7 +136,7 @@ Public Class SQLControl
     End Function
 
 #End Region
-    Sub labelS(itm As Label, table As String)
+    Sub labelS(itm As Object, table As String)
         Using cn = GetConnection()
 
             cn.Open()
@@ -147,8 +148,20 @@ Public Class SQLControl
 
             End While
         End Using
-    End Sub
 
+    End Sub
+    Sub ReadData(itm As TextBox, table As String)
+        Using cn = GetConnection()
+
+            cn.Open()
+            cmd = New SqlCommand(table, cn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                ' itm.Items.Add(dr(1))
+                itm.Text = dr(0)
+            End While
+        End Using
+    End Sub
     Sub cmbox(itm As ComboBox, table As String, index As String, id As String)
         Using cn = GetConnection()
             cn.Open()
@@ -166,4 +179,24 @@ Public Class SQLControl
         End Using
     End Sub
 
+    'danuag char in home
+    Sub CategoryCht(chrt As Object, ChrtView As String)
+        Dim itm1 As New ArrayList
+        Dim itm2 As New ArrayList
+        Using cn = GetConnection()
+
+            cn.Open()
+            cmd = New SqlCommand(ChrtView, cn)
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = cn
+            dr = cmd.ExecuteReader()
+            While (dr.Read())
+                itm1.Add(dr.GetString(0))
+                itm2.Add(dr.GetInt32(1))
+            End While
+            chrt.Series(0).Points.DataBindXY(itm1, itm2)
+            dr.Close()
+        End Using
+        cn.Open()
+    End Sub
 End Class

@@ -50,9 +50,11 @@
     <ApplicationIcon>guru__1__TLY_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FontAwesome.Sharp, Version=5.12.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.12.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -60,7 +62,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +88,12 @@
   <ItemGroup>
     <Compile Include="Config.vb" />
     <Compile Include="ConnectionString.vb" />
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Frms_Category.Designer.vb">
       <DependentUpon>Frms_Category.vb</DependentUpon>
     </Compile>
@@ -99,6 +110,12 @@
       <DependentUpon>Frm_Dashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Home.Designer.vb">
+      <DependentUpon>Frm_Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Home.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Frm_Login.Designer.vb">
@@ -178,6 +195,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -191,6 +209,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frms_Category.resx">
       <DependentUpon>Frms_Category.vb</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Home.resx">
+      <DependentUpon>Frm_Home.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Login.resx">
       <DependentUpon>Frm_Login.vb</DependentUpon>

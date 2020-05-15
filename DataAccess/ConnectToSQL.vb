@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public MustInherit Class ConnectToSQL
     'Server Configuration
-    Public datasource As String = "ACER-PC"
+    Public datasource As String = "DESKTOP-SG2IIT1"
     Public database As String = "Coffee_Shop"
     Public user_ID As String = "sa"
     Public pwd As String = "123"

@@ -86,7 +86,7 @@ Public Class Frm_Dashboard
 
     Private Sub Btn_Dashboard_Click_1(sender As Object, e As EventArgs) Handles Btn_Dashboard.Click
         'call sub form on dashboard form
-
+        AbrirFormEnPanel(New Frm_Home)
     End Sub
     'marquee text random
     Private Sub Tm_Marquee_Tick(sender As Object, e As EventArgs) Handles Tm_Marquee.Tick

@@ -71,7 +71,7 @@ Partial Class Frm_Products
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("NiDA Bayon", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DimGray
         Me.Label5.Location = New System.Drawing.Point(43, 0)
         Me.Label5.Name = "Label5"

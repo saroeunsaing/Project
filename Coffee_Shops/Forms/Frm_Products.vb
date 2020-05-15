@@ -231,5 +231,7 @@ Public Class Frm_Products
             Me.Cmb_Material.Text = row.Cells("material_id").Value.ToString
         End If
     End Sub
+
+
 #End Region
 End Class
