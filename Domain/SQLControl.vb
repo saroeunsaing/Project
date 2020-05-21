@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Imports System.Runtime.InteropServices
 Imports System.Windows.Forms
 Imports System.Collections
+Imports System.Drawing
 
 Public Class SQLControl
     Inherits ConnectToSQL
@@ -74,11 +75,11 @@ Public Class SQLControl
                 RecordCount = da.Fill(dt)
             End If
         Catch ex As Exception
-        ' CAPTURE ERROR
-        Exception = "ExecQuery Error: " & vbNewLine & ex.Message
+            ' CAPTURE ERROR
+            Exception = "ExecQuery Error: " & vbNewLine & ex.Message
         Finally
-        ' CLOSE CONNECTION
-        If cn.State = ConnectionState.Open Then cn.Close()
+            ' CLOSE CONNECTION
+            If cn.State = ConnectionState.Open Then cn.Close()
         End Try
     End Sub
 
@@ -198,5 +199,79 @@ Public Class SQLControl
             dr.Close()
         End Using
         cn.Open()
+    End Sub
+
+
+    'create generate button 
+    Public Sub LoadButton(obj As Object)
+        'varible save location of each button
+        Dim intLeft As Integer = 0
+        Dim intTop As Integer = 0
+
+        'vaiable save width and height of each button
+        Dim intWidth As Integer = 80
+        Dim intHeight As Integer = 100
+        Using cn = GetConnection()
+            cn.Open()
+            cmd = New SqlCommand("select * from tbl_product", cn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                ' itm.Items.Add(dr(1))
+                'itm.Text = dr(1)
+                'Loop from 1 to 25 to create button
+                For i As Integer = 1 To 1
+                    If intLeft >= obj.Width - intWidth Then 'out of right from form width 
+                        'new line
+                        intLeft = 0
+                        intTop += 100
+
+                    End If
+                    Dim btn As New Button
+                    btn.Text = dr(1) ' & i.ToString
+                    btn.Font = New Font("Khmer OS Siemreap", 8)
+
+                    'btn.Image = dr(8)
+                    btn.Image = Image.FromFile(dr(8)).GetThumbnailImage(50, 60, Nothing, IntPtr.Zero)
+
+                    ' Align the image and text on the button.  
+
+                    btn.ImageAlign = ContentAlignment.TopCenter
+                    btn.TextAlign = ContentAlignment.BottomCenter
+                    btn.TextImageRelation = TextImageRelation.ImageAboveText
+
+                    btn.Left = intLeft
+                    btn.Top = intTop
+                    btn.Width = intWidth
+                    btn.Height = intHeight
+
+                    btn.Visible = True
+
+                    'add event for button here
+                    AddHandler btn.Click, AddressOf OnButton_Click
+                    AddHandler btn.MouseHover, AddressOf OnButton_MouseHover
+
+                    'add btn to form
+                    obj.Controls.Add(btn)
+
+
+                    'move next button to right of current button
+                    intLeft += intWidth + 5
+                Next
+            End While
+        End Using
+    End Sub
+
+    Private Sub OnButton_Click(sender As System.Object, ByVal e As System.EventArgs)
+        Dim btn As New Button
+        btn = CType(sender, Button) 'convert object to button
+        MessageBox.Show(btn.Text & "Clicked", "Test", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    End Sub
+    'create event onMouseHover for button
+    Private Sub OnButton_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim btn As New Button
+        btn = CType(sender, Button)
+
+        ' Me.label1.text = "Mouse Hover ON:" & btn.text
     End Sub
 End Class

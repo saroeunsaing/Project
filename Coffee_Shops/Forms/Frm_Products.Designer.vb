@@ -71,8 +71,8 @@ Partial Class Frm_Products
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Font = New System.Drawing.Font("Khmer OS Muol Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(43, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(195, 37)
@@ -302,7 +302,7 @@ Partial Class Frm_Products
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(7, 180)
+        Me.Label10.Location = New System.Drawing.Point(30, 180)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(74, 29)
         Me.Label10.TabIndex = 33

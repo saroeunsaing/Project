@@ -173,7 +173,7 @@ Public Class Frm_Products
 #Region "Retreive Data in Form"
     Public Sub LoadGrid(Optional Query As String = "")
         If Query = "" Then
-            SQL.ExecQuery("SELECT * FROM tbl_Product")
+            SQL.ExecQuery("SELECT * FROM tbl_Product where material_id ='M-0002' ")
         Else
             SQL.ExecQuery(Query)
         End If

@@ -27,8 +27,9 @@ Partial Class Frm_Sales
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.CR_Sales1 = New Coffee_Shops.CR_Sales()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel_Title.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,9 +37,9 @@ Partial Class Frm_Sales
         '
         Me.Panel1.BackColor = System.Drawing.Color.Silver
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 560)
+        Me.Panel1.Location = New System.Drawing.Point(0, 400)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1063, 26)
+        Me.Panel1.Size = New System.Drawing.Size(1063, 186)
         Me.Panel1.TabIndex = 22
         '
         'IconButton1
@@ -91,7 +92,7 @@ Partial Class Frm_Sales
         '
         'Panel_Title
         '
-        Me.Panel_Title.BackColor = System.Drawing.Color.Gray
+        Me.Panel_Title.BackColor = System.Drawing.Color.LightCyan
         Me.Panel_Title.Controls.Add(Me.IconButton1)
         Me.Panel_Title.Controls.Add(Me.IconButton2)
         Me.Panel_Title.Controls.Add(Me.IconButton3)
@@ -101,25 +102,30 @@ Partial Class Frm_Sales
         Me.Panel_Title.Size = New System.Drawing.Size(1063, 31)
         Me.Panel_Title.TabIndex = 21
         '
-        'CrystalReportViewer1
+        'Panel2
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 31)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.CR_Sales1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1063, 529)
-        Me.CrystalReportViewer1.TabIndex = 23
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 31)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(345, 369)
+        Me.Panel2.TabIndex = 23
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(345, 31)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(718, 369)
+        Me.Panel3.TabIndex = 24
         '
         'Frm_Sales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.LightCyan
         Me.ClientSize = New System.Drawing.Size(1063, 586)
-        Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel_Title)
         Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -137,6 +143,7 @@ Partial Class Frm_Sales
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents CR_Sales1 As CR_Sales
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class
