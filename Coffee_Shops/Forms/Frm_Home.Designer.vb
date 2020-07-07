@@ -29,17 +29,17 @@ Partial Class Frm_Home
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Btn_Close = New FontAwesome.Sharp.IconButton()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel_Home = New System.Windows.Forms.Panel()
-        Me.Cht_Category = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Panel_Contain = New System.Windows.Forms.Panel()
+        Me.Chrt_Category = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel_Title.SuspendLayout()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_Home.SuspendLayout()
-        CType(Me.Cht_Category, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Contain.SuspendLayout()
+        CType(Me.Chrt_Category, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel_Title
         '
-        Me.Panel_Title.BackColor = System.Drawing.Color.SkyBlue
+        Me.Panel_Title.BackColor = System.Drawing.Color.Transparent
         Me.Panel_Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_Title.Controls.Add(Me.IconPictureBox1)
         Me.Panel_Title.Controls.Add(Me.Btn_Close)
@@ -47,16 +47,16 @@ Partial Class Frm_Home
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Title.Name = "Panel_Title"
-        Me.Panel_Title.Size = New System.Drawing.Size(900, 40)
-        Me.Panel_Title.TabIndex = 3
+        Me.Panel_Title.Size = New System.Drawing.Size(884, 40)
+        Me.Panel_Title.TabIndex = 24
         '
         'IconPictureBox1
         '
         Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.IconPictureBox1.ForeColor = System.Drawing.Color.DimGray
+        Me.IconPictureBox1.ForeColor = System.Drawing.Color.Linen
         Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ProductHunt
-        Me.IconPictureBox1.IconColor = System.Drawing.Color.DimGray
-        Me.IconPictureBox1.Location = New System.Drawing.Point(3, 5)
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.Linen
+        Me.IconPictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.IconPictureBox1.Name = "IconPictureBox1"
         Me.IconPictureBox1.Size = New System.Drawing.Size(32, 32)
         Me.IconPictureBox1.TabIndex = 27
@@ -70,9 +70,9 @@ Partial Class Frm_Home
         Me.Btn_Close.Flip = FontAwesome.Sharp.FlipOrientation.Normal
         Me.Btn_Close.ForeColor = System.Drawing.Color.Transparent
         Me.Btn_Close.IconChar = FontAwesome.Sharp.IconChar.WindowClose
-        Me.Btn_Close.IconColor = System.Drawing.Color.DimGray
+        Me.Btn_Close.IconColor = System.Drawing.Color.Red
         Me.Btn_Close.IconSize = 22
-        Me.Btn_Close.Location = New System.Drawing.Point(859, 0)
+        Me.Btn_Close.Location = New System.Drawing.Point(843, 0)
         Me.Btn_Close.Name = "Btn_Close"
         Me.Btn_Close.Rotation = 0R
         Me.Btn_Close.Size = New System.Drawing.Size(40, 40)
@@ -82,66 +82,60 @@ Partial Class Frm_Home
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Khmer OS Muol Light", 10.25!)
-        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Font = New System.Drawing.Font("Khmer OS Muol Light", 12.25!)
+        Me.Label5.ForeColor = System.Drawing.Color.SeaShell
         Me.Label5.Location = New System.Drawing.Point(43, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(195, 37)
+        Me.Label5.Size = New System.Drawing.Size(351, 37)
         Me.Label5.TabIndex = 15
-        Me.Label5.Text = "បញ្ចូលផលិតផលថ្មី"
+        Me.Label5.Text = "គ្រប់គ្រងស្ដុកទំនិញ"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Panel_Home
+        'Panel_Contain
         '
-        Me.Panel_Home.Controls.Add(Me.Cht_Category)
-        Me.Panel_Home.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Home.Location = New System.Drawing.Point(0, 40)
-        Me.Panel_Home.Name = "Panel_Home"
-        Me.Panel_Home.Size = New System.Drawing.Size(900, 595)
-        Me.Panel_Home.TabIndex = 4
+        Me.Panel_Contain.Controls.Add(Me.Chrt_Category)
+        Me.Panel_Contain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel_Contain.Location = New System.Drawing.Point(0, 40)
+        Me.Panel_Contain.Name = "Panel_Contain"
+        Me.Panel_Contain.Size = New System.Drawing.Size(884, 556)
+        Me.Panel_Contain.TabIndex = 25
         '
-        'Cht_Category
+        'Chrt_Category
         '
-        Me.Cht_Category.BackColor = System.Drawing.Color.Transparent
-        ChartArea1.BackColor = System.Drawing.Color.Transparent
         ChartArea1.Name = "ChartArea1"
-        Me.Cht_Category.ChartAreas.Add(ChartArea1)
-        Legend1.BackColor = System.Drawing.Color.Transparent
+        Me.Chrt_Category.ChartAreas.Add(ChartArea1)
         Legend1.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Legend1.IsTextAutoFit = False
         Legend1.Name = "Legend1"
-        Me.Cht_Category.Legends.Add(Legend1)
-        Me.Cht_Category.Location = New System.Drawing.Point(31, 6)
-        Me.Cht_Category.Name = "Cht_Category"
-        Series1.BorderColor = System.Drawing.Color.Transparent
+        Me.Chrt_Category.Legends.Add(Legend1)
+        Me.Chrt_Category.Location = New System.Drawing.Point(12, 6)
+        Me.Chrt_Category.Name = "Chrt_Category"
         Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
-        Series1.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series1.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.75!)
         Series1.IsValueShownAsLabel = True
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
-        Me.Cht_Category.Series.Add(Series1)
-        Me.Cht_Category.Size = New System.Drawing.Size(300, 300)
-        Me.Cht_Category.TabIndex = 0
-        Me.Cht_Category.Text = "Chart1"
+        Me.Chrt_Category.Series.Add(Series1)
+        Me.Chrt_Category.Size = New System.Drawing.Size(357, 286)
+        Me.Chrt_Category.TabIndex = 26
+        Me.Chrt_Category.Text = "ផលិតផលតាមប្រភេទ"
         '
         'Frm_Home
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 24.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.SkyBlue
-        Me.ClientSize = New System.Drawing.Size(900, 635)
-        Me.Controls.Add(Me.Panel_Home)
+        Me.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.ClientSize = New System.Drawing.Size(884, 596)
+        Me.Controls.Add(Me.Panel_Contain)
         Me.Controls.Add(Me.Panel_Title)
-        Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 6, 3, 6)
         Me.Name = "Frm_Home"
         Me.Text = "Frm_Home"
         Me.Panel_Title.ResumeLayout(False)
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_Home.ResumeLayout(False)
-        CType(Me.Cht_Category, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Contain.ResumeLayout(False)
+        CType(Me.Chrt_Category, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -150,6 +144,6 @@ Partial Class Frm_Home
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Btn_Close As FontAwesome.Sharp.IconButton
     Friend WithEvents Label5 As Label
-    Friend WithEvents Panel_Home As Panel
-    Friend WithEvents Cht_Category As DataVisualization.Charting.Chart
+    Friend WithEvents Panel_Contain As Panel
+    Friend WithEvents Chrt_Category As DataVisualization.Charting.Chart
 End Class

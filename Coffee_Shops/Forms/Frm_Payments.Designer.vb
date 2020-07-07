@@ -22,22 +22,21 @@ Partial Class Frm_Payments
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.DGV_Data = New System.Windows.Forms.DataGridView()
+        Me.Ckb_All = New System.Windows.Forms.CheckBox()
+        Me.Ckb_Dialy = New System.Windows.Forms.CheckBox()
+        Me.Ckb_Weekly = New System.Windows.Forms.CheckBox()
+        Me.Ckb_Monthly = New System.Windows.Forms.CheckBox()
+        Me.Ckb_Between = New System.Windows.Forms.CheckBox()
+        Me.DTP_Start = New System.Windows.Forms.DateTimePicker()
+        Me.DTP_End = New System.Windows.Forms.DateTimePicker()
         Me.Panel_Title.SuspendLayout()
+        CType(Me.DGV_Data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 482)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(969, 29)
-        Me.Panel1.TabIndex = 22
         '
         'IconButton1
         '
@@ -99,13 +98,99 @@ Partial Class Frm_Payments
         Me.Panel_Title.Size = New System.Drawing.Size(969, 31)
         Me.Panel_Title.TabIndex = 21
         '
+        'DGV_Data
+        '
+        Me.DGV_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGV_Data.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Data.Location = New System.Drawing.Point(12, 116)
+        Me.DGV_Data.Name = "DGV_Data"
+        Me.DGV_Data.RowHeadersVisible = False
+        Me.DGV_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Data.Size = New System.Drawing.Size(945, 383)
+        Me.DGV_Data.TabIndex = 22
+        '
+        'Ckb_All
+        '
+        Me.Ckb_All.AutoSize = True
+        Me.Ckb_All.Location = New System.Drawing.Point(31, 48)
+        Me.Ckb_All.Name = "Ckb_All"
+        Me.Ckb_All.Size = New System.Drawing.Size(86, 33)
+        Me.Ckb_All.TabIndex = 23
+        Me.Ckb_All.Text = "ទាំងអស់"
+        Me.Ckb_All.UseVisualStyleBackColor = True
+        '
+        'Ckb_Dialy
+        '
+        Me.Ckb_Dialy.AutoSize = True
+        Me.Ckb_Dialy.Location = New System.Drawing.Point(123, 48)
+        Me.Ckb_Dialy.Name = "Ckb_Dialy"
+        Me.Ckb_Dialy.Size = New System.Drawing.Size(80, 33)
+        Me.Ckb_Dialy.TabIndex = 24
+        Me.Ckb_Dialy.Text = "ប្រចាំថ្ងៃ"
+        Me.Ckb_Dialy.UseVisualStyleBackColor = True
+        '
+        'Ckb_Weekly
+        '
+        Me.Ckb_Weekly.AutoSize = True
+        Me.Ckb_Weekly.Location = New System.Drawing.Point(209, 48)
+        Me.Ckb_Weekly.Name = "Ckb_Weekly"
+        Me.Ckb_Weekly.Size = New System.Drawing.Size(112, 33)
+        Me.Ckb_Weekly.TabIndex = 25
+        Me.Ckb_Weekly.Text = "ប្រចាំសប្ដាហ៍"
+        Me.Ckb_Weekly.UseVisualStyleBackColor = True
+        '
+        'Ckb_Monthly
+        '
+        Me.Ckb_Monthly.AutoSize = True
+        Me.Ckb_Monthly.Location = New System.Drawing.Point(327, 48)
+        Me.Ckb_Monthly.Name = "Ckb_Monthly"
+        Me.Ckb_Monthly.Size = New System.Drawing.Size(80, 33)
+        Me.Ckb_Monthly.TabIndex = 26
+        Me.Ckb_Monthly.Text = "ប្រចាំខែ"
+        Me.Ckb_Monthly.UseVisualStyleBackColor = True
+        '
+        'Ckb_Between
+        '
+        Me.Ckb_Between.AutoSize = True
+        Me.Ckb_Between.Location = New System.Drawing.Point(431, 48)
+        Me.Ckb_Between.Name = "Ckb_Between"
+        Me.Ckb_Between.Size = New System.Drawing.Size(141, 33)
+        Me.Ckb_Between.TabIndex = 27
+        Me.Ckb_Between.Text = "ចន្លោះពីថ្ងៃទីខែឆ្នាំ"
+        Me.Ckb_Between.UseVisualStyleBackColor = True
+        '
+        'DTP_Start
+        '
+        Me.DTP_Start.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_Start.Location = New System.Drawing.Point(567, 44)
+        Me.DTP_Start.Name = "DTP_Start"
+        Me.DTP_Start.Size = New System.Drawing.Size(200, 37)
+        Me.DTP_Start.TabIndex = 28
+        '
+        'DTP_End
+        '
+        Me.DTP_End.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_End.Location = New System.Drawing.Point(789, 44)
+        Me.DTP_End.Name = "DTP_End"
+        Me.DTP_End.Size = New System.Drawing.Size(200, 37)
+        Me.DTP_End.TabIndex = 29
+        '
         'Frm_Payments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(969, 511)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.DTP_End)
+        Me.Controls.Add(Me.DTP_Start)
+        Me.Controls.Add(Me.Ckb_Between)
+        Me.Controls.Add(Me.Ckb_Monthly)
+        Me.Controls.Add(Me.Ckb_Weekly)
+        Me.Controls.Add(Me.Ckb_Dialy)
+        Me.Controls.Add(Me.Ckb_All)
+        Me.Controls.Add(Me.DGV_Data)
         Me.Controls.Add(Me.Panel_Title)
         Me.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -113,13 +198,21 @@ Partial Class Frm_Payments
         Me.Name = "Frm_Payments"
         Me.Text = "Frm_Payments"
         Me.Panel_Title.ResumeLayout(False)
+        CType(Me.DGV_Data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
+    Friend WithEvents DGV_Data As DataGridView
+    Friend WithEvents Ckb_All As CheckBox
+    Friend WithEvents Ckb_Dialy As CheckBox
+    Friend WithEvents Ckb_Weekly As CheckBox
+    Friend WithEvents Ckb_Monthly As CheckBox
+    Friend WithEvents Ckb_Between As CheckBox
+    Friend WithEvents DTP_Start As DateTimePicker
+    Friend WithEvents DTP_End As DateTimePicker
 End Class

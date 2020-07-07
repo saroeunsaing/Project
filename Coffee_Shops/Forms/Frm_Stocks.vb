@@ -2,7 +2,34 @@
 Imports Domain
 Public Class Frm_Stocks
     Private sql As New SQLControl
+#Region "Retreive Data in Form"
+    Public Sub LoadGrid(Optional Query As String = "")
+        If Query = "" Then
+            sql.ExecQuery("SELECT product_id as [កូដផលិតផល],namekh as [ផលិតផល],nameen as [ជាឡាតាំង],amount [ចំនួន],total as [សរុបទឹកប្រាក់]  FROM rpt_stock ")
+        Else
+            sql.ExecQuery(Query)
+        End If
 
+        ' ERROR HANDLING
+        If sql.HasException(True) Then Exit Sub
+
+        DGV_Data.DataSource = sql.dt
+
+    End Sub
+    Public Sub cmbSearch(Optional Query As String = "")
+        If Query = "" Then
+            sql.ExecQuery("SELECT * FROM rpt_stock where namekh = N'" & Cmb_ProductName.Text & "' ")
+        Else
+            sql.ExecQuery(Query)
+        End If
+
+        ' ERROR HANDLING
+        If sql.HasException(True) Then Exit Sub
+
+        DGV_Data.DataSource = sql.dt
+
+    End Sub
+#End Region
     Private Sub Placeholder()
 
         sql.SetCueText(Txt_Purchase, Format("0.00"))
@@ -23,8 +50,12 @@ Public Class Frm_Stocks
 
     Private Sub Frm_Stocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ''Txt_SalePrice.Text = sql.getMaxID("tbl_stock", "id", "ST-00000000", 4, 8)
-        sql.cmbox(Cmb_ProductName, "SELECT * FROM v_Product", "name", "id")
+        sql.cmbox(Cmb_ProductName, "SELECT * FROM rpt_cmbProduct", "name", "id")
+
+        sql.cmbox(Cmb_Scale, "SELECT * FROM tbl_Scale", "nameKh", "id")
         Placeholder()
+        LoadGrid()
+        DTP_Purchase.Value = Now()
     End Sub
 #Region "Save data in form"
     Private Sub Insert()
@@ -38,13 +69,14 @@ Public Class Frm_Stocks
         sql.AddParam("@sale", Txt_Sale.Text)
         sql.AddParam("@total", Txt_Total.Text)
         sql.AddParam("@date", DTP_Purchase.Value)
+        sql.AddParam("@scale", Cmb_Scale.Text)
 
         'sql.AddParam("@img", "img/logo.png")
         'sql.AddParam("@category", Cmb_Category.SelectedValue)
         'sql.AddParam("@material", Cmb_Material.SelectedValue)
 
-        sql.ExecQuery("INSERT INTO tbl_Stock (id,pro_code,amount,purchase_price,sale_price,total,date) " &
-                      "VALUES (@id,@pro_id,@amount,@purchase,@sale,@total,@date);", True)
+        sql.ExecQuery("INSERT INTO tbl_Stock (id,pro_code,amount,purchase_price,sale_price,total,date,scale) " &
+                      "VALUES (@id,@pro_id,@amount,@purchase,@sale,@total,@date,@scale);", True)
 
         'sql.AddParam("@amount", Txt_Amount.Text)
         'sql.AddParam("@purchase", Txt_ProductCode.Text)
@@ -64,14 +96,15 @@ Public Class Frm_Stocks
         '    MsgBox(r("LastID").ToString)
         'End If
         MsgBox("បន្ថែមស្ដុកបានជោគជ័យ", MessageBoxIcon.Information, "បន្ថែមស្ដុកថ្មី")
-        ' LoadGrid()
+        LoadGrid()
     End Sub
 
     Private Sub Btn_Save_Click(sender As Object, e As EventArgs) Handles Btn_Save.Click
         Insert()
     End Sub
     Private Sub Cmb_ProductName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_ProductName.SelectedIndexChanged
-        sql.ReadData(Txt_ProductCode, "SELECT * FROM v_Product Where name = N'" & Cmb_ProductName.Text & "'")
+        sql.ReadData(Txt_ProductCode, "SELECT * FROM rpt_cmbProduct Where name = N'" & Cmb_ProductName.Text & "'")
+        cmbSearch
     End Sub
 
     Private Sub Txt_Purchase_TextChanged(sender As Object, e As EventArgs) Handles Txt_Purchase.TextChanged
@@ -80,5 +113,19 @@ Public Class Frm_Stocks
             Txt_Total.Text = CDbl(Txt_Purchase.Text) * CDbl(Txt_Amount.Text)
         End If
     End Sub
+
+    Private Sub DGV_Data_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Data.CellContentClick
+
+    End Sub
+
+    Private Sub Cmb_Scale_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Scale.SelectedIndexChanged
+        If Cmb_Scale.Text = "បន្ថែមថ្មី" Then
+            Frm_Scale.ShowDialog()
+        End If
+    End Sub
+
+
+
+
 #End Region
 End Class

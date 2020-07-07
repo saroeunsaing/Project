@@ -9,7 +9,6 @@ Imports System.Drawing
 Public Class SQLControl
     Inherits ConnectToSQL
 
-
 #Region "Placehoder"
     <DllImport("user32.dll", CharSet:=CharSet.Auto)>
     Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal msg As Integer, ByVal wParam As Integer, <MarshalAs(UnmanagedType.LPWStr)> ByVal lParam As String) As Int32
@@ -30,7 +29,6 @@ Public Class SQLControl
         End If
     End Sub
 #End Region
-
 #Region "SQL Command Function"
     ' QUERY PARAMETERS
     Public Params As New List(Of SqlParameter)
@@ -96,7 +94,6 @@ Public Class SQLControl
         Return True
     End Function
 #End Region
-
 #Region "Auto id with string"
     Public Function getMaxID(ByVal tablename As String, ByVal fieldName As String, pre As String, numL As Integer, numR As Integer)
         Dim id As String
@@ -151,7 +148,7 @@ Public Class SQLControl
         End Using
 
     End Sub
-    Sub ReadData(itm As TextBox, table As String)
+    Sub ReadData(itm As Object, table As String)
         Using cn = GetConnection()
 
             cn.Open()
@@ -179,7 +176,6 @@ Public Class SQLControl
             'User will see DisplayMember in the Combobox
         End Using
     End Sub
-
     'danuag char in home
     Sub CategoryCht(chrt As Object, ChrtView As String)
         Dim itm1 As New ArrayList
@@ -198,12 +194,29 @@ Public Class SQLControl
             chrt.Series(0).Points.DataBindXY(itm1, itm2)
             dr.Close()
         End Using
-        cn.Open()
+        cn.Close()
     End Sub
+    Sub SaleCht(chrt As Object, ChrtView As String)
+        Dim itm1 As New ArrayList
+        Dim itm2 As New ArrayList
+        Using cn = GetConnection()
 
-
+            cn.Open()
+            cmd = New SqlCommand(ChrtView, cn)
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = cn
+            dr = cmd.ExecuteReader()
+            While (dr.Read())
+                itm1.Add(dr.GetString(0))
+                itm2.Add(dr.GetInt32(1))
+            End While
+            chrt.Series(0).Points.DataBindXY(itm1, itm2)
+            dr.Close()
+        End Using
+        cn.Close()
+    End Sub
     'create generate button 
-    Public Sub LoadButton(obj As Object)
+    Public Sub LoadButton(obj As Object, query As String)
         'varible save location of each button
         Dim intLeft As Integer = 0
         Dim intTop As Integer = 0
@@ -213,30 +226,108 @@ Public Class SQLControl
         Dim intHeight As Integer = 100
         Using cn = GetConnection()
             cn.Open()
-            cmd = New SqlCommand("select * from tbl_product", cn)
+            cmd = New SqlCommand(query, cn)
             dr = cmd.ExecuteReader
-            While dr.Read
-                ' itm.Items.Add(dr(1))
-                'itm.Text = dr(1)
-                'Loop from 1 to 25 to create button
-                For i As Integer = 1 To 1
-                    If intLeft >= obj.Width - intWidth Then 'out of right from form width 
-                        'new line
-                        intLeft = 0
-                        intTop += 100
 
-                    End If
-                    Dim btn As New Button
-                    btn.Text = dr(1) ' & i.ToString
+            ' itm.Items.Add(dr(1))
+            'itm.Text = dr(1)
+            'Loop from 1 to 25 to create button
+            For i As Integer = 1 To 1
+                While dr.Read
+                    If intLeft >= obj.Width - intWidth Then 'out of right from form width 
+                    'new line
+                    intLeft = 0
+                    intTop += 110
+
+                End If
+                Dim btn As New Button
+                btn.Text = dr(1) & vbNewLine & dr(2) ' & i.ToString
                     btn.Font = New Font("Khmer OS Siemreap", 8)
+                    btn.ForeColor = Color.Black
+                    btn.TextAlign = ContentAlignment.BottomCenter
+                    ' btn.BackColor = Color.Transparent
+                    btn.FlatStyle = FlatStyle.Flat
+                    btn.FlatAppearance.BorderSize = 1
+                    btn.FlatAppearance.MouseDownBackColor = Color.Linen
+
+                    btn.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue
+
 
                     'btn.Image = dr(8)
-                    btn.Image = Image.FromFile(dr(8)).GetThumbnailImage(50, 60, Nothing, IntPtr.Zero)
+                    btn.Image = Image.FromFile(dr(8)).GetThumbnailImage(40, 60, Nothing, IntPtr.Zero)
 
                     ' Align the image and text on the button.  
 
                     btn.ImageAlign = ContentAlignment.TopCenter
+
+                    btn.TextImageRelation = TextImageRelation.ImageAboveText
+
+                btn.Left = intLeft
+                btn.Top = intTop
+                btn.Width = intWidth
+                btn.Height = intHeight
+
+                btn.Visible = True
+
+                'add event for button here
+                AddHandler btn.Click, AddressOf OnButton_Click
+                    AddHandler btn.MouseHover, AddressOf OnButton_MouseHover
+                    AddHandler btn.MouseLeave, AddressOf OnButton_MouseLeave
+
+                    'add btn to form
+                    obj.Controls.Add(btn)
+
+
+                    'move next button to right of current button
+                    intLeft += intWidth + 5
+                End While
+            Next
+
+        End Using
+    End Sub
+    Public Sub LoadIconButton(obj As Object, query As String)
+        'varible save location of each button
+        Dim intLeft As Integer = 0
+        Dim intTop As Integer = 0
+
+        'vaiable save width and height of each button
+        Dim intWidth As Integer = 50
+        Dim intHeight As Integer = 30
+        Using cn = GetConnection()
+            cn.Open()
+            cmd = New SqlCommand(query, cn)
+            dr = cmd.ExecuteReader
+
+            ' itm.Items.Add(dr(1))
+            'itm.Text = dr(1)
+            'Loop from 1 to 25 to create button
+            For i As Integer = 1 To 1
+                While dr.Read
+                    If intLeft >= obj.Width - intWidth Then 'out of right from form width 
+                        'new line
+                        intLeft = 0
+                        intTop += 110
+
+                    End If
+                    Dim btn As New Button
+                    btn.Text = dr(1) & vbNewLine & dr(2) ' & i.ToString
+                    btn.Font = New Font("Khmer OS Siemreap", 6)
+                    btn.ForeColor = Color.Black
                     btn.TextAlign = ContentAlignment.BottomCenter
+                    ' btn.BackColor = Color.Transparent
+                    btn.FlatStyle = FlatStyle.Flat
+                    btn.FlatAppearance.BorderSize = 1
+                    btn.FlatAppearance.MouseDownBackColor = Color.Linen
+
+                    btn.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue
+
+                    'btn.Image = dr(8)
+                    ' btn.Image = Image.FromFile(dr(8)).GetThumbnailImage(40, 60, Nothing, IntPtr.Zero)
+
+                    ' Align the image and text on the button.  
+
+                    btn.ImageAlign = ContentAlignment.TopCenter
+
                     btn.TextImageRelation = TextImageRelation.ImageAboveText
 
                     btn.Left = intLeft
@@ -249,29 +340,143 @@ Public Class SQLControl
                     'add event for button here
                     AddHandler btn.Click, AddressOf OnButton_Click
                     AddHandler btn.MouseHover, AddressOf OnButton_MouseHover
+                    AddHandler btn.MouseLeave, AddressOf OnButton_MouseLeave
 
                     'add btn to form
                     obj.Controls.Add(btn)
 
-
                     'move next button to right of current button
                     intLeft += intWidth + 5
-                Next
-            End While
+                End While
+            Next
         End Using
     End Sub
-
     Private Sub OnButton_Click(sender As System.Object, ByVal e As System.EventArgs)
+
         Dim btn As New Button
         btn = CType(sender, Button) 'convert object to button
-        MessageBox.Show(btn.Text & "Clicked", "Test", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show(btn.Text & "Clicked", "Clicked", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
 
     End Sub
     'create event onMouseHover for button
     Private Sub OnButton_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        Dim btn As New Button
+        btn = CType(sender, Button)
+        'btn.Text = "Price"
+
+    End Sub
+    Private Sub OnButton_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
         Dim btn As New Button
         btn = CType(sender, Button)
 
-        ' Me.label1.text = "Mouse Hover ON:" & btn.text
     End Sub
+    Sub lst(lstv As ListView)
+        Dim ls As Integer
+        Dim lst As New ListViewItem(ls)
+        Dim temp As Integer
+
+        Try
+
+
+            For j = 0 To temp - 1
+
+                If (lstv.Items(j).SubItems(1).Text = "") Then
+                    MessageBox.Show("Product Code already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'Text_Code.Text = ""
+                    'Text_ProductName.Text = ""
+                    'Text_Quantity.Text = ""
+                    'Text_Price.Text = ""
+                    'Text_TotalAmount.Text = ""
+                    'Text_Amount.Text = ""
+                    Exit Sub
+                End If
+            Next j
+            'If Val(Form_Sales.DataGridView1.SelectedCells(2).Value.ToString) < Val(Text_Amount.Text) Then
+            '    MessageBox.Show("Amount was gather than amount in stock", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            '    Me.Text_Amount.Text = ""
+            '    Text_Amount.Focus()
+            '    Exit Sub
+            'End If
+            'If Text_Amount.Text = Nothing Then
+            '    MsgBox("Please insert Amount!")
+            '    Text_Amount.Text = ""
+            '    Text_Amount.Focus()
+            '    Exit Sub
+            'Else
+            lst.SubItems.Add("5")
+            lst.SubItems.Add("4")
+            lst.SubItems.Add("3")
+            lst.SubItems.Add("2")
+
+            lst.SubItems.Add("1")
+            lstv.Items.Add(lst)
+            'Form_Sales.Text_Subtotal.Text = subtot()
+            ' Form_Sales.Text_Total.Text = subtot()
+            ''Form_Sales.paid()
+            ''Text_Amount.Text = ""
+            'Text_Amount.Focus()
+            'End If
+            'Me.Close()
+        Catch ex As Exception
+            MsgBox("You Must Input Only Number")
+            'Text_Amount.Text = ""
+            'Text_Amount.Focus()
+        End Try
+    End Sub
+
+
+
+
+    'temp
+    Public Function GetData() As DataView
+        Using cn = GetConnection()
+            cn.Open()
+
+            Dim SelectQry = "SELECT product_id as [កូដ],namekh​as [ផលិតផល],nameen as [ឡាតាំង],total as [សរុប] from tbl_product "
+            Dim SampleSource As New DataSet
+            Dim TableView As DataView
+            Try
+                Dim SampleCommand As New SqlCommand()
+                Dim SampleDataAdapter = New SqlDataAdapter()
+                SampleCommand.CommandText = SelectQry
+                SampleCommand.Connection = cn
+                SampleDataAdapter.SelectCommand = SampleCommand
+                SampleDataAdapter.Fill(SampleSource)
+                TableView = SampleSource.Tables(0).DefaultView
+            Catch ex As Exception
+                Throw ex
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+            Return TableView
+        End Using
+    End Function
+
+#Region "Crystal Report"
+    Sub Crst_Rpt(rpt As Object, ds As DataSet, qty As String, report As Object, table As String)
+        Dim cmd As New SqlCommand
+        Dim cn As New SqlConnection
+        Dim da As New SqlDataAdapter()
+
+        Try
+            cn = GetConnection()
+            'cn.Open()
+
+            cmd.Connection = cn
+            cmd.CommandText = qty
+            cmd.CommandType = CommandType.Text
+            da.SelectCommand = cmd
+
+            da.Fill(ds, table)
+            rpt.SetDataSource(ds)
+            report.ReportSource = rpt
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+#End Region
 End Class

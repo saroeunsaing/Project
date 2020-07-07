@@ -39,13 +39,13 @@ Partial Class Frm_Shop
         Me.Btn_Brows = New FontAwesome.Sharp.IconButton()
         Me.Img_Logo = New FontAwesome.Sharp.IconPictureBox()
         Me.Panel_Title = New System.Windows.Forms.Panel()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Btn_Exit = New FontAwesome.Sharp.IconButton()
         Me.Panel_Contain = New System.Windows.Forms.Panel()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         CType(Me.Img_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
-        Me.Panel_Contain.SuspendLayout()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Contain.SuspendLayout()
         Me.SuspendLayout()
         '
         'Btn_Delete
@@ -108,7 +108,7 @@ Partial Class Frm_Shop
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("NiDA Bayon", 14.25!)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(44, 3)
         Me.Label5.Name = "Label5"
@@ -247,6 +247,18 @@ Partial Class Frm_Shop
         Me.Panel_Title.Size = New System.Drawing.Size(900, 45)
         Me.Panel_Title.TabIndex = 2
         '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.YellowGreen
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Building
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
+        Me.IconPictureBox1.IconSize = 37
+        Me.IconPictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(38, 37)
+        Me.IconPictureBox1.TabIndex = 20
+        Me.IconPictureBox1.TabStop = False
+        '
         'Btn_Exit
         '
         Me.Btn_Exit.FlatAppearance.BorderSize = 0
@@ -287,18 +299,6 @@ Partial Class Frm_Shop
         Me.Panel_Contain.Size = New System.Drawing.Size(900, 635)
         Me.Panel_Contain.TabIndex = 3
         '
-        'IconPictureBox1
-        '
-        Me.IconPictureBox1.BackColor = System.Drawing.Color.YellowGreen
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Building
-        Me.IconPictureBox1.IconColor = System.Drawing.Color.White
-        Me.IconPictureBox1.IconSize = 40
-        Me.IconPictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.IconPictureBox1.Name = "IconPictureBox1"
-        Me.IconPictureBox1.Size = New System.Drawing.Size(38, 37)
-        Me.IconPictureBox1.TabIndex = 20
-        Me.IconPictureBox1.TabStop = False
-        '
         'Frm_Shop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 29.0!)
@@ -314,9 +314,9 @@ Partial Class Frm_Shop
         Me.Text = "Frm_Shop"
         CType(Me.Img_Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Title.ResumeLayout(False)
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Contain.ResumeLayout(False)
         Me.Panel_Contain.PerformLayout()
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

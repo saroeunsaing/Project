@@ -71,6 +71,7 @@ Public Class Frm_Dashboard
         Me.Panel_Content.Controls.Add(fh)
         Me.Panel_Content.Tag = fh
         fh.Show()
+
     End Sub
 
 
@@ -84,9 +85,9 @@ Public Class Frm_Dashboard
         End If
     End Sub
 
-    Private Sub Btn_Dashboard_Click_1(sender As Object, e As EventArgs) Handles Btn_Dashboard.Click
-        'call sub form on dashboard form
-        AbrirFormEnPanel(New Frm_Home)
+    Private Sub Btn_Dashboard_Click_1(sender As Object, e As EventArgs) Handles Btn_Product.Click
+        '
+        AbrirFormEnPanel(New Frm_Products)
     End Sub
     'marquee text random
     Private Sub Tm_Marquee_Tick(sender As Object, e As EventArgs) Handles Tm_Marquee.Tick
@@ -108,6 +109,8 @@ Public Class Frm_Dashboard
 
         SQLControl.labelS(Label_ShopName, "select * from tbl_shop")
 
+
+
     End Sub
     'load user name put on label
     Sub loadUser()
@@ -125,7 +128,7 @@ Public Class Frm_Dashboard
     'check permission with usertype
     Private Sub managePermissions()
         If ActiveUser.position = Positions.receptionist Then
-            Btn_Dashboard.Enabled = False
+            Btn_Product.Enabled = False
 
         End If
         If ActiveUser.position = Positions.accounting Then
@@ -149,7 +152,22 @@ Public Class Frm_Dashboard
         AbrirFormEnPanel(New Frm_Users)
     End Sub
     Private Sub Btn_Stock_Click(sender As Object, e As EventArgs) Handles Btn_Stock.Click
-        AbrirFormEnPanel(New Frm_Products)
+        AbrirFormEnPanel(New Frm_Stocks)
     End Sub
 
+
+
+    Private Sub Btn_Sales_Click(sender As Object, e As EventArgs) Handles Btn_Sales.Click
+        Me.Hide()
+        Frm_Sale_Temp.Show()
+    End Sub
+
+
+    Private Sub Btn_About_Us_Click(sender As Object, e As EventArgs) Handles Btn_About_Us.Click
+
+    End Sub
+
+    Private Sub Btn_Home_Click(sender As Object, e As EventArgs) Handles Btn_Home.Click
+        AbrirFormEnPanel(New Frm_Homes)
+    End Sub
 End Class

@@ -34,6 +34,7 @@ Partial Class Frm_Dashboard
         Me.Tm_MenuHide = New System.Windows.Forms.Timer(Me.components)
         Me.Tm_MenuShow = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_Menu = New System.Windows.Forms.Panel()
+        Me.Btn_Home = New FontAwesome.Sharp.IconButton()
         Me.Btn_Setting = New FontAwesome.Sharp.IconButton()
         Me.Label_Login = New System.Windows.Forms.Label()
         Me.Label_ShopName = New System.Windows.Forms.Label()
@@ -44,7 +45,7 @@ Partial Class Frm_Dashboard
         Me.Btn_Payment = New FontAwesome.Sharp.IconButton()
         Me.Btn_Sales = New FontAwesome.Sharp.IconButton()
         Me.Btn_Stock = New FontAwesome.Sharp.IconButton()
-        Me.Btn_Dashboard = New FontAwesome.Sharp.IconButton()
+        Me.Btn_Product = New FontAwesome.Sharp.IconButton()
         Me.Btn_Menu = New FontAwesome.Sharp.IconButton()
         Me.Panel_Content = New System.Windows.Forms.Panel()
         Me.Tm_Marquee = New System.Windows.Forms.Timer(Me.components)
@@ -167,6 +168,7 @@ Partial Class Frm_Dashboard
         'Panel_Menu
         '
         Me.Panel_Menu.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel_Menu.Controls.Add(Me.Btn_Home)
         Me.Panel_Menu.Controls.Add(Me.Btn_Setting)
         Me.Panel_Menu.Controls.Add(Me.Label_Login)
         Me.Panel_Menu.Controls.Add(Me.Label_ShopName)
@@ -177,13 +179,38 @@ Partial Class Frm_Dashboard
         Me.Panel_Menu.Controls.Add(Me.Btn_Payment)
         Me.Panel_Menu.Controls.Add(Me.Btn_Sales)
         Me.Panel_Menu.Controls.Add(Me.Btn_Stock)
-        Me.Panel_Menu.Controls.Add(Me.Btn_Dashboard)
+        Me.Panel_Menu.Controls.Add(Me.Btn_Product)
         Me.Panel_Menu.Controls.Add(Me.Btn_Menu)
         Me.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel_Menu.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_Menu.Location = New System.Drawing.Point(0, 35)
         Me.Panel_Menu.Name = "Panel_Menu"
         Me.Panel_Menu.Size = New System.Drawing.Size(200, 635)
         Me.Panel_Menu.TabIndex = 25
+        '
+        'Btn_Home
+        '
+        Me.Btn_Home.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Home.FlatAppearance.BorderSize = 0
+        Me.Btn_Home.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Btn_Home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
+        Me.Btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Home.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Home.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Home.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Btn_Home.IconChar = FontAwesome.Sharp.IconChar.Home
+        Me.Btn_Home.IconColor = System.Drawing.Color.WhiteSmoke
+        Me.Btn_Home.IconSize = 35
+        Me.Btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_Home.Location = New System.Drawing.Point(4, 116)
+        Me.Btn_Home.Name = "Btn_Home"
+        Me.Btn_Home.Rotation = 0R
+        Me.Btn_Home.Size = New System.Drawing.Size(197, 40)
+        Me.Btn_Home.TabIndex = 40
+        Me.Btn_Home.Text = "ទំព័រដើម"
+        Me.Btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Home.UseVisualStyleBackColor = True
         '
         'Btn_Setting
         '
@@ -193,7 +220,7 @@ Partial Class Frm_Dashboard
         Me.Btn_Setting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.Btn_Setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Setting.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Setting.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Setting.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
         Me.Btn_Setting.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Btn_Setting.IconChar = FontAwesome.Sharp.IconChar.Cog
         Me.Btn_Setting.IconColor = System.Drawing.Color.WhiteSmoke
@@ -213,14 +240,14 @@ Partial Class Frm_Dashboard
         '
         Me.Label_Login.Font = New System.Drawing.Font("Khmer OS Muol Light", 8.0!)
         Me.Label_Login.ForeColor = System.Drawing.Color.White
-        Me.Label_Login.Location = New System.Drawing.Point(12, 515)
+        Me.Label_Login.Location = New System.Drawing.Point(21, 531)
         Me.Label_Login.Name = "Label_Login"
         Me.Label_Login.Size = New System.Drawing.Size(147, 40)
         Me.Label_Login.TabIndex = 38
         '
         'Label_ShopName
         '
-        Me.Label_ShopName.Font = New System.Drawing.Font("NiDA Bayon", 10.25!)
+        Me.Label_ShopName.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.25!)
         Me.Label_ShopName.ForeColor = System.Drawing.Color.White
         Me.Label_ShopName.Location = New System.Drawing.Point(50, 48)
         Me.Label_ShopName.Name = "Label_ShopName"
@@ -248,7 +275,7 @@ Partial Class Frm_Dashboard
         Me.Txt_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.Txt_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Txt_Login.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Txt_Login.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Login.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
         Me.Txt_Login.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Txt_Login.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle
         Me.Txt_Login.IconColor = System.Drawing.Color.WhiteSmoke
@@ -272,16 +299,16 @@ Partial Class Frm_Dashboard
         Me.IconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.IconButton1.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IconButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle
         Me.IconButton1.IconColor = System.Drawing.Color.WhiteSmoke
         Me.IconButton1.IconSize = 35
         Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton1.Location = New System.Drawing.Point(0, 408)
+        Me.IconButton1.Location = New System.Drawing.Point(3, 382)
         Me.IconButton1.Name = "IconButton1"
         Me.IconButton1.Rotation = 0R
-        Me.IconButton1.Size = New System.Drawing.Size(197, 50)
+        Me.IconButton1.Size = New System.Drawing.Size(197, 40)
         Me.IconButton1.TabIndex = 34
         Me.IconButton1.Text = "អំពីកម្មវិធី"
         Me.IconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -296,16 +323,16 @@ Partial Class Frm_Dashboard
         Me.Btn_About_Us.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.Btn_About_Us.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_About_Us.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_About_Us.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_About_Us.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_About_Us.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Btn_About_Us.IconChar = FontAwesome.Sharp.IconChar.CreditCard
         Me.Btn_About_Us.IconColor = System.Drawing.Color.WhiteSmoke
         Me.Btn_About_Us.IconSize = 35
         Me.Btn_About_Us.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_About_Us.Location = New System.Drawing.Point(0, 296)
+        Me.Btn_About_Us.Location = New System.Drawing.Point(3, 296)
         Me.Btn_About_Us.Name = "Btn_About_Us"
         Me.Btn_About_Us.Rotation = 0R
-        Me.Btn_About_Us.Size = New System.Drawing.Size(197, 50)
+        Me.Btn_About_Us.Size = New System.Drawing.Size(197, 39)
         Me.Btn_About_Us.TabIndex = 33
         Me.Btn_About_Us.Text = "ចំណូលចំណាយ"
         Me.Btn_About_Us.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -320,16 +347,16 @@ Partial Class Frm_Dashboard
         Me.Btn_Payment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.Btn_Payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Payment.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Payment.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Payment.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Payment.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Btn_Payment.IconChar = FontAwesome.Sharp.IconChar.ChartBar
         Me.Btn_Payment.IconColor = System.Drawing.Color.WhiteSmoke
         Me.Btn_Payment.IconSize = 35
         Me.Btn_Payment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Payment.Location = New System.Drawing.Point(0, 352)
+        Me.Btn_Payment.Location = New System.Drawing.Point(4, 341)
         Me.Btn_Payment.Name = "Btn_Payment"
         Me.Btn_Payment.Rotation = 0R
-        Me.Btn_Payment.Size = New System.Drawing.Size(197, 50)
+        Me.Btn_Payment.Size = New System.Drawing.Size(197, 35)
         Me.Btn_Payment.TabIndex = 31
         Me.Btn_Payment.Text = "របាយការណ៍"
         Me.Btn_Payment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -344,16 +371,16 @@ Partial Class Frm_Dashboard
         Me.Btn_Sales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.Btn_Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Sales.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Sales.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Sales.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Sales.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Btn_Sales.IconChar = FontAwesome.Sharp.IconChar.ProductHunt
         Me.Btn_Sales.IconColor = System.Drawing.Color.WhiteSmoke
         Me.Btn_Sales.IconSize = 35
         Me.Btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Sales.Location = New System.Drawing.Point(0, 240)
+        Me.Btn_Sales.Location = New System.Drawing.Point(3, 254)
         Me.Btn_Sales.Name = "Btn_Sales"
         Me.Btn_Sales.Rotation = 0R
-        Me.Btn_Sales.Size = New System.Drawing.Size(197, 50)
+        Me.Btn_Sales.Size = New System.Drawing.Size(197, 36)
         Me.Btn_Sales.TabIndex = 29
         Me.Btn_Sales.Text = "គ្រប់គ្រងការលក់"
         Me.Btn_Sales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -368,45 +395,45 @@ Partial Class Frm_Dashboard
         Me.Btn_Stock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
         Me.Btn_Stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Stock.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Stock.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Stock.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Stock.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Btn_Stock.IconChar = FontAwesome.Sharp.IconChar.Industry
         Me.Btn_Stock.IconColor = System.Drawing.Color.WhiteSmoke
         Me.Btn_Stock.IconSize = 35
         Me.Btn_Stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Stock.Location = New System.Drawing.Point(0, 184)
+        Me.Btn_Stock.Location = New System.Drawing.Point(3, 205)
         Me.Btn_Stock.Name = "Btn_Stock"
         Me.Btn_Stock.Rotation = 0R
-        Me.Btn_Stock.Size = New System.Drawing.Size(197, 50)
+        Me.Btn_Stock.Size = New System.Drawing.Size(197, 44)
         Me.Btn_Stock.TabIndex = 27
         Me.Btn_Stock.Text = "គ្រប់គ្រងស្ដុក"
         Me.Btn_Stock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Btn_Stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Btn_Stock.UseVisualStyleBackColor = True
         '
-        'Btn_Dashboard
+        'Btn_Product
         '
-        Me.Btn_Dashboard.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Dashboard.FlatAppearance.BorderSize = 0
-        Me.Btn_Dashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Btn_Dashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
-        Me.Btn_Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Dashboard.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Dashboard.Font = New System.Drawing.Font("NiDA Bayon", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Dashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Btn_Dashboard.IconChar = FontAwesome.Sharp.IconChar.Home
-        Me.Btn_Dashboard.IconColor = System.Drawing.Color.WhiteSmoke
-        Me.Btn_Dashboard.IconSize = 35
-        Me.Btn_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Dashboard.Location = New System.Drawing.Point(0, 128)
-        Me.Btn_Dashboard.Name = "Btn_Dashboard"
-        Me.Btn_Dashboard.Rotation = 0R
-        Me.Btn_Dashboard.Size = New System.Drawing.Size(197, 50)
-        Me.Btn_Dashboard.TabIndex = 25
-        Me.Btn_Dashboard.Text = "ទំព័រដើម"
-        Me.Btn_Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Dashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Btn_Dashboard.UseVisualStyleBackColor = True
+        Me.Btn_Product.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Product.FlatAppearance.BorderSize = 0
+        Me.Btn_Product.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Btn_Product.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
+        Me.Btn_Product.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Product.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Product.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Product.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Btn_Product.IconChar = FontAwesome.Sharp.IconChar.Home
+        Me.Btn_Product.IconColor = System.Drawing.Color.WhiteSmoke
+        Me.Btn_Product.IconSize = 35
+        Me.Btn_Product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_Product.Location = New System.Drawing.Point(4, 162)
+        Me.Btn_Product.Name = "Btn_Product"
+        Me.Btn_Product.Rotation = 0R
+        Me.Btn_Product.Size = New System.Drawing.Size(197, 37)
+        Me.Btn_Product.TabIndex = 25
+        Me.Btn_Product.Text = "គ្រប់គ្រងផលិតផល"
+        Me.Btn_Product.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_Product.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Product.UseVisualStyleBackColor = True
         '
         'Btn_Menu
         '
@@ -473,7 +500,7 @@ Partial Class Frm_Dashboard
     Friend WithEvents Btn_Payment As FontAwesome.Sharp.IconButton
     Friend WithEvents Btn_Sales As FontAwesome.Sharp.IconButton
     Friend WithEvents Btn_Stock As FontAwesome.Sharp.IconButton
-    Friend WithEvents Btn_Dashboard As FontAwesome.Sharp.IconButton
+    Friend WithEvents Btn_Product As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Content As Panel
     Friend WithEvents Txt_Login As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
@@ -484,4 +511,5 @@ Partial Class Frm_Dashboard
     Friend WithEvents Label1 As Label
     Friend WithEvents Btn_Setting As FontAwesome.Sharp.IconButton
     Friend WithEvents Label_Login As Label
+    Friend WithEvents Btn_Home As FontAwesome.Sharp.IconButton
 End Class

@@ -94,6 +94,11 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataStore\DataSet_Sale.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Sale.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frms_Category.Designer.vb">
       <DependentUpon>Frms_Category.vb</DependentUpon>
     </Compile>
@@ -104,6 +109,12 @@
       <DependentUpon>Frms_Material.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frms_Material.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Amount.Designer.vb">
+      <DependentUpon>Frm_Amount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Amount.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Frm_Dashboard.Designer.vb">
@@ -142,6 +153,24 @@
     <Compile Include="Forms\Frm_PTCash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Frm_Rate.Designer.vb">
+      <DependentUpon>Frm_Rate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Rate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_RptSale.Designer.vb">
+      <DependentUpon>Frm_RptSale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_RptSale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Rpt_Sale.Designer.vb">
+      <DependentUpon>Frm_Rpt_Sale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Rpt_Sale.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Frm_Sales.Designer.vb">
       <DependentUpon>Frm_Sales.vb</DependentUpon>
     </Compile>
@@ -158,6 +187,24 @@
       <DependentUpon>Frm_Payments.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Payments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Sale_Temp.Designer.vb">
+      <DependentUpon>Frm_Sale_Temp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Sale_Temp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Scale.Designer.vb">
+      <DependentUpon>Frm_Scale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Scale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Homes.Designer.vb">
+      <DependentUpon>Frm_Homes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Homes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\CR_Sales.vb">
@@ -219,6 +266,9 @@
     <EmbeddedResource Include="Forms\Frms_Material.resx">
       <DependentUpon>Frms_Material.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Amount.resx">
+      <DependentUpon>Frm_Amount.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +287,15 @@
     <EmbeddedResource Include="Forms\Frm_PTCash.resx">
       <DependentUpon>Frm_PTCash.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Rate.resx">
+      <DependentUpon>Frm_Rate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_RptSale.resx">
+      <DependentUpon>Frm_RptSale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Rpt_Sale.resx">
+      <DependentUpon>Frm_Rpt_Sale.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Sales.resx">
       <DependentUpon>Frm_Sales.vb</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +304,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Payments.resx">
       <DependentUpon>Frm_Payments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Sale_Temp.resx">
+      <DependentUpon>Frm_Sale_Temp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Scale.resx">
+      <DependentUpon>Frm_Scale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Homes.resx">
+      <DependentUpon>Frm_Homes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -270,6 +338,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataStore\DataSet_Sale.xsc">
+      <DependentUpon>DataSet_Sale.xsd</DependentUpon>
+    </None>
+    <None Include="DataStore\DataSet_Sale.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Sale.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataStore\DataSet_Sale.xss">
+      <DependentUpon>DataSet_Sale.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

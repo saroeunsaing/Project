@@ -1,12 +1,15 @@
 ﻿Imports Domain
-
 Public Class Frm_Home
-    Private sql As New SQLControl
+    Private sql As New sqlcontrol
+    Private Sub Frm_Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        sql.CategoryCht(Chrt_Category, "Select * from cht_category")
+    End Sub
 
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
+    End Sub
 
-    Private Sub Frm_Home_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Panel_Contain_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Contain.Paint
 
-        Dim query As String = "select * from categoryChart "
-        sql.CategoryCht(Cht_Category, query)
     End Sub
 End Class

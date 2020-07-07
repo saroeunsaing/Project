@@ -232,6 +232,11 @@ Public Class Frm_Products
         End If
     End Sub
 
+    Private Sub Cmb_Category_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Category.SelectedIndexChanged
+
+    End Sub
+
+
 
 #End Region
 End Class
