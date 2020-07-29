@@ -26,26 +26,23 @@ Public Class Frm_Sale_Temp
         DVG_Product.DataSource = sql.GetData()
         autoid()
         Lb_User.Text = ActiveUser.fullname
-        Txt_Discount.Text = 0
+        Txt_Discount.Text = CInt(0)
+        Txt_PayDue.Text = CInt(0)
         sql.ReadData(Lb_Rate, "Select * from tbl_Rate")
     End Sub
 
     Private Sub Txt_SubTotal_TextChanged(sender As Object, e As EventArgs) Handles Txt_SubTotal.TextChanged
-        Lb_Riel.Text = Val(Txt_SubTotal.Text) / Val(Lb_Rate.Text)
+        Lb_TotalRiel.Text = Val(Txt_SubTotal.Text) / Val(Lb_Rate.Text)
         Me.Txt_Total.Text = Me.Txt_SubTotal.Text
     End Sub
 
-    Private Sub Txt_Discount_TextChanged(sender As Object, e As EventArgs) Handles Txt_Discount.TextChanged
-
-
-    End Sub
-
     Private Sub Txt_Total_TextChanged(sender As Object, e As EventArgs) Handles Txt_Total.TextChanged
-        Lb_Riels.Text = Val(Txt_Total.Text) / Val(Lb_Rate.Text)
+        Lb_PaymentRiel.Text = Val(Txt_Total.Text) / Val(Lb_Rate.Text)
     End Sub
 
     Private Sub Txt_Payment_TextChanged(sender As Object, e As EventArgs) Handles Txt_Payment.TextChanged
         Txt_PayDue.Text = Val(Txt_Payment.Text) - Val(Txt_Total.Text)
+        Lb_PayDueRiel.Text = Val(Txt_PayDue.Text) / Val(Lb_Rate.Text)
     End Sub
 
     Private Sub Btn_Maximize_Click(sender As Object, e As EventArgs) Handles Btn_Maximize.Click
@@ -75,12 +72,12 @@ Public Class Frm_Sale_Temp
         sql.AddParam("@total", Txt_Total.Text)
         sql.AddParam("@payment", Txt_Payment.Text)
         sql.AddParam("@paydue", Txt_PayDue.Text)
+        sql.AddParam("@rate", Lb_Rate.Text)
 
 
 
-
-        sql.ExecQuery("INSERT INTO tbl_Invoice (invoice_no,subtotal,discount,total,payment,payDue) " &
-                      "VALUES (@invoiceno,@subtotal,@discount,@total,@payment,@paydue);", True)
+        sql.ExecQuery("INSERT INTO tbl_Invoice (invoice_no,subtotal,discount,total,payment,payDue,rate) " &
+                      "VALUES (@invoiceno,@subtotal,@discount,@total,@payment,@paydue,@rate);", True)
 
 
 
@@ -89,8 +86,6 @@ Public Class Frm_Sale_Temp
         For i = 0 To Lst_data.Items.Count - 1
 
             sql.AddParam("@invoiceno", Txt_Invoice.Text)
-
-
 
             sql.AddParam("@productcode", Lst_data.Items(i).SubItems(1).Text)
             sql.AddParam("@qty", Lst_data.Items(i).SubItems(5).Text)
@@ -128,15 +123,21 @@ Public Class Frm_Sale_Temp
 
     End Sub
 
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+        For Each i As ListViewItem In Lst_data.SelectedItems
+            Lst_data.Items.Remove(i)
+        Next
     End Sub
 
-    Private Sub Lb_Rate_Click(sender As Object, e As EventArgs) Handles Lb_Rate.Click
-
+    Private Sub Txt_Search_TextChanged(sender As Object, e As EventArgs) Handles Txt_Search.TextChanged
+        DVG_Product.DataSource = sql.GetDataParam(Txt_Search)
     End Sub
 
-    Private Sub Panel_Content_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Content.Paint
+    Private Sub Btn_Search_Click(sender As Object, e As EventArgs) Handles Btn_Search.Click
+        DVG_Product.DataSource = sql.GetDataParam(Txt_Search)
+    End Sub
+
+    Private Sub Panel_Title_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Title.Paint
 
     End Sub
 End Class

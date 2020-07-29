@@ -30,6 +30,9 @@ Partial Class Frm_Sale_Temp
         Me.Btn_Maximize = New FontAwesome.Sharp.IconButton()
         Me.Btn_Close = New FontAwesome.Sharp.IconButton()
         Me.Panel_Item = New System.Windows.Forms.Panel()
+        Me.Btn_Search = New FontAwesome.Sharp.IconButton()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Txt_Search = New System.Windows.Forms.TextBox()
         Me.Btn_Setting = New FontAwesome.Sharp.IconButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
@@ -38,21 +41,23 @@ Partial Class Frm_Sale_Temp
         Me.DVG_Product = New System.Windows.Forms.DataGridView()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Lb_PayDueRiel = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Txt_PayDue = New System.Windows.Forms.TextBox()
         Me.Txt_Payment = New System.Windows.Forms.TextBox()
         Me.Panel_Content = New System.Windows.Forms.Panel()
+        Me.Lb_Rate = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Lb_Riels = New System.Windows.Forms.Label()
+        Me.Lb_PaymentRiel = New System.Windows.Forms.Label()
         Me.Txt_Discount = New System.Windows.Forms.TextBox()
-        Me.Lb_Riel = New System.Windows.Forms.Label()
+        Me.Lb_TotalRiel = New System.Windows.Forms.Label()
         Me.Txt_Total = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -65,8 +70,6 @@ Partial Class Frm_Sale_Temp
         Me.Price = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.QTY = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Total = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Lb_Rate = New System.Windows.Forms.Label()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Item.SuspendLayout()
         CType(Me.DVG_Product, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,6 +193,9 @@ Partial Class Frm_Sale_Temp
         '
         Me.Panel_Item.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel_Item.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel_Item.Controls.Add(Me.Btn_Search)
+        Me.Panel_Item.Controls.Add(Me.Label16)
+        Me.Panel_Item.Controls.Add(Me.Txt_Search)
         Me.Panel_Item.Controls.Add(Me.Btn_Setting)
         Me.Panel_Item.Controls.Add(Me.Label13)
         Me.Panel_Item.Controls.Add(Me.IconButton2)
@@ -201,6 +207,41 @@ Partial Class Frm_Sale_Temp
         Me.Panel_Item.Name = "Panel_Item"
         Me.Panel_Item.Size = New System.Drawing.Size(461, 551)
         Me.Panel_Item.TabIndex = 29
+        '
+        'Btn_Search
+        '
+        Me.Btn_Search.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_Search.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Search.FlatAppearance.BorderSize = 0
+        Me.Btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Search.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_Search.ForeColor = System.Drawing.Color.Black
+        Me.Btn_Search.IconChar = FontAwesome.Sharp.IconChar.Search
+        Me.Btn_Search.IconColor = System.Drawing.Color.Black
+        Me.Btn_Search.IconSize = 30
+        Me.Btn_Search.Location = New System.Drawing.Point(420, 434)
+        Me.Btn_Search.Name = "Btn_Search"
+        Me.Btn_Search.Rotation = 0R
+        Me.Btn_Search.Size = New System.Drawing.Size(30, 31)
+        Me.Btn_Search.TabIndex = 27
+        Me.Btn_Search.UseVisualStyleBackColor = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Location = New System.Drawing.Point(-1, 437)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(102, 24)
+        Me.Label16.TabIndex = 25
+        Me.Label16.Text = "ស្វែងរកផលិតផល"
+        '
+        'Txt_Search
+        '
+        Me.Txt_Search.Location = New System.Drawing.Point(102, 434)
+        Me.Txt_Search.Name = "Txt_Search"
+        Me.Txt_Search.Size = New System.Drawing.Size(316, 31)
+        Me.Txt_Search.TabIndex = 26
         '
         'Btn_Setting
         '
@@ -226,7 +267,7 @@ Partial Class Frm_Sale_Temp
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Location = New System.Drawing.Point(11, 430)
+        Me.Label13.Location = New System.Drawing.Point(9, 474)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(84, 24)
         Me.Label13.TabIndex = 22
@@ -241,10 +282,10 @@ Partial Class Frm_Sale_Temp
         Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.TrashRestore
         Me.IconButton2.IconColor = System.Drawing.Color.Red
         Me.IconButton2.IconSize = 25
-        Me.IconButton2.Location = New System.Drawing.Point(342, 498)
+        Me.IconButton2.Location = New System.Drawing.Point(342, 508)
         Me.IconButton2.Name = "IconButton2"
         Me.IconButton2.Rotation = 0R
-        Me.IconButton2.Size = New System.Drawing.Size(111, 43)
+        Me.IconButton2.Size = New System.Drawing.Size(111, 33)
         Me.IconButton2.TabIndex = 19
         Me.IconButton2.Text = "សំអាត"
         Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -253,7 +294,7 @@ Partial Class Frm_Sale_Temp
         'Txt_Invoice
         '
         Me.Txt_Invoice.Enabled = False
-        Me.Txt_Invoice.Location = New System.Drawing.Point(102, 427)
+        Me.Txt_Invoice.Location = New System.Drawing.Point(100, 471)
         Me.Txt_Invoice.Name = "Txt_Invoice"
         Me.Txt_Invoice.Size = New System.Drawing.Size(340, 31)
         Me.Txt_Invoice.TabIndex = 23
@@ -267,10 +308,10 @@ Partial Class Frm_Sale_Temp
         Me.Btn_Cash.IconChar = FontAwesome.Sharp.IconChar.CartPlus
         Me.Btn_Cash.IconColor = System.Drawing.Color.Blue
         Me.Btn_Cash.IconSize = 30
-        Me.Btn_Cash.Location = New System.Drawing.Point(204, 498)
+        Me.Btn_Cash.Location = New System.Drawing.Point(204, 508)
         Me.Btn_Cash.Name = "Btn_Cash"
         Me.Btn_Cash.Rotation = 0R
-        Me.Btn_Cash.Size = New System.Drawing.Size(132, 43)
+        Me.Btn_Cash.Size = New System.Drawing.Size(132, 33)
         Me.Btn_Cash.TabIndex = 18
         Me.Btn_Cash.Text = "ទូទាត់វិក័យបត្រ"
         Me.Btn_Cash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -283,16 +324,17 @@ Partial Class Frm_Sale_Temp
         Me.DVG_Product.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DVG_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DVG_Product.Location = New System.Drawing.Point(3, 5)
+        Me.DVG_Product.MultiSelect = False
         Me.DVG_Product.Name = "DVG_Product"
         Me.DVG_Product.RowHeadersVisible = False
         Me.DVG_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DVG_Product.Size = New System.Drawing.Size(450, 411)
+        Me.DVG_Product.Size = New System.Drawing.Size(450, 427)
         Me.DVG_Product.TabIndex = 0
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(233, 451)
+        Me.Label12.Location = New System.Drawing.Point(233, 423)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(35, 24)
         Me.Label12.TabIndex = 13
@@ -301,24 +343,24 @@ Partial Class Frm_Sale_Temp
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(233, 490)
+        Me.Label3.Location = New System.Drawing.Point(233, 462)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 24)
+        Me.Label3.Size = New System.Drawing.Size(36, 24)
         Me.Label3.TabIndex = 21
-        Me.Label3.Text = "USD"
+        Me.Label3.Text = "ដុល្លា"
         '
-        'Label11
+        'Lb_PayDueRiel
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(95, 485)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(0, 24)
-        Me.Label11.TabIndex = 20
+        Me.Lb_PayDueRiel.Location = New System.Drawing.Point(92, 457)
+        Me.Lb_PayDueRiel.Name = "Lb_PayDueRiel"
+        Me.Lb_PayDueRiel.Size = New System.Drawing.Size(135, 24)
+        Me.Lb_PayDueRiel.TabIndex = 20
+        Me.Lb_PayDueRiel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(7, 451)
+        Me.Label10.Location = New System.Drawing.Point(7, 423)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(58, 24)
         Me.Label10.TabIndex = 15
@@ -335,7 +377,7 @@ Partial Class Frm_Sale_Temp
         '
         'Txt_PayDue
         '
-        Me.Txt_PayDue.Location = New System.Drawing.Point(92, 448)
+        Me.Txt_PayDue.Location = New System.Drawing.Point(92, 420)
         Me.Txt_PayDue.Name = "Txt_PayDue"
         Me.Txt_PayDue.ReadOnly = True
         Me.Txt_PayDue.Size = New System.Drawing.Size(135, 31)
@@ -361,15 +403,15 @@ Partial Class Frm_Sale_Temp
         Me.Panel_Content.Controls.Add(Me.Label3)
         Me.Panel_Content.Controls.Add(Me.Txt_Payment)
         Me.Panel_Content.Controls.Add(Me.Label7)
-        Me.Panel_Content.Controls.Add(Me.Label11)
+        Me.Panel_Content.Controls.Add(Me.Lb_PayDueRiel)
         Me.Panel_Content.Controls.Add(Me.Label6)
         Me.Panel_Content.Controls.Add(Me.Label4)
         Me.Panel_Content.Controls.Add(Me.Label5)
         Me.Panel_Content.Controls.Add(Me.Label10)
-        Me.Panel_Content.Controls.Add(Me.Lb_Riels)
+        Me.Panel_Content.Controls.Add(Me.Lb_PaymentRiel)
         Me.Panel_Content.Controls.Add(Me.Txt_Discount)
         Me.Panel_Content.Controls.Add(Me.Txt_PayDue)
-        Me.Panel_Content.Controls.Add(Me.Lb_Riel)
+        Me.Panel_Content.Controls.Add(Me.Lb_TotalRiel)
         Me.Panel_Content.Controls.Add(Me.Txt_Total)
         Me.Panel_Content.Controls.Add(Me.Label2)
         Me.Panel_Content.Controls.Add(Me.Label1)
@@ -381,10 +423,27 @@ Partial Class Frm_Sale_Temp
         Me.Panel_Content.Size = New System.Drawing.Size(602, 551)
         Me.Panel_Content.TabIndex = 30
         '
+        'Lb_Rate
+        '
+        Me.Lb_Rate.AutoSize = True
+        Me.Lb_Rate.Location = New System.Drawing.Point(135, 510)
+        Me.Lb_Rate.Name = "Lb_Rate"
+        Me.Lb_Rate.Size = New System.Drawing.Size(0, 24)
+        Me.Lb_Rate.TabIndex = 24
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(7, 510)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(130, 24)
+        Me.Label15.TabIndex = 23
+        Me.Label15.Text = "អត្រាប្ដូរប្រាក់ 1 USD = "
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(448, 513)
+        Me.Label14.Location = New System.Drawing.Point(554, 516)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(22, 24)
         Me.Label14.TabIndex = 22
@@ -429,35 +488,36 @@ Partial Class Frm_Sale_Temp
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(554, 483)
+        Me.Label5.Location = New System.Drawing.Point(552, 478)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 24)
+        Me.Label5.Size = New System.Drawing.Size(36, 24)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "USD"
+        Me.Label5.Text = "ដុល្លា"
         '
-        'Lb_Riels
+        'Lb_PaymentRiel
         '
-        Me.Lb_Riels.AutoSize = True
-        Me.Lb_Riels.Location = New System.Drawing.Point(363, 483)
-        Me.Lb_Riels.Name = "Lb_Riels"
-        Me.Lb_Riels.Size = New System.Drawing.Size(0, 24)
-        Me.Lb_Riels.TabIndex = 7
+        Me.Lb_PaymentRiel.AutoEllipsis = True
+        Me.Lb_PaymentRiel.Location = New System.Drawing.Point(363, 480)
+        Me.Lb_PaymentRiel.Name = "Lb_PaymentRiel"
+        Me.Lb_PaymentRiel.Size = New System.Drawing.Size(184, 27)
+        Me.Lb_PaymentRiel.TabIndex = 7
+        Me.Lb_PaymentRiel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Txt_Discount
         '
         Me.Txt_Discount.Location = New System.Drawing.Point(358, 510)
         Me.Txt_Discount.Name = "Txt_Discount"
-        Me.Txt_Discount.Size = New System.Drawing.Size(84, 31)
+        Me.Txt_Discount.Size = New System.Drawing.Size(189, 31)
         Me.Txt_Discount.TabIndex = 6
-        Me.Txt_Discount.Text = "0"
         '
-        'Lb_Riel
+        'Lb_TotalRiel
         '
-        Me.Lb_Riel.AutoSize = True
-        Me.Lb_Riel.Location = New System.Drawing.Point(366, 417)
-        Me.Lb_Riel.Name = "Lb_Riel"
-        Me.Lb_Riel.Size = New System.Drawing.Size(0, 24)
-        Me.Lb_Riel.TabIndex = 5
+        Me.Lb_TotalRiel.AutoEllipsis = True
+        Me.Lb_TotalRiel.Location = New System.Drawing.Point(359, 417)
+        Me.Lb_TotalRiel.Name = "Lb_TotalRiel"
+        Me.Lb_TotalRiel.Size = New System.Drawing.Size(188, 24)
+        Me.Lb_TotalRiel.TabIndex = 5
+        Me.Lb_TotalRiel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Txt_Total
         '
@@ -481,9 +541,9 @@ Partial Class Frm_Sale_Temp
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(554, 417)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 24)
+        Me.Label1.Size = New System.Drawing.Size(36, 24)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "USD"
+        Me.Label1.Text = "ដុល្លា"
         '
         'Txt_SubTotal
         '
@@ -541,23 +601,6 @@ Partial Class Frm_Sale_Temp
         Me.Total.Text = "សរុប"
         Me.Total.Width = 88
         '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(7, 513)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(130, 24)
-        Me.Label15.TabIndex = 23
-        Me.Label15.Text = "អត្រាប្ដូរប្រាក់ 1 USD = "
-        '
-        'Lb_Rate
-        '
-        Me.Lb_Rate.AutoSize = True
-        Me.Lb_Rate.Location = New System.Drawing.Point(135, 510)
-        Me.Lb_Rate.Name = "Lb_Rate"
-        Me.Lb_Rate.Size = New System.Drawing.Size(0, 24)
-        Me.Lb_Rate.TabIndex = 24
-        '
         'Frm_Sale_Temp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 24.0!)
@@ -601,7 +644,7 @@ Partial Class Frm_Sale_Temp
     Friend WithEvents QTY As ColumnHeader
     Friend WithEvents Total As ColumnHeader
     Friend WithEvents Txt_SubTotal As TextBox
-    Friend WithEvents Lb_Riel As Label
+    Friend WithEvents Lb_TotalRiel As Label
     Friend WithEvents Txt_Total As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -616,11 +659,11 @@ Partial Class Frm_Sale_Temp
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Lb_Riels As Label
+    Friend WithEvents Lb_PaymentRiel As Label
     Friend WithEvents Txt_Discount As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label11 As Label
+    Friend WithEvents Lb_PayDueRiel As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Txt_Invoice As TextBox
     Friend WithEvents Label14 As Label
@@ -629,4 +672,7 @@ Partial Class Frm_Sale_Temp
     Friend WithEvents Btn_Setting As FontAwesome.Sharp.IconButton
     Friend WithEvents Lb_Rate As Label
     Friend WithEvents Label15 As Label
+    Friend WithEvents Btn_Search As FontAwesome.Sharp.IconButton
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Txt_Search As TextBox
 End Class

@@ -9,7 +9,7 @@ Public Class Frm_Rate
         If Sql.HasException(True) Then Exit Sub
 
         MsgBox("ទិន្នន័យកែប្រែបានជោគជ័យ")
-
+        sql.ReadData(Frm_Sale_Temp.Lb_Rate, "Select * from tbl_Rate")
     End Sub
 
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click

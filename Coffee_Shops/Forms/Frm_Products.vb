@@ -43,6 +43,10 @@ Public Class Frm_Products
 
         autoid()
         headdvg()
+
+        Txt_Discount.Text = CInt(0)
+        Txt_Price.Text = CInt(0)
+        Txt_priceSale.Text = CInt(0)
     End Sub
 
     Sub headdvg()
@@ -54,10 +58,9 @@ Public Class Frm_Products
         DGV_Data.Columns(5).HeaderText = "បញ្ចុះតម្លៃ"
         DGV_Data.Columns(6).HeaderText = "តម្លៃលក់"
         DGV_Data.Columns(7).HeaderText = "ពិពណ៌នា"
-        DGV_Data.Columns(9).HeaderText = "ប្រភេទ"
-        DGV_Data.Columns(10).HeaderText = "ប្រភព"
-
-        DGV_Data.Columns(8).HeaderText = "រូបភាព"
+        DGV_Data.Columns(9).HeaderText = "ប្រភព"
+        DGV_Data.Columns(10).HeaderText = "ប្រភេទ"
+        DGV_Data.ColumnHeadersDefaultCellStyle.Font = New Font("Khmer OS Siemreap", 9.75F, FontStyle.Bold)
     End Sub
     Sub autoid()
         ''  Txt_ID.Text = SQL.getMaxID("tbl_product", "product_id", "Cat-0000001", 5, 7)
@@ -76,12 +79,20 @@ Public Class Frm_Products
         SQL.AddParam("@total", Txt_total.Text)
         SQL.AddParam("@desc", Txt_Description.Text)
 
-        SQL.AddParam("@img", "img/logo.png")
+        Dim fname As String = Txt_NameEN.Text & ".jpg"
+        Dim folder As String = "D:\Files\Product"
+
+
+        SQL.AddParam("@img", fname)
         SQL.AddParam("@category", Cmb_Category.SelectedValue)
         SQL.AddParam("@material", Cmb_Material.SelectedValue)
 
         SQL.ExecQuery("INSERT INTO tbl_Product (product_id,nameKH,nameEN,price,salePrice,discount,total,description,image,material_id,category_id) " &
                       "VALUES (@id,@nameKH,@nameEN,@price,@salePrice,@discount,@total,@desc,@img,@material,@category);", True)
+
+        Dim pathstring As String = System.IO.Path.Combine(folder, fname)
+        Dim a As Image = Pic_Image.Image
+        a.Save(pathstring)
 
         ' REPORT & ABORT ON ERRORS
         If SQL.HasException(True) Then Exit Sub
@@ -116,6 +127,9 @@ Public Class Frm_Products
 #Region "Update"
     Private Sub Update()
 
+        ' ADD SQL PARAMS & RUN THE COMMAND
+
+        SQL.AddParam("@id", Txt_ID.Text)
         SQL.AddParam("@nameEN", Txt_NameEN.Text)
         SQL.AddParam("@nameKH", Txt_NameKH.Text)
         SQL.AddParam("@price", Txt_Price.Text)
@@ -123,19 +137,30 @@ Public Class Frm_Products
         SQL.AddParam("@discount", Txt_Discount.Text)
         SQL.AddParam("@total", Txt_total.Text)
         SQL.AddParam("@desc", Txt_Description.Text)
+
+        Dim fname As String = Txt_NameEN.Text & ".jpg"
+        Dim folder As String = "D:\Files\Product"
+
+
+        SQL.AddParam("@img", fname)
         SQL.AddParam("@category", Cmb_Category.SelectedValue)
         SQL.AddParam("@material", Cmb_Material.SelectedValue)
-        SQL.AddParam("@id", Txt_ID.Text)
 
-        SQL.ExecQuery("Update tbl_Product" &
-                      "SET nameKH = @nameKH,nameEN = @nameEN,price = @price,salePrice = @salePrice,discount = @discount,total = @total,description = @desc,material_id = @material,category_id = @category" &
-                      "WHERE product_id=@id;")
+        SQL.ExecQuery("Update tbl_Product​​​ SET nameKH = @nameKH,nameEN = @nameEN,price = @price,salePrice = @salePrice,discount = @discount,total = @total,description = @desc,material_id = @material,category_id = @category, image = @img WHERE product_id=@id")
 
+        Dim pathstring As String = System.IO.Path.Combine(folder, fname)
+        Dim a As Image = Pic_Image.Image
+        a.Save(pathstring)
+
+        ' REPORT & ABORT ON ERRORS
         If SQL.HasException(True) Then Exit Sub
 
-        MsgBox("ទិន្នន័យកែប្រែបានជោគជ័យ.")
+        'If SQL.dt.Rows.Count > 0 Then
+        '    Dim r As DataRow = SQL.dt.Rows(0)
+        '    MsgBox(r("LastID").ToString)
+        'End If
+        MsgBox("ផលិតផលកែប្រែបានជោគជ័យ", MessageBoxIcon.Information, "ផលិតផល")
         LoadGrid()
-        autoid()
     End Sub
 
     Private Sub Btn_Delete_Click(sender As Object, e As EventArgs) Handles Btn_Delete.Click
@@ -173,7 +198,7 @@ Public Class Frm_Products
 #Region "Retreive Data in Form"
     Public Sub LoadGrid(Optional Query As String = "")
         If Query = "" Then
-            SQL.ExecQuery("SELECT * FROM tbl_Product where material_id ='M-0002' ")
+            SQL.ExecQuery("SELECT * FROM Product ")
         Else
             SQL.ExecQuery(Query)
         End If
@@ -227,14 +252,20 @@ Public Class Frm_Products
             Me.Txt_Discount.Text = row.Cells("discount").Value.ToString
             Me.Txt_total.Text = row.Cells("total").Value.ToString
             Me.Txt_Description.Text = row.Cells("description").Value.ToString
-            Me.Cmb_Category.Text = row.Cells("category_id").Value.ToString
-            Me.Cmb_Material.Text = row.Cells("material_id").Value.ToString
+            Me.Cmb_Category.Text = row.Cells("category").Value.ToString
+            Me.Cmb_Material.Text = row.Cells("material").Value.ToString
         End If
+        SQL.ProductImg(Pic_Image, "Select image from tbl_product ")
     End Sub
 
-    Private Sub Cmb_Category_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Category.SelectedIndexChanged
-
+    Private Sub Btn_Brows_Click(sender As Object, e As EventArgs) Handles Btn_Brows.Click
+        SQL.browsImg(Pic_Image)
     End Sub
+
+    Private Sub Btn_Remove_Click(sender As Object, e As EventArgs) Handles Btn_Remove.Click
+        Pic_Image.Image = Nothing
+    End Sub
+
 
 
 

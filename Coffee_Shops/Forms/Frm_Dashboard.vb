@@ -85,10 +85,6 @@ Public Class Frm_Dashboard
         End If
     End Sub
 
-    Private Sub Btn_Dashboard_Click_1(sender As Object, e As EventArgs) Handles Btn_Product.Click
-        '
-        AbrirFormEnPanel(New Frm_Products)
-    End Sub
     'marquee text random
     Private Sub Tm_Marquee_Tick(sender As Object, e As EventArgs) Handles Tm_Marquee.Tick
         'Tm_Marquee.Interval = 500
@@ -97,7 +93,9 @@ Public Class Frm_Dashboard
         '    Label1.Left = Me.Width
         'End If
 
+
         Label1.Text = MaqueeText(Label1.Text)
+
 
     End Sub
 
@@ -108,8 +106,8 @@ Public Class Frm_Dashboard
         loadUser()
 
         SQLControl.labelS(Label_ShopName, "select * from tbl_shop")
-
-
+        SQLControl.Image(Pic_Logo, "Select Logo from tbl_Shop")
+        security()
 
     End Sub
     'load user name put on label
@@ -129,11 +127,21 @@ Public Class Frm_Dashboard
     Private Sub managePermissions()
         If ActiveUser.position = Positions.receptionist Then
             Btn_Product.Enabled = False
+            Btn_Payment_OutStanding.Enabled = False
+            Btn_Stock.Enabled = False
+            Btn_Product.Enabled = False
+            Btn_Setting.Enabled = False
+
 
         End If
         If ActiveUser.position = Positions.accounting Then
-            Btn_About_Us.Enabled = False
+            Btn_Product.Enabled = False
+            Btn_Payment_OutStanding.Enabled = False
+            Btn_Stock.Enabled = False
+            Btn_Product.Enabled = False
+            Btn_Setting.Enabled = False
         End If
+
 
     End Sub
     Private Function MaqueeText(ByVal data As String)
@@ -141,7 +149,7 @@ Public Class Frm_Dashboard
         Dim s2 As String = data(0)
         Return s1 & s2
     End Function
-    Private Sub Txt_Login_Click(sender As Object, e As EventArgs) Handles Txt_Login.Click
+    Private Sub Txt_Login_Click(sender As Object, e As EventArgs) Handles Btn_Logout.Click
 
         If MessageBox.Show("តើអ្នកចង់ចាកចេញពី កម្មវិធី ឬ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Application.Exit()
@@ -163,11 +171,15 @@ Public Class Frm_Dashboard
     End Sub
 
 
-    Private Sub Btn_About_Us_Click(sender As Object, e As EventArgs) Handles Btn_About_Us.Click
+    Private Sub Btn_About_Us_Click(sender As Object, e As EventArgs) Handles Btn_Payment_OutStanding.Click
 
     End Sub
 
     Private Sub Btn_Home_Click(sender As Object, e As EventArgs) Handles Btn_Home.Click
         AbrirFormEnPanel(New Frm_Homes)
+    End Sub
+
+    Private Sub Btn_Product_Click(sender As Object, e As EventArgs) Handles Btn_Product.Click
+        AbrirFormEnPanel(New Frm_Products)
     End Sub
 End Class

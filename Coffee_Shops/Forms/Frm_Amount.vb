@@ -46,11 +46,13 @@
             '    Text_Amount.Focus()
             '    Exit Sub
             'End If
+
             If Text_Amount.Text = Nothing Then
                 MsgBox("Please insert Amount!")
                 Text_Amount.Text = ""
                 Text_Amount.Focus()
                 Exit Sub
+
             Else
 
                 lst.SubItems.Add(Frm_Sale_Temp.DVG_Product.SelectedCells(0).Value.ToString)
@@ -75,4 +77,10 @@
             Text_Amount.Focus()
         End Try
     End Sub
+
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
+    End Sub
+
+
 End Class

@@ -5,6 +5,7 @@ Imports System.Runtime.InteropServices
 Imports System.Windows.Forms
 Imports System.Collections
 Imports System.Drawing
+Imports System.IO
 
 Public Class SQLControl
     Inherits ConnectToSQL
@@ -235,13 +236,13 @@ Public Class SQLControl
             For i As Integer = 1 To 1
                 While dr.Read
                     If intLeft >= obj.Width - intWidth Then 'out of right from form width 
-                    'new line
-                    intLeft = 0
-                    intTop += 110
+                        'new line
+                        intLeft = 0
+                        intTop += 110
 
-                End If
-                Dim btn As New Button
-                btn.Text = dr(1) & vbNewLine & dr(2) ' & i.ToString
+                    End If
+                    Dim btn As New Button
+                    btn.Text = dr(1) & vbNewLine & dr(2) ' & i.ToString
                     btn.Font = New Font("Khmer OS Siemreap", 8)
                     btn.ForeColor = Color.Black
                     btn.TextAlign = ContentAlignment.BottomCenter
@@ -254,7 +255,7 @@ Public Class SQLControl
 
 
                     'btn.Image = dr(8)
-                    btn.Image = Image.FromFile(dr(8)).GetThumbnailImage(40, 60, Nothing, IntPtr.Zero)
+                    btn.Image = System.Drawing.Image.FromFile(dr(8)).GetThumbnailImage(40, 60, Nothing, IntPtr.Zero)
 
                     ' Align the image and text on the button.  
 
@@ -262,15 +263,15 @@ Public Class SQLControl
 
                     btn.TextImageRelation = TextImageRelation.ImageAboveText
 
-                btn.Left = intLeft
-                btn.Top = intTop
-                btn.Width = intWidth
-                btn.Height = intHeight
+                    btn.Left = intLeft
+                    btn.Top = intTop
+                    btn.Width = intWidth
+                    btn.Height = intHeight
 
-                btn.Visible = True
+                    btn.Visible = True
 
-                'add event for button here
-                AddHandler btn.Click, AddressOf OnButton_Click
+                    'add event for button here
+                    AddHandler btn.Click, AddressOf OnButton_Click
                     AddHandler btn.MouseHover, AddressOf OnButton_MouseHover
                     AddHandler btn.MouseLeave, AddressOf OnButton_MouseLeave
 
@@ -435,7 +436,7 @@ Public Class SQLControl
         Using cn = GetConnection()
             cn.Open()
 
-            Dim SelectQry = "SELECT product_id as [កូដ],namekh​as [ផលិតផល],nameen as [ឡាតាំង],total as [សរុប] from tbl_product "
+            Dim SelectQry = "SELECT product_id as [កូដ],namekh​as [ផលិតផល],nameen as [ឡាតាំង],total as [តម្លៃ] from tbl_product "
             Dim SampleSource As New DataSet
             Dim TableView As DataView
             Try
@@ -453,7 +454,28 @@ Public Class SQLControl
             Return TableView
         End Using
     End Function
+    Public Function GetDataParam(param1 As TextBox) As DataView
+        Using cn = GetConnection()
+            cn.Open()
 
+            Dim SelectQry = "SELECT product_id as [កូដ],namekh ​as [ផលិតផល],nameen as [ឡាតាំង],total as [តម្លៃ] from tbl_product where namekh like N'" & param1.Text & "' or nameen like '" & param1.Text & "' or product_id like N'" & param1.Text & "'"
+            Dim SampleSource As New DataSet
+            Dim TableView As DataView
+            Try
+                Dim SampleCommand As New SqlCommand()
+                Dim SampleDataAdapter = New SqlDataAdapter()
+                SampleCommand.CommandText = SelectQry
+                SampleCommand.Connection = cn
+                SampleDataAdapter.SelectCommand = SampleCommand
+                SampleDataAdapter.Fill(SampleSource)
+                TableView = SampleSource.Tables(0).DefaultView
+            Catch ex As Exception
+                Throw ex
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+            Return TableView
+        End Using
+    End Function
 #Region "Crystal Report"
     Sub Crst_Rpt(rpt As Object, ds As DataSet, qty As String, report As Object, table As String)
         Dim cmd As New SqlCommand
@@ -477,6 +499,79 @@ Public Class SQLControl
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+    End Sub
+#End Region
+#Region "Image"
+    Public Sub Image(pic As Object, qty As String)
+
+        Using cn = GetConnection()
+
+            cn.Open()
+            cmd = New SqlCommand(qty, cn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                Dim fname As String = dr(0)
+                Dim pathstring As String = System.IO.Path.Combine(fname)
+                pic.image = System.Drawing.Image.FromStream(New System.IO.MemoryStream(File.ReadAllBytes(pathstring)))
+
+
+
+
+            End While
+            dr.Close()
+            cn.Close()
+        End Using
+
+    End Sub
+    Public Sub ProductImg(pic As Object, qty As String)
+        Dim folder As String = "D:\Files\Product"
+        Using cn = GetConnection()
+            cn.Open()
+            Using cmd As SqlCommand = New SqlCommand(qty, cn)
+
+                Dim fname As String = cmd.ExecuteScalar()
+                Dim pathString As String = System.IO.Path.Combine(folder, fname)
+                pic.image = System.Drawing.Image.FromFile(pathString)
+
+            End Using
+            cn.Close()
+        End Using
+    End Sub
+
+    Public Sub browsImg(pic As Object)
+
+
+        Dim op As OpenFileDialog = New OpenFileDialog
+
+        If op.ShowDialog = DialogResult.OK Then
+
+            pic.image = System.Drawing.Image.FromFile(op.FileName)
+        End If
+    End Sub
+#End Region
+
+#Region "Shop Name"
+    Sub Shop(p2 As Object, p3 As Object, p4 As Object, p5 As Object, p6 As Object, pic As Object, table As String)
+        Using cn = GetConnection()
+
+            cn.Open()
+            cmd = New SqlCommand(table, cn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                Dim fname As String = dr(6)
+                Dim pathstring As String = System.IO.Path.Combine(fname)
+                pic.image = System.Drawing.Image.FromStream(New System.IO.MemoryStream(File.ReadAllBytes(pathstring)))
+
+
+
+                p2.Text = dr(1)
+                p3.Text = dr(2)
+                p4.Text = dr(3)
+                p5.Text = dr(4)
+                p6.Text = dr(5)
+
+            End While
+        End Using
     End Sub
 #End Region
 End Class
