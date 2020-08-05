@@ -201,12 +201,6 @@
     <Compile Include="Forms\Frm_Scale.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Homes.Designer.vb">
-      <DependentUpon>Frm_Homes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_Homes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Reports\CR_Sales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -310,9 +304,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Scale.resx">
       <DependentUpon>Frm_Scale.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Homes.resx">
-      <DependentUpon>Frm_Homes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

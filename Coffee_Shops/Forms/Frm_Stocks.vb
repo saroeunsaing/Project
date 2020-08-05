@@ -5,7 +5,7 @@ Public Class Frm_Stocks
 #Region "Retreive Data in Form"
     Public Sub LoadGrid(Optional Query As String = "")
         If Query = "" Then
-            sql.ExecQuery("SELECT product_id as [កូដផលិតផល],namekh as [ផលិតផល],nameen as [ជាឡាតាំង],amount [ចំនួន],total as [សរុបទឹកប្រាក់]  FROM rpt_stock ")
+            sql.ExecQuery("SELECT product_id as [កូដផលិតផល],namekh as [ផលិតផល],nameen as [ជាឡាតាំង],amount [ចំនួន],total as [សរុបទឹកប្រាក់]  FROM stock ")
         Else
             sql.ExecQuery(Query)
         End If
@@ -18,7 +18,7 @@ Public Class Frm_Stocks
     End Sub
     Public Sub cmbSearch(Optional Query As String = "")
         If Query = "" Then
-            sql.ExecQuery("SELECT * FROM rpt_stock where namekh = N'" & Cmb_ProductName.Text & "' ")
+            sql.ExecQuery("SELECT * FROM stock where namekh = N'" & Cmb_ProductName.Text & "' ")
         Else
             sql.ExecQuery(Query)
         End If
@@ -113,19 +113,6 @@ Public Class Frm_Stocks
             Txt_Total.Text = CDbl(Txt_Purchase.Text) * CDbl(Txt_Amount.Text)
         End If
     End Sub
-
-    Private Sub DGV_Data_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Data.CellContentClick
-
-    End Sub
-
-    Private Sub Cmb_Scale_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Scale.SelectedIndexChanged
-        If Cmb_Scale.Text = "បន្ថែមថ្មី" Then
-            Frm_Scale.ShowDialog()
-        End If
-    End Sub
-
-
-
 
 #End Region
 End Class

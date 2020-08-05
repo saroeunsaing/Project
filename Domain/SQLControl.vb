@@ -177,6 +177,7 @@ Public Class SQLControl
             'User will see DisplayMember in the Combobox
         End Using
     End Sub
+#Region "Chart"
     'danuag char in home
     Sub CategoryCht(chrt As Object, ChrtView As String)
         Dim itm1 As New ArrayList
@@ -216,6 +217,18 @@ Public Class SQLControl
         End Using
         cn.Close()
     End Sub
+    Function ChrtData(qty As String) As DataTable
+        Dim dtData As New DataTable
+        Using cn = GetConnection()
+            Using cmd As New SqlCommand(qty, cn)
+                cn.Open()
+                dr = cmd.ExecuteReader
+                dtData.Load(dr)
+            End Using
+        End Using
+        Return dtData
+    End Function
+#End Region
     'create generate button 
     Public Sub LoadButton(obj As Object, query As String)
         'varible save location of each button
@@ -531,7 +544,8 @@ Public Class SQLControl
 
                 Dim fname As String = cmd.ExecuteScalar()
                 Dim pathString As String = System.IO.Path.Combine(folder, fname)
-                pic.image = System.Drawing.Image.FromFile(pathString)
+                ' pic.image = System.Drawing.Image.FromFile(pathString)
+                pic.image = System.Drawing.Image.FromStream(New System.IO.MemoryStream(File.ReadAllBytes(pathString)))
 
             End Using
             cn.Close()

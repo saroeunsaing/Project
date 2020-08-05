@@ -5,11 +5,15 @@ Public Class Frm_Home
         sql.CategoryCht(Chrt_Category, "Select * from cht_category")
     End Sub
 
-    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub Panel_Contain_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Contain.Paint
+    Private Sub Panel_Contain_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub Panel_Stock_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Stock.Paint
 
     End Sub
 End Class

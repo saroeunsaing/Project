@@ -176,7 +176,7 @@ Public Class Frm_Dashboard
     End Sub
 
     Private Sub Btn_Home_Click(sender As Object, e As EventArgs) Handles Btn_Home.Click
-        AbrirFormEnPanel(New Frm_Homes)
+        AbrirFormEnPanel(New Frm_Home)
     End Sub
 
     Private Sub Btn_Product_Click(sender As Object, e As EventArgs) Handles Btn_Product.Click
