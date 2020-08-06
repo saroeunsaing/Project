@@ -84,7 +84,7 @@ Partial Class Frm_Products
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(32, 335)
+        Me.Label4.Location = New System.Drawing.Point(32, 318)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 29)
         Me.Label4.TabIndex = 14
@@ -102,7 +102,7 @@ Partial Class Frm_Products
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 97)
+        Me.Label2.Location = New System.Drawing.Point(30, 101)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(116, 29)
         Me.Label2.TabIndex = 12
@@ -119,7 +119,7 @@ Partial Class Frm_Products
         '
         'Txt_Price
         '
-        Me.Txt_Price.Location = New System.Drawing.Point(147, 137)
+        Me.Txt_Price.Location = New System.Drawing.Point(147, 143)
         Me.Txt_Price.Name = "Txt_Price"
         Me.Txt_Price.Size = New System.Drawing.Size(202, 37)
         Me.Txt_Price.TabIndex = 3
@@ -133,7 +133,7 @@ Partial Class Frm_Products
         '
         'Txt_NameKH
         '
-        Me.Txt_NameKH.Location = New System.Drawing.Point(147, 94)
+        Me.Txt_NameKH.Location = New System.Drawing.Point(147, 98)
         Me.Txt_NameKH.Name = "Txt_NameKH"
         Me.Txt_NameKH.Size = New System.Drawing.Size(549, 37)
         Me.Txt_NameKH.TabIndex = 1
@@ -227,7 +227,7 @@ Partial Class Frm_Products
         '
         'Pic_Image
         '
-        Me.Pic_Image.Location = New System.Drawing.Point(720, 59)
+        Me.Pic_Image.Location = New System.Drawing.Point(724, 59)
         Me.Pic_Image.Name = "Pic_Image"
         Me.Pic_Image.Size = New System.Drawing.Size(150, 150)
         Me.Pic_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -236,6 +236,7 @@ Partial Class Frm_Products
         '
         'DGV_Data
         '
+        Me.DGV_Data.AllowUserToAddRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 8.0!)
         Me.DGV_Data.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -244,7 +245,7 @@ Partial Class Frm_Products
         Me.DGV_Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.NullValue = Nothing
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -255,7 +256,7 @@ Partial Class Frm_Products
         Me.DGV_Data.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Linen
@@ -266,7 +267,7 @@ Partial Class Frm_Products
         Me.DGV_Data.Name = "DGV_Data"
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 10.0!)
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Linen
@@ -298,7 +299,7 @@ Partial Class Frm_Products
         '
         'Txt_priceSale
         '
-        Me.Txt_priceSale.Location = New System.Drawing.Point(449, 137)
+        Me.Txt_priceSale.Location = New System.Drawing.Point(449, 143)
         Me.Txt_priceSale.Name = "Txt_priceSale"
         Me.Txt_priceSale.Size = New System.Drawing.Size(246, 37)
         Me.Txt_priceSale.TabIndex = 4
@@ -306,7 +307,7 @@ Partial Class Frm_Products
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(32, 253)
+        Me.Label11.Location = New System.Drawing.Point(32, 236)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(72, 29)
         Me.Label11.TabIndex = 35
@@ -314,7 +315,7 @@ Partial Class Frm_Products
         '
         'Txt_Description
         '
-        Me.Txt_Description.Location = New System.Drawing.Point(147, 250)
+        Me.Txt_Description.Location = New System.Drawing.Point(147, 233)
         Me.Txt_Description.Name = "Txt_Description"
         Me.Txt_Description.Size = New System.Drawing.Size(549, 76)
         Me.Txt_Description.TabIndex = 6
@@ -332,7 +333,7 @@ Partial Class Frm_Products
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(369, 145)
+        Me.Label9.Location = New System.Drawing.Point(369, 151)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(67, 29)
         Me.Label9.TabIndex = 31
@@ -348,7 +349,7 @@ Partial Class Frm_Products
         Me.Btn_AddMatrial.IconChar = FontAwesome.Sharp.IconChar.PlusCircle
         Me.Btn_AddMatrial.IconColor = System.Drawing.Color.Blue
         Me.Btn_AddMatrial.IconSize = 20
-        Me.Btn_AddMatrial.Location = New System.Drawing.Point(662, 331)
+        Me.Btn_AddMatrial.Location = New System.Drawing.Point(662, 314)
         Me.Btn_AddMatrial.Name = "Btn_AddMatrial"
         Me.Btn_AddMatrial.Rotation = 0R
         Me.Btn_AddMatrial.Size = New System.Drawing.Size(30, 30)
@@ -366,7 +367,7 @@ Partial Class Frm_Products
         Me.Btn_AddCategory.IconChar = FontAwesome.Sharp.IconChar.PlusCircle
         Me.Btn_AddCategory.IconColor = System.Drawing.Color.Blue
         Me.Btn_AddCategory.IconSize = 20
-        Me.Btn_AddCategory.Location = New System.Drawing.Point(314, 336)
+        Me.Btn_AddCategory.Location = New System.Drawing.Point(314, 319)
         Me.Btn_AddCategory.Name = "Btn_AddCategory"
         Me.Btn_AddCategory.Rotation = 0R
         Me.Btn_AddCategory.Size = New System.Drawing.Size(30, 30)
@@ -387,7 +388,7 @@ Partial Class Frm_Products
         '
         Me.Cmb_Material.FormattingEnabled = True
         Me.Cmb_Material.Items.AddRange(New Object() {"RM", "FG", "Other"})
-        Me.Cmb_Material.Location = New System.Drawing.Point(464, 329)
+        Me.Cmb_Material.Location = New System.Drawing.Point(464, 312)
         Me.Cmb_Material.Name = "Cmb_Material"
         Me.Cmb_Material.Size = New System.Drawing.Size(196, 37)
         Me.Cmb_Material.TabIndex = 8
@@ -395,7 +396,7 @@ Partial Class Frm_Products
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(369, 332)
+        Me.Label7.Location = New System.Drawing.Point(369, 315)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(89, 29)
         Me.Label7.TabIndex = 22
@@ -404,7 +405,7 @@ Partial Class Frm_Products
         'Cmb_Category
         '
         Me.Cmb_Category.FormattingEnabled = True
-        Me.Cmb_Category.Location = New System.Drawing.Point(147, 332)
+        Me.Cmb_Category.Location = New System.Drawing.Point(147, 315)
         Me.Cmb_Category.Name = "Cmb_Category"
         Me.Cmb_Category.Size = New System.Drawing.Size(164, 37)
         Me.Cmb_Category.TabIndex = 7
@@ -412,7 +413,7 @@ Partial Class Frm_Products
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(30, 145)
+        Me.Label6.Location = New System.Drawing.Point(30, 151)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(67, 29)
         Me.Label6.TabIndex = 20
@@ -428,7 +429,7 @@ Partial Class Frm_Products
         Me.Btn_Delete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt
         Me.Btn_Delete.IconColor = System.Drawing.Color.Red
         Me.Btn_Delete.IconSize = 20
-        Me.Btn_Delete.Location = New System.Drawing.Point(812, 331)
+        Me.Btn_Delete.Location = New System.Drawing.Point(822, 324)
         Me.Btn_Delete.Name = "Btn_Delete"
         Me.Btn_Delete.Rotation = 0R
         Me.Btn_Delete.Size = New System.Drawing.Size(75, 37)
@@ -447,7 +448,7 @@ Partial Class Frm_Products
         Me.Btn_Edit.IconChar = FontAwesome.Sharp.IconChar.Edit
         Me.Btn_Edit.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Btn_Edit.IconSize = 20
-        Me.Btn_Edit.Location = New System.Drawing.Point(720, 331)
+        Me.Btn_Edit.Location = New System.Drawing.Point(720, 324)
         Me.Btn_Edit.Name = "Btn_Edit"
         Me.Btn_Edit.Rotation = 0R
         Me.Btn_Edit.Size = New System.Drawing.Size(86, 37)
@@ -466,7 +467,7 @@ Partial Class Frm_Products
         Me.Btn_Save.IconChar = FontAwesome.Sharp.IconChar.Save
         Me.Btn_Save.IconColor = System.Drawing.Color.Blue
         Me.Btn_Save.IconSize = 20
-        Me.Btn_Save.Location = New System.Drawing.Point(720, 288)
+        Me.Btn_Save.Location = New System.Drawing.Point(720, 254)
         Me.Btn_Save.Name = "Btn_Save"
         Me.Btn_Save.Rotation = 0R
         Me.Btn_Save.Size = New System.Drawing.Size(167, 37)

@@ -135,6 +135,7 @@ Public Class SQLControl
     End Function
 
 #End Region
+#Region "Retrive data"
     Sub labelS(itm As Object, table As String)
         Using cn = GetConnection()
 
@@ -177,6 +178,8 @@ Public Class SQLControl
             'User will see DisplayMember in the Combobox
         End Using
     End Sub
+#End Region
+
 #Region "Chart"
     'danuag char in home
     Sub CategoryCht(chrt As Object, ChrtView As String)

@@ -38,6 +38,11 @@ Public Class Frm_Stocks
         sql.SetCueText(Txt_Amount, Format("0"))
         sql.SetCueText(Txt_Total, Format("0.00"))
 
+
+        Txt_Amount.Text = CInt(0)
+        Txt_Purchase.Text = CInt(0)
+        Txt_Sale.Text = CInt(0)
+
         'sql.SetCueText(Txt_NameKH, Format("សូមបញ្ចូលឈ្មោះផលិផលជាភាសាខ្មែរ"))
         'sql.SetCueText(Txt_NameEN, Format("សូមបញ្ចូលឈ្មោះផលិផលជាឡាតាំង"))
 
@@ -97,22 +102,59 @@ Public Class Frm_Stocks
         'End If
         MsgBox("បន្ថែមស្ដុកបានជោគជ័យ", MessageBoxIcon.Information, "បន្ថែមស្ដុកថ្មី")
         LoadGrid()
+        Txt_Amount.Text = CInt(0)
     End Sub
 
     Private Sub Btn_Save_Click(sender As Object, e As EventArgs) Handles Btn_Save.Click
         Insert()
+
     End Sub
     Private Sub Cmb_ProductName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_ProductName.SelectedIndexChanged
         sql.ReadData(Txt_ProductCode, "SELECT * FROM rpt_cmbProduct Where name = N'" & Cmb_ProductName.Text & "'")
-        cmbSearch
+        sql.ReadData(Txt_Purchase, "select min(purchase_price),pro_code from tbl_Stock where pro_code = N'" & Txt_ProductCode.Text & "' Group By pro_code")
+        cmbSearch()
     End Sub
 
     Private Sub Txt_Purchase_TextChanged(sender As Object, e As EventArgs) Handles Txt_Purchase.TextChanged
-        Placeholder()
+
+        If Txt_Amount.Text <> "" And Txt_Purchase.Text <> "" Then
+            Txt_Total.Text = CDbl(Txt_Purchase.Text) * CDbl(Txt_Amount.Text)
+        End If
+    End Sub
+#End Region
+    Private Sub update()
+        ' ADD SQL PARAMS & RUN THE COMMAND
+
+        sql.AddParam("@id", sql.getMaxID("tbl_stock", "id", "ST-00000000", 4, 9))
+        sql.AddParam("@pro_id", Txt_ProductCode.Text)
+        sql.AddParam("@amount", -(Txt_Amount.Text))
+        sql.AddParam("@purchase", Txt_Purchase.Text)
+        sql.AddParam("@sale", Txt_Sale.Text)
+        sql.AddParam("@total", -(Txt_Total.Text))
+        sql.AddParam("@date", DTP_Purchase.Value)
+        sql.AddParam("@scale", Cmb_Scale.Text)
+
+
+        sql.ExecQuery("INSERT INTO tbl_Stock (id,pro_code,amount,purchase_price,sale_price,total,date,scale) " &
+                      "VALUES (@id,@pro_id,@amount,@purchase,@sale,@total,@date,@scale);", True)
+
+
+        If sql.HasException(True) Then Exit Sub
+
+
+        MsgBox("បន្ថែមស្ដុកបានជោគជ័យ", MessageBoxIcon.Information, "បន្ថែមស្ដុកថ្មី")
+        LoadGrid()
+        Txt_Amount.Text = CInt(0)
+    End Sub
+
+    Private Sub Txt_Amount_TextChanged(sender As Object, e As EventArgs) Handles Txt_Amount.TextChanged
+
         If Txt_Amount.Text <> "" And Txt_Purchase.Text <> "" Then
             Txt_Total.Text = CDbl(Txt_Purchase.Text) * CDbl(Txt_Amount.Text)
         End If
     End Sub
 
-#End Region
+    Private Sub Btn_Edit_Click(sender As Object, e As EventArgs) Handles Btn_Edit.Click
+        update()
+    End Sub
 End Class

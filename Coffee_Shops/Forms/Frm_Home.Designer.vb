@@ -25,16 +25,23 @@ Partial Class Frm_Home
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Btn_Close = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel_Stock = New System.Windows.Forms.Panel()
+        Me.Chrt_Period = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chrt_Category = New System.Windows.Forms.DataVisualization.Charting.Chart()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Stock.SuspendLayout()
+        CType(Me.Chrt_Period, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chrt_Category, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,6 +101,7 @@ Partial Class Frm_Home
         '
         'Panel_Stock
         '
+        Me.Panel_Stock.Controls.Add(Me.Chrt_Period)
         Me.Panel_Stock.Controls.Add(Me.Chrt_Category)
         Me.Panel_Stock.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Stock.Location = New System.Drawing.Point(0, 0)
@@ -101,29 +109,65 @@ Partial Class Frm_Home
         Me.Panel_Stock.Size = New System.Drawing.Size(900, 600)
         Me.Panel_Stock.TabIndex = 26
         '
-        'Chrt_Category
+        'Chrt_Period
         '
+        ChartArea1.AxisX.MaximumAutoSize = 50.0!
         ChartArea1.Name = "ChartArea1"
-        Me.Chrt_Category.ChartAreas.Add(ChartArea1)
+        Me.Chrt_Period.ChartAreas.Add(ChartArea1)
+        Legend1.DockedToChartArea = "ChartArea1"
+        Legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left
         Legend1.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Legend1.IsTextAutoFit = False
         Legend1.Name = "Legend1"
-        Me.Chrt_Category.Legends.Add(Legend1)
-        Me.Chrt_Category.Location = New System.Drawing.Point(23, 46)
-        Me.Chrt_Category.Name = "Chrt_Category"
+        Legend1.TitleFont = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Chrt_Period.Legends.Add(Legend1)
+        Me.Chrt_Period.Location = New System.Drawing.Point(463, 47)
+        Me.Chrt_Period.Name = "Chrt_Period"
         Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
         Series1.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!)
+        Series1.IsValueShownAsLabel = True
+        Series1.IsXValueIndexed = True
         Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chrt_Category.Series.Add(Series1)
+        Series1.Name = "តម្លៃលក់សរុប"
+        Series2.ChartArea = "ChartArea1"
+        Series2.IsValueShownAsLabel = True
+        Series2.IsXValueIndexed = True
+        Series2.Legend = "Legend1"
+        Series2.Name = "មុខទំនិញសរុប"
+        Me.Chrt_Period.Series.Add(Series1)
+        Me.Chrt_Period.Series.Add(Series2)
+        Me.Chrt_Period.Size = New System.Drawing.Size(434, 327)
+        Me.Chrt_Period.TabIndex = 1
+        Me.Chrt_Period.Text = "Chart1"
+        Title1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.75!)
+        Title1.Name = "Title1"
+        Title1.Text = "ស្ថិតិការលក់ប្រចាំថ្ងៃក្នុងសប្ដាហ៍"
+        Me.Chrt_Period.Titles.Add(Title1)
+        '
+        'Chrt_Category
+        '
+        ChartArea2.Name = "ChartArea1"
+        Me.Chrt_Category.ChartAreas.Add(ChartArea2)
+        Legend2.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend2.IsTextAutoFit = False
+        Legend2.Name = "Legend1"
+        Me.Chrt_Category.Legends.Add(Legend2)
+        Me.Chrt_Category.Location = New System.Drawing.Point(15, 46)
+        Me.Chrt_Category.Name = "Chrt_Category"
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series3.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!)
+        Series3.IsValueShownAsLabel = True
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.Chrt_Category.Series.Add(Series3)
         Me.Chrt_Category.Size = New System.Drawing.Size(434, 327)
         Me.Chrt_Category.TabIndex = 0
         Me.Chrt_Category.Text = "Chart1"
-        Title1.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.75!)
-        Title1.Name = "Title1"
-        Title1.Text = "ស្ថិតិមុខទំនិញតាមប្រភេទនីមួយៗ"
-        Me.Chrt_Category.Titles.Add(Title1)
+        Title2.Font = New System.Drawing.Font("Khmer OS Siemreap", 11.75!)
+        Title2.Name = "Title1"
+        Title2.Text = "ស្ថិតិមុខទំនិញតាមប្រភេទនីមួយៗ"
+        Me.Chrt_Category.Titles.Add(Title2)
         '
         'Frm_Home
         '
@@ -141,6 +185,7 @@ Partial Class Frm_Home
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Stock.ResumeLayout(False)
+        CType(Me.Chrt_Period, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chrt_Category, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -152,4 +197,5 @@ Partial Class Frm_Home
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel_Stock As Panel
     Friend WithEvents Chrt_Category As DataVisualization.Charting.Chart
+    Friend WithEvents Chrt_Period As DataVisualization.Charting.Chart
 End Class
