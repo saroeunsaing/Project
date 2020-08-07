@@ -44,6 +44,8 @@ Partial Class Frm_Users
         Me.Btn_Delete = New FontAwesome.Sharp.IconButton()
         Me.Btn_Edit = New FontAwesome.Sharp.IconButton()
         Me.Btn_Save = New FontAwesome.Sharp.IconButton()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel_Contain.SuspendLayout()
         Me.Panel_Title.SuspendLayout()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +55,7 @@ Partial Class Frm_Users
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("NiDA Bayon", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Khmer OS Siemreap", 14.25!)
         Me.Label5.ForeColor = System.Drawing.Color.Red
         Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Label5.Location = New System.Drawing.Point(42, 2)
@@ -67,7 +69,7 @@ Partial Class Frm_Users
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(47, 200)
+        Me.Label3.Location = New System.Drawing.Point(47, 196)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(88, 29)
         Me.Label3.TabIndex = 13
@@ -77,7 +79,7 @@ Partial Class Frm_Users
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(47, 157)
+        Me.Label2.Location = New System.Drawing.Point(52, 157)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 29)
         Me.Label2.TabIndex = 12
@@ -87,7 +89,7 @@ Partial Class Frm_Users
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(47, 72)
+        Me.Label1.Location = New System.Drawing.Point(52, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(93, 29)
         Me.Label1.TabIndex = 11
@@ -117,6 +119,8 @@ Partial Class Frm_Users
         'Panel_Contain
         '
         Me.Panel_Contain.BackColor = System.Drawing.Color.MediumTurquoise
+        Me.Panel_Contain.Controls.Add(Me.ComboBox1)
+        Me.Panel_Contain.Controls.Add(Me.Label7)
         Me.Panel_Contain.Controls.Add(Me.Panel_Title)
         Me.Panel_Contain.Controls.Add(Me.Label6)
         Me.Panel_Contain.Controls.Add(Me.Txt_Fullname)
@@ -133,6 +137,7 @@ Partial Class Frm_Users
         Me.Panel_Contain.Controls.Add(Me.Txt_UserName)
         Me.Panel_Contain.Controls.Add(Me.Txt_UserID)
         Me.Panel_Contain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel_Contain.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel_Contain.ForeColor = System.Drawing.Color.White
         Me.Panel_Contain.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Contain.Name = "Panel_Contain"
@@ -186,11 +191,11 @@ Partial Class Frm_Users
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(47, 119)
+        Me.Label6.Location = New System.Drawing.Point(52, 114)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 29)
+        Me.Label6.Size = New System.Drawing.Size(104, 29)
         Me.Label6.TabIndex = 24
-        Me.Label6.Text = "លេខសម្គាល់"
+        Me.Label6.Text = "គោត្តនាម នាម"
         '
         'Txt_Fullname
         '
@@ -201,13 +206,14 @@ Partial Class Frm_Users
         '
         'DGV_Data
         '
+        Me.DGV_Data.AllowUserToAddRows = False
         Me.DGV_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGV_Data.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Data.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -215,11 +221,11 @@ Partial Class Frm_Users
         Me.DGV_Data.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Data.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DGV_Data.Location = New System.Drawing.Point(3, 342)
+        Me.DGV_Data.Location = New System.Drawing.Point(12, 342)
         Me.DGV_Data.Name = "DGV_Data"
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -229,7 +235,7 @@ Partial Class Frm_Users
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         Me.DGV_Data.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_Data.Size = New System.Drawing.Size(894, 290)
+        Me.DGV_Data.Size = New System.Drawing.Size(876, 281)
         Me.DGV_Data.TabIndex = 22
         '
         'Cmb_Position
@@ -244,7 +250,7 @@ Partial Class Frm_Users
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(47, 242)
+        Me.Label4.Location = New System.Drawing.Point(52, 245)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 29)
         Me.Label4.TabIndex = 20
@@ -255,15 +261,15 @@ Partial Class Frm_Users
         Me.Btn_Delete.FlatAppearance.BorderSize = 0
         Me.Btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Delete.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Delete.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Delete.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Delete.ForeColor = System.Drawing.Color.White
         Me.Btn_Delete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt
         Me.Btn_Delete.IconColor = System.Drawing.Color.Red
-        Me.Btn_Delete.IconSize = 20
-        Me.Btn_Delete.Location = New System.Drawing.Point(794, 299)
+        Me.Btn_Delete.IconSize = 30
+        Me.Btn_Delete.Location = New System.Drawing.Point(714, 197)
         Me.Btn_Delete.Name = "Btn_Delete"
         Me.Btn_Delete.Rotation = 0R
-        Me.Btn_Delete.Size = New System.Drawing.Size(75, 37)
+        Me.Btn_Delete.Size = New System.Drawing.Size(109, 37)
         Me.Btn_Delete.TabIndex = 18
         Me.Btn_Delete.Text = "លុប"
         Me.Btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -274,15 +280,15 @@ Partial Class Frm_Users
         Me.Btn_Edit.FlatAppearance.BorderSize = 0
         Me.Btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Edit.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Edit.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Edit.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Edit.ForeColor = System.Drawing.Color.White
         Me.Btn_Edit.IconChar = FontAwesome.Sharp.IconChar.Edit
         Me.Btn_Edit.IconColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Edit.IconSize = 20
-        Me.Btn_Edit.Location = New System.Drawing.Point(714, 299)
+        Me.Btn_Edit.IconSize = 30
+        Me.Btn_Edit.Location = New System.Drawing.Point(714, 139)
         Me.Btn_Edit.Name = "Btn_Edit"
         Me.Btn_Edit.Rotation = 0R
-        Me.Btn_Edit.Size = New System.Drawing.Size(74, 37)
+        Me.Btn_Edit.Size = New System.Drawing.Size(109, 37)
         Me.Btn_Edit.TabIndex = 17
         Me.Btn_Edit.Text = "កែប្រែ"
         Me.Btn_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -293,19 +299,37 @@ Partial Class Frm_Users
         Me.Btn_Save.FlatAppearance.BorderSize = 0
         Me.Btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Save.Flip = FontAwesome.Sharp.FlipOrientation.Normal
-        Me.Btn_Save.Font = New System.Drawing.Font("Khmer OS Siemreap", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Save.Font = New System.Drawing.Font("Khmer OS Siemreap", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Save.ForeColor = System.Drawing.Color.White
         Me.Btn_Save.IconChar = FontAwesome.Sharp.IconChar.Save
         Me.Btn_Save.IconColor = System.Drawing.Color.Blue
-        Me.Btn_Save.IconSize = 20
-        Me.Btn_Save.Location = New System.Drawing.Point(638, 299)
+        Me.Btn_Save.IconSize = 30
+        Me.Btn_Save.Location = New System.Drawing.Point(715, 81)
         Me.Btn_Save.Name = "Btn_Save"
         Me.Btn_Save.Rotation = 0R
-        Me.Btn_Save.Size = New System.Drawing.Size(90, 37)
+        Me.Btn_Save.Size = New System.Drawing.Size(108, 37)
         Me.Btn_Save.TabIndex = 16
         Me.Btn_Save.Text = " រក្សាទុក"
         Me.Btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Btn_Save.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(197, 285)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(474, 37)
+        Me.ComboBox1.TabIndex = 28
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(43, 288)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(142, 29)
+        Me.Label7.TabIndex = 27
+        Me.Label7.Text = "លេខសម្គាល់បុគ្គលិក"
         '
         'Frm_Users
         '
@@ -346,4 +370,6 @@ Partial Class Frm_Users
     Friend WithEvents Btn_Exit As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label7 As Label
 End Class

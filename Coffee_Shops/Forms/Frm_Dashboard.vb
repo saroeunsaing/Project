@@ -171,9 +171,7 @@ Public Class Frm_Dashboard
     End Sub
 
 
-    Private Sub Btn_About_Us_Click(sender As Object, e As EventArgs) Handles Btn_Payment_OutStanding.Click
 
-    End Sub
 
     Private Sub Btn_Home_Click(sender As Object, e As EventArgs) Handles Btn_Home.Click
         AbrirFormEnPanel(New Frm_Home)
@@ -181,5 +179,9 @@ Public Class Frm_Dashboard
 
     Private Sub Btn_Product_Click(sender As Object, e As EventArgs) Handles Btn_Product.Click
         AbrirFormEnPanel(New Frm_Products)
+    End Sub
+
+    Private Sub Btn_Payment_OutStanding_Click(sender As Object, e As EventArgs) Handles Btn_Payment_OutStanding.Click
+        AbrirFormEnPanel(New Frm_Payments)
     End Sub
 End Class
