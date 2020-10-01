@@ -148,7 +148,7 @@ Public Class SQLControl
 
             End While
         End Using
-
+        'call sql.labelS(Label_ShopName, "select * from tbl_shop")
     End Sub
     Sub ReadData(itm As Object, table As String)
         Using cn = GetConnection()
@@ -516,6 +516,8 @@ Public Class SQLControl
         End Try
 
     End Sub
+   
+
 #End Region
 #Region "Image"
     Public Sub Image(pic As Object, qty As String)

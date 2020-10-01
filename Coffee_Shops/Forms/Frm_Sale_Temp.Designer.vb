@@ -30,6 +30,7 @@ Partial Class Frm_Sale_Temp
         Me.Btn_Maximize = New FontAwesome.Sharp.IconButton()
         Me.Btn_Close = New FontAwesome.Sharp.IconButton()
         Me.Panel_Item = New System.Windows.Forms.Panel()
+        Me.Btn_PTCash = New FontAwesome.Sharp.IconButton()
         Me.Btn_Search = New FontAwesome.Sharp.IconButton()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Txt_Search = New System.Windows.Forms.TextBox()
@@ -193,6 +194,7 @@ Partial Class Frm_Sale_Temp
         '
         Me.Panel_Item.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel_Item.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel_Item.Controls.Add(Me.Btn_PTCash)
         Me.Panel_Item.Controls.Add(Me.Btn_Search)
         Me.Panel_Item.Controls.Add(Me.Label16)
         Me.Panel_Item.Controls.Add(Me.Txt_Search)
@@ -207,6 +209,24 @@ Partial Class Frm_Sale_Temp
         Me.Panel_Item.Name = "Panel_Item"
         Me.Panel_Item.Size = New System.Drawing.Size(461, 551)
         Me.Panel_Item.TabIndex = 29
+        '
+        'Btn_PTCash
+        '
+        Me.Btn_PTCash.FlatAppearance.BorderSize = 0
+        Me.Btn_PTCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_PTCash.Flip = FontAwesome.Sharp.FlipOrientation.Normal
+        Me.Btn_PTCash.ForeColor = System.Drawing.Color.Blue
+        Me.Btn_PTCash.IconChar = FontAwesome.Sharp.IconChar.Cogs
+        Me.Btn_PTCash.IconColor = System.Drawing.Color.Blue
+        Me.Btn_PTCash.IconSize = 30
+        Me.Btn_PTCash.Location = New System.Drawing.Point(91, 509)
+        Me.Btn_PTCash.Name = "Btn_PTCash"
+        Me.Btn_PTCash.Rotation = 0R
+        Me.Btn_PTCash.Size = New System.Drawing.Size(134, 33)
+        Me.Btn_PTCash.TabIndex = 28
+        Me.Btn_PTCash.Text = "ទូទាត់ PTCash"
+        Me.Btn_PTCash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_PTCash.UseVisualStyleBackColor = True
         '
         'Btn_Search
         '
@@ -254,10 +274,10 @@ Partial Class Frm_Sale_Temp
         Me.Btn_Setting.IconChar = FontAwesome.Sharp.IconChar.Cog
         Me.Btn_Setting.IconColor = System.Drawing.Color.Black
         Me.Btn_Setting.IconSize = 22
-        Me.Btn_Setting.Location = New System.Drawing.Point(6, 502)
+        Me.Btn_Setting.Location = New System.Drawing.Point(-2, 507)
         Me.Btn_Setting.Name = "Btn_Setting"
         Me.Btn_Setting.Rotation = 0R
-        Me.Btn_Setting.Size = New System.Drawing.Size(97, 35)
+        Me.Btn_Setting.Size = New System.Drawing.Size(87, 35)
         Me.Btn_Setting.TabIndex = 24
         Me.Btn_Setting.Text = "អត្រាប្ដូរ"
         Me.Btn_Setting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -282,10 +302,10 @@ Partial Class Frm_Sale_Temp
         Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.TrashRestore
         Me.IconButton2.IconColor = System.Drawing.Color.Red
         Me.IconButton2.IconSize = 25
-        Me.IconButton2.Location = New System.Drawing.Point(342, 508)
+        Me.IconButton2.Location = New System.Drawing.Point(381, 507)
         Me.IconButton2.Name = "IconButton2"
         Me.IconButton2.Rotation = 0R
-        Me.IconButton2.Size = New System.Drawing.Size(111, 33)
+        Me.IconButton2.Size = New System.Drawing.Size(78, 33)
         Me.IconButton2.TabIndex = 19
         Me.IconButton2.Text = "សំអាត"
         Me.IconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -308,7 +328,7 @@ Partial Class Frm_Sale_Temp
         Me.Btn_Cash.IconChar = FontAwesome.Sharp.IconChar.CartPlus
         Me.Btn_Cash.IconColor = System.Drawing.Color.Blue
         Me.Btn_Cash.IconSize = 30
-        Me.Btn_Cash.Location = New System.Drawing.Point(204, 508)
+        Me.Btn_Cash.Location = New System.Drawing.Point(243, 509)
         Me.Btn_Cash.Name = "Btn_Cash"
         Me.Btn_Cash.Rotation = 0R
         Me.Btn_Cash.Size = New System.Drawing.Size(132, 33)
@@ -675,4 +695,5 @@ Partial Class Frm_Sale_Temp
     Friend WithEvents Btn_Search As FontAwesome.Sharp.IconButton
     Friend WithEvents Label16 As Label
     Friend WithEvents Txt_Search As TextBox
+    Friend WithEvents Btn_PTCash As FontAwesome.Sharp.IconButton
 End Class

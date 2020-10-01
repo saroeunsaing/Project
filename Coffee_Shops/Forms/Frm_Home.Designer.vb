@@ -31,31 +31,16 @@ Partial Class Frm_Home
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Btn_Close = New FontAwesome.Sharp.IconButton()
         Me.Panel_Title = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel_Stock = New System.Windows.Forms.Panel()
         Me.Chrt_Period = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chrt_Category = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Title.SuspendLayout()
         Me.Panel_Stock.SuspendLayout()
         CType(Me.Chrt_Period, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chrt_Category, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'IconPictureBox1
-        '
-        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.IconPictureBox1.ForeColor = System.Drawing.Color.Linen
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ProductHunt
-        Me.IconPictureBox1.IconColor = System.Drawing.Color.Linen
-        Me.IconPictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.IconPictureBox1.Name = "IconPictureBox1"
-        Me.IconPictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.IconPictureBox1.TabIndex = 27
-        Me.IconPictureBox1.TabStop = False
         '
         'Btn_Close
         '
@@ -78,26 +63,12 @@ Partial Class Frm_Home
         '
         Me.Panel_Title.BackColor = System.Drawing.Color.Transparent
         Me.Panel_Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel_Title.Controls.Add(Me.IconPictureBox1)
         Me.Panel_Title.Controls.Add(Me.Btn_Close)
-        Me.Panel_Title.Controls.Add(Me.Label5)
         Me.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Title.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Title.Name = "Panel_Title"
         Me.Panel_Title.Size = New System.Drawing.Size(900, 40)
         Me.Panel_Title.TabIndex = 25
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Khmer OS Muol Light", 12.25!)
-        Me.Label5.ForeColor = System.Drawing.Color.SeaShell
-        Me.Label5.Location = New System.Drawing.Point(43, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(351, 37)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "គ្រប់គ្រងស្ដុកទំនិញ"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel_Stock
         '
@@ -182,7 +153,6 @@ Partial Class Frm_Home
         Me.Margin = New System.Windows.Forms.Padding(3, 6, 3, 6)
         Me.Name = "Frm_Home"
         Me.Text = "Frm_Home"
-        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Title.ResumeLayout(False)
         Me.Panel_Stock.ResumeLayout(False)
         CType(Me.Chrt_Period, System.ComponentModel.ISupportInitialize).EndInit()
@@ -190,11 +160,8 @@ Partial Class Frm_Home
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
     Friend WithEvents Btn_Close As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel_Title As Panel
-    Friend WithEvents Label5 As Label
     Friend WithEvents Panel_Stock As Panel
     Friend WithEvents Chrt_Category As DataVisualization.Charting.Chart
     Friend WithEvents Chrt_Period As DataVisualization.Charting.Chart

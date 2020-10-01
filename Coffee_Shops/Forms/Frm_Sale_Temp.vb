@@ -61,7 +61,7 @@ Public Class Frm_Sale_Temp
     Private Sub Btn_Cash_Click(sender As Object, e As EventArgs) Handles Btn_Cash.Click
         Insert()
         Me.Hide()
-        Frm_RptSale.Show()
+        Frm_Rpt_Sale.Show()
     End Sub
     Private Sub Insert()
         ' ADD SQL PARAMS & RUN THE COMMAND
@@ -91,7 +91,7 @@ Public Class Frm_Sale_Temp
             sql.AddParam("@qty", Lst_data.Items(i).SubItems(5).Text)
             sql.AddParam("@price", Lst_data.Items(i).SubItems(4).Text)
 
-            sql.AddParam("@date", Format(Now(), "dd/MM/yyyy hh:mm tt"))
+            sql.AddParam("@date", Format(Now(), "dd-MMMM-yyyy hh:mm tt"))
             sql.AddParam("@seller", Lb_User.Text)
 
 
@@ -138,6 +138,10 @@ Public Class Frm_Sale_Temp
     End Sub
 
     Private Sub Panel_Title_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Title.Paint
+
+    End Sub
+
+    Private Sub Panel_Content_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Content.Paint
 
     End Sub
 End Class

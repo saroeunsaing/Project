@@ -94,7 +94,7 @@ Public Class Frm_Dashboard
         'End If
 
 
-        Label1.Text = MaqueeText(Label1.Text)
+        Label1.Text = MaqueeText(Label1.Width)
 
 
     End Sub
@@ -119,8 +119,10 @@ Public Class Frm_Dashboard
         Dim user As New UserModel()
         If ActiveUser.idUser = Nothing OrElse ActiveUser.idUser = 0 Then
             'codes
-            MessageBox.Show("Error")
-            Me.Close()
+            MsgBox("សូមមេតាប្រើប្រាស់គណនីរបស់អ្នកដើម្បីដើំណើរការប្រព័ន្ធ", MessageBoxIcon.Information, "Error")
+
+            Frm_Login.Show()
+            Me.Hide()
         End If
     End Sub
     'check permission with usertype
@@ -183,5 +185,9 @@ Public Class Frm_Dashboard
 
     Private Sub Btn_Payment_OutStanding_Click(sender As Object, e As EventArgs) Handles Btn_Payment_OutStanding.Click
         AbrirFormEnPanel(New Frm_Payments)
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class

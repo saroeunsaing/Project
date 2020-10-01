@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CFF55DA8-C9D4-424D-B469-E3F6E1D8CBF9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Coffee_Shops.My.MyApplication</StartupObject>
+    <StartupObject>Coffee_Shops.Frm_Login</StartupObject>
     <RootNamespace>Coffee_Shops</RootNamespace>
     <AssemblyName>Coffee_Shops</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -88,12 +88,6 @@
   <ItemGroup>
     <Compile Include="Config.vb" />
     <Compile Include="ConnectionString.vb" />
-    <Compile Include="CrystalReport1.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DataStore\DataSet_Sale.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +195,11 @@
     <Compile Include="Forms\Frm_Scale.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\CR_Invoice.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Invoice.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CR_Sales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -250,10 +249,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frms_Category.resx">
       <DependentUpon>Frms_Category.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +299,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Scale.resx">
       <DependentUpon>Frm_Scale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CR_Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Invoice.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

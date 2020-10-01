@@ -13,6 +13,7 @@ Public Class Frm_Shop
     Private Sub Btn_Exit_Click(sender As Object, e As EventArgs) Handles Btn_Exit.Click
         Me.Hide()
         Frm_Login.Show()
+        sql.Image(Frm_Login.Pic_Logo, "Select Logo from tbl_Shop")
     End Sub
 
     Private Sub Btn_Save_Click(sender As Object, e As EventArgs) Handles Btn_Save.Click
@@ -65,17 +66,11 @@ Public Class Frm_Shop
 
     End Sub
 
-    Private Sub Btn_Brows_MouseLeave(sender As Object, e As EventArgs) Handles Btn_Brows.MouseLeave
-
-    End Sub
-
     Private Sub Btn_Brows_Click(sender As Object, e As EventArgs) Handles Btn_Brows.Click
         sql.browsImg(Img_Logo)
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
 
-    End Sub
 
 
 

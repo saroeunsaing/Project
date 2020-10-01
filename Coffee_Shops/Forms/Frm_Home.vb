@@ -14,4 +14,8 @@ Public Class Frm_Home
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
         Me.Close()
     End Sub
+
+    Private Sub Panel_Stock_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Stock.Paint
+
+    End Sub
 End Class

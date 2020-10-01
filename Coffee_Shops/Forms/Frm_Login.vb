@@ -40,7 +40,7 @@ Public Class Frm_Login
         Placeholder()
         sql.labelS(Label_ShopName, "select * from tbl_shop")
         sql.Image(Pic_Logo, "Select Logo from tbl_Shop")
-
+        Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath)
     End Sub
 
 
@@ -52,5 +52,6 @@ Public Class Frm_Login
         Me.Hide()
         Frm_Shop.Show()
     End Sub
+
 
 End Class
