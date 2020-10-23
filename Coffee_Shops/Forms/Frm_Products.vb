@@ -265,9 +265,5 @@ Public Class Frm_Products
     Private Sub Btn_Remove_Click(sender As Object, e As EventArgs) Handles Btn_Remove.Click
         Pic_Image.Image = Nothing
     End Sub
-
-
-
-
 #End Region
 End Class

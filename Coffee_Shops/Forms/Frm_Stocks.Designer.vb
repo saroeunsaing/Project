@@ -73,7 +73,7 @@ Partial Class Frm_Stocks
         '
         Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.IconPictureBox1.ForeColor = System.Drawing.Color.Linen
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ProductHunt
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Warehouse
         Me.IconPictureBox1.IconColor = System.Drawing.Color.Linen
         Me.IconPictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.IconPictureBox1.Name = "IconPictureBox1"

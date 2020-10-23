@@ -105,6 +105,12 @@
     <Compile Include="Forms\Frms_Material.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Frm_About.Designer.vb">
+      <DependentUpon>Frm_About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Frm_Amount.Designer.vb">
       <DependentUpon>Frm_Amount.vb</DependentUpon>
     </Compile>
@@ -159,6 +165,12 @@
     <Compile Include="Forms\Frm_RptSale.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Frm_Rpt_PTCash.Designer.vb">
+      <DependentUpon>Frm_Rpt_PTCash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Rpt_PTCash.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Frm_Rpt_Sale.Designer.vb">
       <DependentUpon>Frm_Rpt_Sale.vb</DependentUpon>
     </Compile>
@@ -199,6 +211,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CR_Invoice.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CR_PTCash.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_PTCash.rpt</DependentUpon>
     </Compile>
     <Compile Include="Reports\CR_Sales.vb">
       <AutoGen>True</AutoGen>
@@ -255,6 +272,9 @@
     <EmbeddedResource Include="Forms\Frms_Material.resx">
       <DependentUpon>Frms_Material.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_About.resx">
+      <DependentUpon>Frm_About.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Amount.resx">
       <DependentUpon>Frm_Amount.vb</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +302,9 @@
     <EmbeddedResource Include="Forms\Frm_RptSale.resx">
       <DependentUpon>Frm_RptSale.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Rpt_PTCash.resx">
+      <DependentUpon>Frm_Rpt_PTCash.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Rpt_Sale.resx">
       <DependentUpon>Frm_Rpt_Sale.vb</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +326,10 @@
     <EmbeddedResource Include="Reports\CR_Invoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Invoice.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CR_PTCash.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_PTCash.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CR_Sales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -376,6 +403,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="guru__1__TLY_icon.ico" />
+    <None Include="Resources\logo ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -144,4 +144,9 @@ Public Class Frm_Sale_Temp
     Private Sub Panel_Content_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Content.Paint
 
     End Sub
+
+    Private Sub Btn_PTCash_Click(sender As Object, e As EventArgs) Handles Btn_PTCash.Click
+        Me.Hide()
+        Frm_Rpt_PTCash.Show()
+    End Sub
 End Class

@@ -2,42 +2,11 @@
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 Imports Domain
-
-Public Class Frm_Rpt_Sale
-    Private sql As New SQLControl
-
-
-    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
-        Me.Hide()
-        Frm_Sale_Temp.Show()
-    End Sub
-
-    Private Sub Frm_Rpt_Sale_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        'Dim ds As New DataSet_Sale
-        'Dim rpt As New CR_Invoice
-        'Dim table As String = "tbl_shop"
-
-
-        'Dim qty As String = "SELECT * FROM tbl_shop"
-
-        ''call sub crystall report from class
-        'sql.Crst_Rpt(rpt, ds, qty, CRV_PTCash, table)
-
-
-
-        'Dim table1 As String = "rpt_invoice"
-
-
-        'Dim qty1 As String = "SELECT * FROM rpt_sales where rpt_sales.invoice_no ='CIEDI-0000000003' "
-
-        ''call sub crystall report from class
-        'sql.Crst_Rpt(rpt, ds, qty1, CRV_PTCash, table1)
-
-
+Public Class Frm_Rpt_PTCash
+    Private Sub Frm_Rpt_PTCash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
 
-            Dim rpt As New CR_Invoice() 'The report you created.
+            Dim rpt As New CR_PTCash() 'The report you created.
             Dim myConnection As SqlConnection
             Dim MyCommand As New SqlCommand()
             Dim cm As New SqlCommand()
@@ -46,8 +15,7 @@ Public Class Frm_Rpt_Sale
 
             myConnection = New SqlConnection("Data Source=DESKTOP-SG2IIT1;Initial Catalog=Coffee_Shop;Persist Security Info=True;User ID=sa;Password=123")
             MyCommand.Connection = myConnection
-            MyCommand.CommandText = "SELECT * FROM  rpt_sales WHERE rpt_sales.invoice_no = '" & Frm_Sale_Temp.Txt_Invoice.Text & "'"
-
+            MyCommand.CommandText = "SELECT * FROM  rpt_sales where date = cast(getdate() as date) And seller ='" & Frm_Sale_Temp.Lb_User.Text & "' "
 
             MyCommand.CommandType = CommandType.Text
             myDA.SelectCommand = MyCommand
@@ -63,15 +31,10 @@ Public Class Frm_Rpt_Sale
             ' myDA.Fill(myDS, "tbl_Prosold")
 
             rpt.SetDataSource(myDS)
-            CRV_PTCash.ReportSource = rpt
+            CrystalReportViewer1.ReportSource = rpt
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-    End Sub
-
-    Private Sub CRV_PTCash_Load(sender As Object, e As EventArgs) Handles CRV_PTCash.Load
-
     End Sub
 End Class

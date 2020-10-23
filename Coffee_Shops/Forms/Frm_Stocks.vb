@@ -3,9 +3,22 @@ Imports Domain
 Public Class Frm_Stocks
     Private sql As New SQLControl
 #Region "Retreive Data in Form"
+    Sub headdvg()
+        DGV_Data.Columns(0).HeaderText = "កូដផលិតផល"
+        DGV_Data.Columns(1).HeaderText = "ផលិតផល"
+        DGV_Data.Columns(2).HeaderText = "ជាឡាតាំង"
+        DGV_Data.Columns(3).HeaderText = "ចំនួន"
+        DGV_Data.Columns(4).HeaderText = "តម្លៃ"
+        'DGV_Data.Columns(5).HeaderText = "សរុបទឹកប្រាក់"
+        'DGV_Data.Columns(6).HeaderText = "តម្លៃលក់"
+        'DGV_Data.Columns(7).HeaderText = "ពិពណ៌នា"
+        'DGV_Data.Columns(9).HeaderText = "ប្រភព"
+        'DGV_Data.Columns(10).HeaderText = "ប្រភេទ"
+        DGV_Data.ColumnHeadersDefaultCellStyle.Font = New Font("Khmer OS Siemreap", 9.75F, FontStyle.Bold)
+    End Sub
     Public Sub LoadGrid(Optional Query As String = "")
         If Query = "" Then
-            sql.ExecQuery("SELECT product_id as [កូដផលិតផល],namekh as [ផលិតផល],nameen as [ជាឡាតាំង],amount [ចំនួន],total as [សរុបទឹកប្រាក់]  FROM stock ")
+            sql.ExecQuery("SELECT product_id,namekh,nameen,amount,total FROM stock ")
         Else
             sql.ExecQuery(Query)
         End If
@@ -60,6 +73,7 @@ Public Class Frm_Stocks
         sql.cmbox(Cmb_Scale, "SELECT * FROM tbl_Scale", "nameKh", "id")
         Placeholder()
         LoadGrid()
+        headdvg()
         DTP_Purchase.Value = Now()
     End Sub
 #Region "Save data in form"
@@ -160,5 +174,9 @@ Public Class Frm_Stocks
 
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
         Me.Close()
+    End Sub
+
+    Private Sub Panel_Stock_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Stock.Paint
+
     End Sub
 End Class
